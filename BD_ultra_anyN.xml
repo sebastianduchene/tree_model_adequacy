@@ -1,0 +1,37 @@
+<beast version='2.0' namespace='master:master.model:master.steppers:master.conditions:master.postprocessors:master.outputs'>
+    <run spec='InheritanceTrajectory' samplePopulationSizes="true" verbosity="3">
+        <model spec='Model' id='model'>
+            <population spec='Population' populationName='I' id='I'/>
+            <population spec='Population' populationName='R' id='R'/>
+            <reaction spec='Reaction' reactionName="Birth" rate="2">
+                I -> I + I
+            </reaction>
+            <reaction spec='Reaction' reactionName="Death" rate="1">
+                I -> R
+            </reaction>
+        </model>
+
+        <initialState spec='InitState'>
+            <lineageSeed spec='Individual' population='@I'/>
+            <populationSize spec='PopulationSize' population='@R' size='1'/>
+        </initialState>
+
+        <populationEndCondition spec='PopulationEndCondition'
+				population='@I' threshold="0" exceedCondition="false"
+				isRejection="true"/>
+
+        <populationEndCondition spec='PopulationEndCondition'
+				threshold="100" population='@I' isRejection="false"/>
+
+	<inheritancePostProcessor spec="LineageSampler" samplingTime="3" pSample="0.8">
+          <populationSize spec="PopulationSize" population="@I" size="100"/>
+	</inheritancePostProcessor>
+	<postSimCondition spec="LeafCountPostSimCondition"
+			  nLeaves="70" exact="false" exceedCondition="true"/>
+
+        <output spec='NewickOutput'
+		fileName="BDTree_ultra_anyN_MASTER.newick.tree"/>
+	<output spec="NexusOutput" fileName="BDTree_ultra_anyN_MASTER.nexus.tree"/>
+	<output spec='JsonOutput' fileName="BDTree_ultra_anyN_MASTER.json"/>
+    </run>
+</beast>
