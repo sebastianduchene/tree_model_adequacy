@@ -13,23 +13,23 @@
 	  <population spec='Population' id='S' populationName='S'/>
 	  <population spec='Population' id='I' populationName='I'/>
 	  <population spec='Population' id='R' populationName='R'/>
-	  <reaction spec='Reaction' reactionName="Infection" rate="0.005">
+	  <reaction spec='Reaction' reactionName="Infection" rate=$(birthEc)>
 	    S + I -> 2I
 	  </reaction>
-	  <reaction spec='Reaction' reactionName="Recovery" rate="0.2">
+	  <reaction spec='Reaction' reactionName="Recovery" rate=$(deathEc)>
 	    I -> R
 	  </reaction>
 
 	</model>
 
 	<initialState spec='InitState'>
-	  <populationSize spec='PopulationSize' population='@S' size='199'/>
+	  <populationSize spec='PopulationSize' population='@S' size=$(S0)/>
 	  <lineageSeed spec='Individual' population='@I'/>
 	</initialState>
 
 	<lineageEndCondition spec='LineageEndCondition' nLineages="0"/>
 
-	<inheritancePostProcessor spec="LineageSampler" samplingTime="10" pSample="0.9">
+	<inheritancePostProcessor spec="LineageSampler" samplingTime=$(originEc) pSample=$(rhoEc)>
 	  <populationSize spec="PopulationSize" population="@I"
 			  size="100"/>
 	</inheritancePostProcessor>
