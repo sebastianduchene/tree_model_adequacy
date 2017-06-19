@@ -1,6 +1,6 @@
 <beast version='2.0' namespace='master:master.model:master.steppers:master.conditions:master.postprocessors:master.outputs'>
     <run spec='InheritanceTrajectory' samplePopulationSizes="true"
-	 verbosity="3" simulationTime='0.08'>
+	 verbosity="3" simulationTime=$(origin)>
 
         <model spec='Model' id='model'>
             <population spec='Population' populationName='I' id='I'/>
