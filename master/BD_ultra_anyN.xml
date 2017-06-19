@@ -3,10 +3,10 @@
         <model spec='Model' id='model'>
             <population spec='Population' populationName='I' id='I'/>
             <population spec='Population' populationName='R' id='R'/>
-            <reaction spec='Reaction' reactionName="Birth" rate="2">
+            <reaction spec='Reaction' reactionName="Birth" rate="$(birth)">
                 I -> I + I
             </reaction>
-            <reaction spec='Reaction' reactionName="Death" rate="1">
+            <reaction spec='Reaction' reactionName="Death" rate="$(death)">
                 I -> R
             </reaction>
         </model>
@@ -23,15 +23,14 @@
         <populationEndCondition spec='PopulationEndCondition'
 				threshold="100" population='@I' isRejection="false"/>
 
-	<inheritancePostProcessor spec="LineageSampler" samplingTime="3" pSample="0.8">
+	<inheritancePostProcessor spec="LineageSampler" samplingTime="$(origin)" pSample="$(rho)">
           <populationSize spec="PopulationSize" population="@I" size="100"/>
 	</inheritancePostProcessor>
 	<postSimCondition spec="LeafCountPostSimCondition"
 			  nLeaves="70" exact="false" exceedCondition="true"/>
 
-        <output spec='NewickOutput'
-		fileName="BDTree_ultra_anyN_MASTER.newick.tree"/>
-	<output spec="NexusOutput" fileName="BDTree_ultra_anyN_MASTER.nexus.tree"/>
-	<output spec='JsonOutput' fileName="BDTree_ultra_anyN_MASTER.json"/>
+    <!--output spec='NewickOutput'	fileName="BDTree_ultra_anyN_MASTER.newick.tree"/-->
+	<output spec="NexusOutput" fileName="output.tree"/>
+	<!--output spec='JsonOutput' fileName="BDTree_ultra_anyN_MASTER.json"/-->
     </run>
 </beast>
