@@ -5,6 +5,7 @@
     <!-- tree priors -->
     <mergewith point='treePriorTemplatesX'>
         <!-- Yule -->
+        <!--
         <subtemplate id='YuleModel' class='beast.evolution.speciation.YuleModel' mainid='YuleModel.t:$(n)'>
 <![CDATA[
             <plugin spec='YuleModel' id="YuleModel.t:$(n)" tree='@Tree.t:$(n)'>
@@ -39,8 +40,10 @@
 
 			<connect srcID='birthRate.t:Species' targetID='SBI' inputName='birthRate' if='inposterior(YuleModel.t:Species) and inposterior(birthRate.t:Species)'/>
         </subtemplate>
+        -->
 
        <!-- Birth Death model according to Gernhard'08 -->
+       <!--
         <subtemplate id='BirthDeathModel' class='beast.evolution.speciation.BirthDeathGernhard08Model'
                      mainid='BirthDeath.t:$(n)'>
             <![CDATA[
@@ -91,6 +94,107 @@
                      if='inposterior(BirthDeath.t:$(n)) and inposterior(BDDeathRate.t:$(n)) and BDDeathRate.t:$(n)/estimate=true'/>
 
 			<connect srcID='BDBirthRate.t:Species' targetID='SBI' inputName='birthRate' if='inposterior(BirthDeath.t:Species) and inposterior(BDBirthRate.t:Species)'/>
+        </subtemplate>
+        -->
+        
+        <!-- TODO: add following:
+        BD SKY Contemp
+        BD SKY Sequential
+        BDSIR
+        -->
+        
+        <!-- Coalescent for Constant population -->
+        <subtemplate id='CoalescentConstantPopulation' class='beast.evolution.tree.coalescent.Coalescent'
+                     mainid='CoalescentConstant.t:$(n)'>
+            <![CDATA[
+            <distribution id="CoalescentConstant.t:$(n)" spec="Coalescent">
+                <treeIntervals spec='TreeIntervals' id='TreeIntervals.t:$(n)' tree='@Tree.t:$(n)'/>
+                <populationModel spec="ConstantPopulation" id='ConstantPopulation.t:$(n)'>
+                     <parameter name="popSize" id="popSize.t:$(n)" value='0.3' estimate='true'/>
+                 </populationModel>
+            </distribution>
+
+  		    <operator id='PopSizeScaler.t:$(n)' spec='ScaleOperator' scaleFactor="0.75" weight="3" parameter="@popSize.t:$(n)"/>
+	        <prior id='PopSizePrior.t:$(n)' x='@popSize.t:$(n)'><distr spec="OneOnX"/></prior>
+]]>
+
+            <connect srcID='CoalescentConstant.t:$(n)' targetID='prior' inputName='distribution'
+                     if='inposterior(CoalescentConstant.t:$(n))'>Coalescent prior with
+                constant rate on tree t:$(n)
+            </connect>
+            <connect srcID='PopSizePrior.t:$(n)' targetID='prior' inputName='distribution'
+                     if='inposterior(CoalescentConstant.t:$(n)) and inposterior(popSize.t:$(n)) and popSize.t:$(n)/estimate=true'>
+                Coalescent population size parameter of partition t:$(n)
+            </connect>
+
+            <connect srcID='popSize.t:$(n)' targetID='state' inputName='stateNode'
+                     if='inposterior(CoalescentConstant.t:$(n)) and inposterior(popSize.t:$(n)) and popSize.t:$(n)/estimate=true'/>
+
+            <connect srcID='PopSizeScaler.t:$(n)' targetID='mcmc' inputName='operator'
+                     if='inposterior(CoalescentConstant.t:$(n)) and inposterior(popSize.t:$(n)) and popSize.t:$(n)/estimate=true'>
+                Scale population size of Coalescent prior of tree t:$(n)
+            </connect>
+
+            <connect srcID='popSize.t:$(n)' targetID='tracelog' inputName='log'
+                     if='inposterior(CoalescentConstant.t:$(n)) and inposterior(popSize.t:$(n)) and popSize.t:$(n)/estimate=true'/>
+            <connect srcID='CoalescentConstant.t:$(n)' targetID='tracelog' inputName='log'
+                     if='inposterior(CoalescentConstant.t:$(n))'/>
+        </subtemplate>
+
+
+        <!-- Coalescent for Exponential population -->
+        <subtemplate id='CoalescentExponentialPopulation' class='beast.evolution.tree.coalescent.Coalescent'
+                     mainid='CoalescentExponential.t:$(n)'>
+            <![CDATA[
+            <distribution id="CoalescentExponential.t:$(n)" spec="Coalescent">
+                <treeIntervals spec='TreeIntervals' id='TreeIntervals.t:$(n)' tree='@Tree.t:$(n)'/>
+                <populationModel spec="ExponentialGrowth" id="ExponentialGrowth.t:$(n)">
+                    <parameter name="popSize" id="ePopSize.t:$(n)" value='0.3' estimate='true'/>
+                    <parameter name="growthRate" id="growthRate.t:$(n)" value='3e-4' estimate='true'/>
+                </populationModel>
+            </distribution>
+
+  		    <operator id='ePopSizeScaler.t:$(n)' spec='ScaleOperator' scaleFactor="0.75" weight="3" parameter="@ePopSize.t:$(n)"/>
+	        <operator id="GrowthRateRandomWalk.t:$(n)" spec="RealRandomWalkOperator" windowSize='1' weight="3" parameter="@growthRate.t:$(n)"/>
+
+	        <prior id='ePopSizePrior.t:$(n)' x='@ePopSize.t:$(n)'><distr spec="OneOnX"/></prior>
+	        <prior id='GrowthRatePrior.t:$(n)' x='@growthRate.t:$(n)'><distr spec="LaplaceDistribution"><parameter name="mu" value='0.001' estimate="false"/><parameter name="scale" value='30.701135' estimate="false"/></distr></prior>
+
+]]>
+
+            <connect srcID='CoalescentExponential.t:$(n)' targetID='prior' inputName='distribution'
+                     if='inposterior(CoalescentExponential.t:$(n))'>Coalesenct prior with
+                exponential rate on tree t:$(n)
+            </connect>
+            <connect srcID='ePopSizePrior.t:$(n)' targetID='prior' inputName='distribution'
+                     if='inposterior(CoalescentExponential.t:$(n)) and inposterior(ePopSize.t:$(n)) and ePopSize.t:$(n)/estimate=true'>
+                Coalescent population size parameter of partition t:$(n)
+            </connect>
+            <connect srcID='GrowthRatePrior.t:$(n)' targetID='prior' inputName='distribution'
+                     if='inposterior(CoalescentExponential.t:$(n)) and inposterior(growthRate.t:$(n)) and growthRate.t:$(n)/estimate=true'>
+                Coalescent growth rate of partition t:$(n)
+            </connect>
+
+            <connect srcID='ePopSize.t:$(n)' targetID='state' inputName='stateNode'
+                     if='inposterior(CoalescentExponential.t:$(n)) and inposterior(ePopSize.t:$(n))  and ePopSize.t:$(n)/estimate=true'/>
+            <connect srcID='growthRate.t:$(n)' targetID='state' inputName='stateNode'
+                     if='inposterior(CoalescentExponential.t:$(n)) and inposterior(growthRate.t:$(n)) and growthRate.t:$(n)/estimate=true'/>
+
+            <connect srcID='ePopSizeScaler.t:$(n)' targetID='mcmc' inputName='operator'
+                     if='inposterior(CoalescentExponential.t:$(n)) and inposterior(ePopSize.t:$(n))  and ePopSize.t:$(n)/estimate=true'>
+                Scale population size of Coalescent prior of tree t:$(n)
+            </connect>
+            <connect srcID='GrowthRateRandomWalk.t:$(n)' targetID='mcmc' inputName='operator'
+                     if='inposterior(CoalescentExponential.t:$(n)) and inposterior(growthRate.t:$(n)) and growthRate.t:$(n)/estimate=true'>
+                Scale growth rate of Coalescent prior of tree t:$(n)
+            </connect>
+
+            <connect srcID='CoalescentExponential.t:$(n)' targetID='tracelog' inputName='log'
+                     if='inposterior(CoalescentExponential.t:$(n))'/>
+            <connect srcID='ePopSize.t:$(n)' targetID='tracelog' inputName='log'
+                     if='inposterior(CoalescentExponential.t:$(n)) and inposterior(ePopSize.t:$(n)) and ePopSize.t:$(n)/estimate=true'/>
+            <connect srcID='growthRate.t:$(n)' targetID='tracelog' inputName='log'
+                     if='inposterior(CoalescentExponential.t:$(n)) and inposterior(growthRate.t:$(n)) and growthRate.t:$(n)/estimate=true'/>
         </subtemplate>
 
     </mergewith>

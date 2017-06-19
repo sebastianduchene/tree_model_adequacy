@@ -22,11 +22,12 @@ import beast.core.Description;
 import beast.core.Distribution;
 import beast.core.Input;
 import beast.core.MCMC;
-import beast.core.Input.Validate;
 import beast.core.Logger;
 import beast.core.util.CompoundDistribution;
 import beast.core.util.Log;
+import beast.evolution.likelihood.GenericTreeLikelihood;
 import beast.evolution.likelihood.TreeLikelihood;
+import beast.evolution.tree.Node;
 import beast.evolution.tree.TreeInterface;
 import beast.util.LogAnalyser;
 import beast.util.Randomizer;
@@ -36,13 +37,12 @@ import modeladequacy.util.TreeModelAdequacyAnalyser;
 public class TreeModelAdequacy extends MCMC {
 	public Input<Integer> treeCountInput = new Input<>("nrOfTrees", "the number of trees to use, default 100", 100);
 	public Input<String> rootDirInput = new Input<>("rootdir", "root directory for storing individual tree files (default /tmp)", "/tmp");
-	public Input<MCMC> mcmcInput = new Input<MCMC>("mcmc", "MCMC analysis used to specify model and operations in each of the particles", Validate.REQUIRED);
 	public Input<String> scriptInput = new Input<String>("value", "script for launching a job. " +
 			"$(dir) is replaced by the directory associated with the particle " +
 			"$(java.class.path) is replaced by a java class path used to launch this application " +
 			"$(java.library.path) is replaced by a java library path used to launch this application " +
 			"$(seed) is replaced by a random number seed that differs with every launch " +
-			"$(host) is replaced by a host from the list of hosts", Validate.REQUIRED);
+			"$(host) is replaced by a host from the list of hosts");
 	public Input<String> hostsInput = new Input<String>("hosts", "comma separated list of hosts. " +
 			"If there are k hosts in the list, for particle i the term $(host) in the script will be replaced " +
 			"by the (i modulo k) host in the list. " +
@@ -51,7 +51,7 @@ public class TreeModelAdequacy extends MCMC {
 			"This can be useful for setting up an analysis on a cluster", false);
 
 	public Input<Integer> burnInPercentageInput = new Input<Integer>("burnInPercentage", "burn-In Percentage used for analysing log files", 50);
-	public Input<String> masterInput = new Input<>("master", "master template used for generating XML", Validate.REQUIRED);
+	public Input<String> masterInput = new Input<>("master", "master template used for generating XML");
 
 	
 	String m_sScript;
@@ -75,10 +75,11 @@ public class TreeModelAdequacy extends MCMC {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+
+			// do the post-analysis
+			postAnalysis();
 		}
 		
-		// do the post-analysis
-		postAnalysis();
 	}
 
 
@@ -217,8 +218,27 @@ public class TreeModelAdequacy extends MCMC {
 			}
 		}
 		
+		
+		// <!-- SEQ_DATA -->
+        TreeInterface tree = getTree();
+		StringBuilder tmp = new StringBuilder();
+		for (int i = 0; i < tree.getLeafNodeCount(); i++) {
+			tmp.append("<sequence taxon=\"" + tree.getNode(i).getID() + "\">???</sequence>\n");
+		}
+	    String seqData = tmp.toString();
+
+	    // <!-- DATE_DATA -->
+		tmp = new StringBuilder();
+		for (int i = 0; i < tree.getLeafNodeCount(); i++) {
+			Node node = tree.getNode(i);
+			tmp.append(node.getID() + " = " + node.getHeight() + ",");
+		}
+		tmp.deleteCharAt(tmp.length() - 1);
+		String dateData = tmp.toString();  
+		
+		
 		for (int i = 0; i < treeCountInput.get(); i++) {
-			String xml = merge(masterTemplate, trace, i);
+			String xml = merge(masterTemplate, trace, i, seqData, dateData);
 			File stepDir = new File(rootdir.getPath() + "/run" + i);
 			if (!stepDir.exists()) {
 				if (!stepDir.mkdirs()) {
@@ -233,9 +253,12 @@ public class TreeModelAdequacy extends MCMC {
 	}
 
 	// merges entry index from trace into master template
-	private String merge(String masterTemplate, LogAnalyser trace, int index) {
+	private String merge(String masterTemplate, LogAnalyser trace, int index, String seqData, String dateData) {
 		StringBuilder str = new StringBuilder();
 		List<String> labels = trace.getLabels();
+		
+		masterTemplate = masterTemplate.replace("<!-- SEQ_DATA -->", seqData);
+		masterTemplate = masterTemplate.replace("<!-- DATE_DATA -->", dateData);
 		
 		for (int i = 0; i < masterTemplate.length(); i++) {
 			char c = masterTemplate.charAt(i);
@@ -246,14 +269,14 @@ public class TreeModelAdequacy extends MCMC {
 				for (int labelIndex = 0; labelIndex < labels.size(); labelIndex++) {
 					String candidate = labels.get(labelIndex);
 					if (candidate.startsWith(label)) {
-						log = trace.getTrace(labelIndex);						
+						log = trace.getTrace(labelIndex + 1);						
 						break;
 					}
 				}
 				if (log == null) {
 					throw new IllegalArgumentException("Could not find entry for " + label + " in tracelog");
 				}
-				str.append(log[i]);
+				str.append(log[index] + "");
 				i = end;
 			} else {
 				str.append(c);
@@ -270,7 +293,7 @@ public class TreeModelAdequacy extends MCMC {
 				String file = logger.fileNameInput.get();
 				LogAnalyser trace = new LogAnalyser(file, burnInPercentageInput.get(), false, false);
 				if (trace.getTrace(0).length < treeCountInput.get()) {
-					throw new IllegalArgumentException("tracelog has only " + trace.getTrace(0).length + " entries, but " + treeCountInput + "  are needed. "
+					throw new IllegalArgumentException("tracelog has only " + trace.getTrace(0).length + " entries, but " + treeCountInput.get() + "  are needed. "
 							+ "Resume this run to produce more log entries.");
 				}
 				return trace;
@@ -296,7 +319,7 @@ public class TreeModelAdequacy extends MCMC {
 				String classpath = System.getProperty("java.class.path");
 				String[] classpathEntries = classpath.split(File.pathSeparator);
 				for (String pathEntry : classpathEntries) {
-					if (new File(pathEntry).getName().toLowerCase().equals("bmodeltest.addon.jar")) {
+					if (new File(pathEntry).getName().toLowerCase().equals("TMA.addon.jar")) {
 						Log.debug.println("Got it!");
 						File parentFile = (new File(pathEntry)).getParentFile().getParentFile();
 						String parent = parentFile.getPath();
@@ -365,6 +388,20 @@ public class TreeModelAdequacy extends MCMC {
 
 	
 	private void postAnalysis() {
+        TreeInterface tree = getTree();
+        
+		TreeModelAdequacyAnalyser analyser = new TreeModelAdequacyAnalyser();
+		try {
+			analyser.initByName("nrOfTrees", treeCountInput.get(),
+					"rootdir", rootDirInput.get(),
+					"tree", tree);
+			analyser.run();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	private TreeInterface getTree() {
 		// get Tree from TreeLikelihood
 		TreeInterface tree = null;
 		Distribution posterior = posteriorInput.get();
@@ -378,22 +415,13 @@ public class TreeModelAdequacy extends MCMC {
             if (distID.startsWith("likelihood")) {
             	CompoundDistribution d2 = (CompoundDistribution) pDist;
                 for (Distribution pDist2: d2.pDistributions.get()) {
-                    if (pDist2 instanceof TreeLikelihood) {
-                    	tree = ((TreeLikelihood) pDist).treeInput.get();
+                    if (pDist2 instanceof GenericTreeLikelihood) {
+                    	tree = ((GenericTreeLikelihood) pDist2).treeInput.get();
                     }
                 }
             }
         }
-		
-		TreeModelAdequacyAnalyser analyser = new TreeModelAdequacyAnalyser();
-		try {
-			analyser.initByName("nrOfTrees", treeCountInput.get(),
-					"rootdir", rootDirInput.get(),
-					"tree", tree);
-			analyser.run();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		return tree;
 	}
 
 	class StepThread extends Thread {
