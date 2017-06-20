@@ -33,7 +33,12 @@
 	        beast.core.MCMC.state,
 	        beast.core.MCMC.distribution,
 	        beast.core.MCMC.init,
-	        beast.evolution.speciation.BirthDeathGernhard08Model.treeIntervals,
+			modeladequacy.TreeModelAdequacy.state,
+			modeladequacy.TreeModelAdequacy.distribution,
+			modeladequacy.TreeModelAdequacy.init,
+			modeladequacy.TreeModelAdequacy.operator,
+			modeladequacy.TreeModelAdequacy.operatorschedule,
+    		beast.evolution.speciation.BirthDeathGernhard08Model.treeIntervals,
 	        beast.evolution.speciation.BirthDeathGernhard08Model.tree,
 	        beast.evolution.speciation.BirthDeathGernhard08Model.sampleProbability,
 			beast.evolution.speciation.YuleModel.treeIntervals,
@@ -146,26 +151,22 @@
 
 
             <!-- default tree prior -->
-            <plugin spec='YuleModel' id="YuleModel.t:$(n)" tree='@Tree.t:$(n)'>
-                <parameter name='birthDiffRate' id="birthRate.t:$(n)" value='1.0' estimate='true'/>
-            </plugin>
+            <distribution id="CoalescentConstant.t:$(n)" spec="Coalescent">
+                <treeIntervals spec='TreeIntervals' id='TreeIntervals.t:$(n)' tree='@Tree.t:$(n)'/>
+                <populationModel spec="ConstantPopulation" id='ConstantPopulation.t:$(n)'>
+                     <parameter name="popSize" id="popSize.t:$(n)" value='0.3' estimate='true'/>
+                 </populationModel>
+            </distribution>
 
-            <prior id='YuleBirthRatePrior.t:$(n)' x='@birthRate.t:$(n)'><distr spec="beast.math.distributions.Uniform" lower='0' upper='Infinity'/></prior>
-
-  		    <operator id='YuleBirthRateScaler.t:$(n)' spec='ScaleOperator' scaleFactor="0.75" weight="3" parameter="@birthRate.t:$(n)"/>
+  		    <operator id='PopSizeScaler.t:$(n)' spec='ScaleOperator' scaleFactor="0.75" weight="3" parameter="@popSize.t:$(n)"/>
+	        <prior id='PopSizePrior.t:$(n)' x='@popSize.t:$(n)'><distr spec="OneOnX"/></prior>
 ]]>
             <connect srcID='treeLikelihood.$(n)'            targetID='likelihood' inputName='distribution' if="isInitializing"/>
-            <connect srcID='YuleModel.t:$(n)'               targetID='prior' inputName='distribution' if="isInitializing"/>
+            <connect srcID='CoalescentConstant.t:$(n)'      targetID='prior' inputName='distribution' if="isInitializing"/>
 			<connect method="beast.app.beauti.SiteModelInputEditor.customConnector"/>
 
             <connect srcID='treelog.t:$(n)'                 targetID='mcmc' inputName='logger' if='inposterior(Tree.t:$(n))'/>
 
-            <connect srcID='birthRate.t:$(n)'                 targetID='state' inputName='stateNode' if='inposterior(YuleModel.t:$(n)) and inposterior(Tree.t:$(n)) and birthRate.t:$(n)/estimate=true'/>
-
-            <connect srcID='YuleBirthRateScaler.t:$(n)'       targetID='mcmc' inputName='operator' if='inposterior(birthRate.t:$(n)) and birthRate.t:$(n)/estimate=true'>Scales birth rate of Yule prior for partition t:$(n)</connect>
-
-            <connect srcID='birthRate.t:$(n)'                 targetID='tracelog' inputName='log' if='inposterior(YuleModel.t:$(n)) and birthRate.t:$(n)/estimate=true'/>
-            <connect srcID='YuleBirthRatePrior.t:$(n)'        targetID='prior' inputName='distribution' if='inposterior(YuleModel.t:$(n)) and inposterior(Tree.t:$(n)) and birthRate.t:$(n)/estimate=true'>Prior on Yule birth rate for partition s:$(n)</connect>
 
 			<mergepoint id='aux-partitiontemplate'/>
         </partitiontemplate>
@@ -189,7 +190,7 @@
 
 <!-- framework for main model -->
 
-    <run spec="MCMC" id="mcmc" chainLength="10000000">
+    <run spec="modeladequacy.TreeModelAdequacy" id="mcmc" chainLength="1110000">
 
         <state storeEvery='5000' id='state'>
         </state>
@@ -203,14 +204,14 @@
             </distribution>
         </distribution>
 
-        <logger id='tracelog' logEvery="1000" fileName="beast.log" sort="smart" sanitiseHeaders='true'>
+        <logger id='tracelog' logEvery="10000" fileName="beast.log" sort="smart" sanitiseHeaders='true'>
 	        <model idref='posterior'/>
             <log idref="posterior"/>
             <log idref="likelihood"/>
             <log idref="prior"/>
         </logger>
 
-        <logger id='screenlog' logEvery="1000">
+        <logger id='screenlog' logEvery="10000">
 	        <!--model idref='posterior'/-->
             <log idref="posterior"/>
       	    <ESS spec='ESS' name='log' arg="@posterior"/>

@@ -1,12 +1,25 @@
 <beast version='2.0' namespace='master:master.model:master.steppers:master.conditions:master.postprocessors:master.outputs'>
     <run spec='InheritanceTrajectory' samplePopulationSizes="true"
+<<<<<<< HEAD
+	 verbosity="3" simulationTime='0.08'>
+=======
 	 verbosity="3" simulationTime=$(origin)>
+>>>>>>> cc5ae61d054f747a765583aee6d49bfe171c34f9
 
         <model spec='Model' id='model'>
             <population spec='Population' populationName='I' id='I'/>
             <population spec='Population' populationName='R' id='R'/>
             <population spec='Population' populationName='I_sampled' id='I_sampled'/>
 
+<<<<<<< HEAD
+            <reaction spec='Reaction' reactionName="Birth" rate="114.75"> <!-- rate="1"> -->
+                I -> I + I
+            </reaction>
+            <reaction spec='Reaction' reactionName="Death" rate="13.5"> <!-- rate="0.5"> -->
+                I -> R
+            </reaction>
+            <reaction spec='Reaction' reactionName="Sampling" rate="31.5">  <!-- rate="0.2"> -->
+=======
             <reaction spec='Reaction' reactionName="Birth" rate=$(birth)> <!-- rate="1"> -->
                 I -> I + I
             </reaction>
@@ -14,6 +27,7 @@
                 I -> R
             </reaction>
             <reaction spec='Reaction' reactionName="Sampling" rate=$(sampling)>  <!-- rate="0.2"> -->
+>>>>>>> cc5ae61d054f747a765583aee6d49bfe171c34f9
                 I -> I_sampled
             </reaction>
         </model>
@@ -31,13 +45,20 @@
 	<inheritancePostProcessor spec='LineageFilter'
 				  reactionName="Sampling"/>
 	<postSimCondition spec="LeafCountPostSimCondition"
+<<<<<<< HEAD
+				  nLeaves="5" exact="false"
+				  exceedCondition="true"/>
+	<postSimCondition spec="LeafCountPostSimCondition"
+				  nLeaves="500" exact="false"
+=======
 				  nLeaves="2" exact="false"
 				  exceedCondition="true"/>
 	<postSimCondition spec="LeafCountPostSimCondition"
 				  nLeaves="1000" exact="false"
+>>>>>>> cc5ae61d054f747a765583aee6d49bfe171c34f9
 				  exceedCondition="false"/>
-        <!-- output spec='NewickOutput' fileName='BDTree_hetero_anyN_MASTER.newick.tree'/ -->
+        <output spec='NewickOutput' fileName='BDTree_hetero_anyN_MASTER.newick.tree'/>
 	<output spec='NexusOutput' fileName='BDTree_hetero_anyN_MASTER.nexus.tree'/>
-	<!-- output spec='JsonOutput' fileName='BDTree_hetero_anyN_MASTER.json'/ -->
+	<output spec='JsonOutput' fileName='BDTree_hetero_anyN_MASTER.json'/>
     </run>
 </beast>

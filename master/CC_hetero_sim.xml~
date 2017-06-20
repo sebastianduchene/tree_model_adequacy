@@ -4,7 +4,11 @@
     <data
 id="dummy"
 name="alignment">
+<<<<<<< HEAD
+      <!-- SEQ_DATA -->
+=======
 <!-- SEQ_DATA -->
+>>>>>>> cc5ae61d054f747a765583aee6d49bfe171c34f9
 <!--
     <sequence id="seq_10_0.27" taxon="10_0.27"
      totalcount="4" value="gca"/> -->
@@ -47,7 +51,11 @@ name="alignment">
             <taxonset idref="TaxonSet.dummy"/>
         </tree>
         <parameter id="clockRate.c:dummy" name="stateNode">1.0</parameter>
+<<<<<<< HEAD
+        <parameter id="popSize.t:dummy" name="stateNode">35</parameter>
+=======
         <parameter id="popSize.t:dummy" name="stateNode">$(popSize)</parameter>
+>>>>>>> cc5ae61d054f747a765583aee6d49bfe171c34f9
     </state>
 
     <init id="RandomTree.t:dummy" spec="beast.evolution.tree.RandomTree" estimate="false" initial="@Tree.t:dummy" taxa="@dummy">
@@ -106,7 +114,11 @@ name="alignment">
 <!--
     <operator id="PopSizeScaler.t:dummy" spec="ScaleOperator" parameter="@popSize.t:dummy" scaleFactor="0.75" weight="3.0"/>
 -->
+<<<<<<< HEAD
+    <logger id="tracelog" fileName="CC_hetero_sim.log" logEvery="10000" model="@posterior" sanitiseHeaders="true" sort="smart">
+=======
     <logger id="tracelog" fileName="CC_hetero_sim.log" logEvery="200000" model="@posterior" sanitiseHeaders="true" sort="smart">
+>>>>>>> cc5ae61d054f747a765583aee6d49bfe171c34f9
         <log idref="posterior"/>
         <log idref="likelihood"/>
         <log idref="prior"/>
@@ -117,7 +129,11 @@ name="alignment">
         <log idref="CoalescentConstant.t:dummy"/>
     </logger>
 
+<<<<<<< HEAD
+    <logger id="screenlog" logEvery="10000">
+=======
     <logger id="screenlog" logEvery="200000">
+>>>>>>> cc5ae61d054f747a765583aee6d49bfe171c34f9
         <log idref="posterior"/>
         <log id="ESS.0" spec="util.ESS" arg="@posterior"/>
 	<log idref="TreeHeight.t:dummy"/>
@@ -127,7 +143,11 @@ name="alignment">
         <log idref="prior"/>
     </logger>
 
+<<<<<<< HEAD
+    <logger id="treelog.t:dummy" fileName="CC_hetero_sim.nexus.trees" logEvery="10000" mode="tree">
+=======
     <logger id="treelog.t:dummy" fileName="output.tree" logEvery="200000" mode="tree">
+>>>>>>> cc5ae61d054f747a765583aee6d49bfe171c34f9
         <log id="TreeWithMetaDataLogger.t:dummy" spec="beast.evolution.tree.TreeWithMetaDataLogger" tree="@Tree.t:dummy"/>
     </logger>
 
