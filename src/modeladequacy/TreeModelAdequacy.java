@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
@@ -17,6 +18,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 import beast.app.BeastMCMC;
+import beast.app.treestat.statistics.AbstractTreeSummaryStatistic;
 import beast.app.util.Utils;
 import beast.core.Description;
 import beast.core.Distribution;
@@ -52,6 +54,7 @@ public class TreeModelAdequacy extends MCMC {
 
 	public Input<Integer> burnInPercentageInput = new Input<Integer>("burnInPercentage", "burn-In Percentage used for analysing log files", 50);
 	public Input<String> masterInput = new Input<>("master", "master template used for generating XML");
+	public Input<List<AbstractTreeSummaryStatistic<?>>> statsInput = new Input<>("statistic", "set of statistics that need to be produced", new ArrayList<>());
 
 	
 	String m_sScript;
@@ -394,7 +397,8 @@ public class TreeModelAdequacy extends MCMC {
 		try {
 			analyser.initByName("nrOfTrees", treeCountInput.get(),
 					"rootdir", rootDirInput.get(),
-					"tree", tree);
+					"tree", tree,
+					"statistic", statsInput.get());
 			analyser.run();
 		} catch (Exception e) {
 			e.printStackTrace();

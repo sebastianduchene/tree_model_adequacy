@@ -3,8 +3,13 @@ package modeladequacy.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+
+import beast.app.treestat.statistics.AbstractTreeSummaryStatistic;
 import beast.app.util.Application;
 import beast.app.util.TreeFile;
 import beast.core.Description;
@@ -24,13 +29,15 @@ public class TreeModelAdequacyAnalyser extends Runnable {
 	public Input<Integer> treeCountInput = new Input<>("nrOfTrees", "the number of trees to use, default 100", 100);
 	public Input<TreeFile> treeFileInput = new Input<>("treefile", "file with original tree to test adequacy for");
 	public Input<Tree> treeInput = new Input<>("tree", "original tree to test adequacy for");
+	public Input<List<AbstractTreeSummaryStatistic<?>>> statsInput = new Input<>("statistic", "set of statistics that need to be produced", new ArrayList<>());
 	
-	List<TreeSummaryStatistic> stats;
+	
+	
+	List<AbstractTreeSummaryStatistic<?>> stats;
 	
 	@Override
 	public void initAndValidate() {
-		stats = new ArrayList<>();
-		stats.add(new getDF());
+		stats = statsInput.get();
 	}
 
 	
@@ -40,36 +47,71 @@ public class TreeModelAdequacyAnalyser extends Runnable {
 		
 		Tree origTree = getOriginalTree();
 		
-		List<Double> origStats = new ArrayList<>();
-		for (int i = 0; i < stats.size(); i++) {
-			double s = stats.get(i).getTreeStatistic(origTree);
-			origStats.add(s);
+		// init stats
+		Map<String, Object> origStats = new LinkedHashMap<>();
+		for (AbstractTreeSummaryStatistic<?> stat : stats) {
+			Map<String,?> map = stat.getStatistics(origTree);
+			for (String name : map.keySet()) {
+				origStats.put(name, map.get(name));
+			}
 		}
-		
-		// TODO: init stats
-					
-
-		
-		//
 		
 		
 		String rootDir = rootDirInput.get();
 		int treeCount = treeCountInput.get();
+		Map<String, Object>[] treeStats = new LinkedHashMap[treeCount];
+
 		for (int i = 0; i < treeCount; i++) {
+			treeStats[i] = new LinkedHashMap<>();
 			NexusParser parser = new NexusParser();
 			File file = new File(rootDir + "/run" + i + "/output.tree");
 			parser.parseFile(file);
 			Tree tree = parser.trees.get(0);
-			// TODO: update stats
+			for (AbstractTreeSummaryStatistic<?> stat : stats) {
+				Map<String,?> map = stat.getStatistics(tree);
+				for (String name : map.keySet()) {
+					treeStats[i].put(name, map.get(name));
+				}
+			}
 		}
 		
-		// TODO: report stats
+		// report stats
+		logStats(System.out, origStats, treeStats);
+		
 	}
 
 	
-	private Double endTime() {
-		// TODO Auto-generated method stub
-		return null;
+
+	private void logStats(PrintStream out, Map<String, Object> origStats, Map<String, Object>[] treeStats) {
+		List<String> labels = new ArrayList<>();
+		for (String label : origStats.keySet()) {
+			labels.add(label);
+		}
+		
+		out.print("state\t");
+		for (String label : labels) {
+			out.print(label+"\t");
+		}
+		out.println();
+		
+		// first line contains stats for original tree
+		out.print("0\t");
+		for (String label : labels) {
+			Object o = origStats.get(label);
+			out.print(o.toString() + "\t");
+		}
+		out.println();
+		
+		// print out stats for sampled trees
+		for (int i = 0; i < treeStats.length; i++) {
+			out.print((i+1) + "\t");
+			Map<String, Object> stats = treeStats[i];
+			for (String label : labels) {
+				Object o = stats.get(label);
+				out.print(o.toString() + "\t");
+			}
+			out.println();			
+		}		
 	}
 
 
