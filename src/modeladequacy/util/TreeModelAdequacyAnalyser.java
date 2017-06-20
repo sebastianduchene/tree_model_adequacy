@@ -1,15 +1,21 @@
 package modeladequacy.util;
 
+
 import java.io.File;
 import java.io.IOException;
-
+import java.util.ArrayList;
+import java.util.List;
 import beast.app.util.Application;
 import beast.app.util.TreeFile;
 import beast.core.Description;
 import beast.core.Input;
 import beast.core.Runnable;
+import beast.evolution.tree.Node;
 import beast.evolution.tree.Tree;
 import beast.util.NexusParser;
+import beast.evolution.tree.TreeUtils;
+
+
 
 @Description("Analyse set of trees created through Tree Model Adequacy")
 public class TreeModelAdequacyAnalyser extends Runnable {
@@ -18,15 +24,33 @@ public class TreeModelAdequacyAnalyser extends Runnable {
 	public Input<Integer> treeCountInput = new Input<>("nrOfTrees", "the number of trees to use, default 100", 100);
 	public Input<TreeFile> treeFileInput = new Input<>("tree", "original tree to test adequacy for");
 	
+	List<TreeSummaryStatistic> stats;
+	
 	@Override
 	public void initAndValidate() {
+		stats = new ArrayList<>();
+		stats.add(new getDF());
 	}
 
+	
+	
 	@Override
 	public void run() throws Exception {
+		
 		Tree origTree = getOriginalTree();
 		
+		List<Double> origStats = new ArrayList<>();
+		for (int i = 0; i < stats.size(); i++) {
+			double s = stats.get(i).getTreeStatistic(origTree);
+			origStats.add(s);
+		}
+		
 		// TODO: init stats
+					
+
+		
+		//
+		
 		
 		String rootDir = rootDirInput.get();
 		int treeCount = treeCountInput.get();
@@ -42,8 +66,16 @@ public class TreeModelAdequacyAnalyser extends Runnable {
 	}
 
 	
+	private Double endTime() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
 	private Tree getOriginalTree() throws IOException {
 		NexusParser parser = new NexusParser();
+		System.out.println("get original tree");
 		parser.parseFile(treeFileInput.get());
 		Tree tree = parser.trees.get(0);
 		return tree;
