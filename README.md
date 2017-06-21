@@ -1,5 +1,5 @@
 # Tree Model Adequacy
-Model adequacy using tree summary statistics in BEAST2
+Model adequacy using tree summary statistics in [BEAST2](http://beast2.org)
 
 [Installation](https://github.com/sebastianduchene/tree_model_adequacy/wiki)
 
