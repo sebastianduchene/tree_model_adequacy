@@ -105,7 +105,7 @@ public class BeautiFixedTreeAlignmentProvider extends BeautiAlignmentProvider {
 		}
 	}
 
-	@Override
+	//@Override
     public List<BEASTInterface> getAlignments(BeautiDoc doc, File[] files, String [] args) {
 		if (files.length != 1) {
 			throw new IllegalArgumentException("Expected exactly 1 file");

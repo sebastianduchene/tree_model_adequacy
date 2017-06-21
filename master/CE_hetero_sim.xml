@@ -32,13 +32,13 @@ name="alignment">
     <map name="OneOnX" >beast.math.distributions.OneOnX</map>
 
 
-<run id="mcmc" spec="MCMC" chainLength="2000000" sampleFromPrior="true">
+<run id="mcmc" spec="MCMC" chainLength="100000" sampleFromPrior="true">
     <state id="state" storeEvery="5000">
         <tree id="Tree.t:dummy" name="stateNode">
             <trait id="dateTrait.t:dummy"
 		   spec="beast.evolution.tree.TraitSet"
 		   traitname="date-backward">
-	      <!-- SEQ_TIMES -->
+	      <!-- DATE_DATA -->
 	      <!--
 		  1_7.92=7.92,
 		  2_6.74=6.74,
@@ -57,14 +57,14 @@ name="alignment">
             </trait>
             <taxonset idref="TaxonSet.dummy"/>
         </tree>
-        <parameter id="ePopSize.t:dummy" name="stateNode">ePopSize</parameter><!-- 100</parameter> -->
-        <parameter id="growthRate.t:dummy" name="stateNode">growthRate</parameter><!-- 0.5</parameter> -->
+        <parameter id="ePopSize.t:dummy" name="stateNode">$(ePopSize)</parameter><!-- 100</parameter> -->
+        <parameter id="growthRate.t:dummy" name="stateNode">$(growthRate)</parameter><!-- 0.5</parameter> -->
         <parameter id="clockRate.c:dummy" name="stateNode">1.0</parameter>
     </state>
 
     <init id="RandomTree.t:dummy" spec="beast.evolution.tree.RandomTree" estimate="false" initial="@Tree.t:dummy" taxa="@dummy">
         <populationModel id="ConstantPopulation0.t:dummy" spec="ConstantPopulation">
-            <parameter id="randomPopSize.t:dummy" name="popSize">100</parameter>
+            <parameter id="randomPopSize.t:dummy" name="popSize">10000</parameter>
         </populationModel>
     </init>
 
@@ -129,7 +129,7 @@ name="alignment">
     </operator>
 -->
     <logger id="tracelog" fileName="CE_hetero_sim.log"
-	    logEvery="50000" model="@posterior" sanitiseHeaders="true"
+	    logEvery="5000" model="@posterior" sanitiseHeaders="true"
 	    sort="smart">
         <log idref="posterior"/>
         <log idref="likelihood"/>
@@ -152,7 +152,7 @@ name="alignment">
 	<log idref="TreeHeight.t:dummy"/>
     </logger>
 
-    <logger id="treelog.t:dummy" fileName="CE_hetero_sim.nexus.trees" logEvery="50000" mode="tree">
+    <logger id="treelog.t:dummy" fileName="output.tree" logEvery="5000" mode="tree">
         <log id="TreeWithMetaDataLogger.t:dummy" spec="beast.evolution.tree.TreeWithMetaDataLogger" tree="@Tree.t:dummy"/>
     </logger>
 

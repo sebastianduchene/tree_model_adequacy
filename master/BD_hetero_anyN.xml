@@ -1,19 +1,19 @@
 <beast version='2.0' namespace='master:master.model:master.steppers:master.conditions:master.postprocessors:master.outputs'>
     <run spec='InheritanceTrajectory' samplePopulationSizes="true"
-	 verbosity="3" simulationTime=$(origin)>
+	 verbosity="3" simulationTime="$(origin)">
 
         <model spec='Model' id='model'>
             <population spec='Population' populationName='I' id='I'/>
             <population spec='Population' populationName='R' id='R'/>
             <population spec='Population' populationName='I_sampled' id='I_sampled'/>
 
-            <reaction spec='Reaction' reactionName="Birth" rate=$(birth)> <!-- rate="1"> -->
+            <reaction spec='Reaction' reactionName="Birth" rate="$(birth)"> <!-- rate="1"> -->
                 I -> I + I
             </reaction>
-            <reaction spec='Reaction' reactionName="Death" rate=$(death)> <!-- rate="0.5"> -->
+            <reaction spec='Reaction' reactionName="Death" rate="$(death)"> <!-- rate="0.5"> -->
                 I -> R
             </reaction>
-            <reaction spec='Reaction' reactionName="Sampling" rate=$(sampling)>  <!-- rate="0.2"> -->
+            <reaction spec='Reaction' reactionName="Sampling" rate="$(sampling)">  <!-- rate="0.2"> -->
                 I -> I_sampled
             </reaction>
         </model>
@@ -37,7 +37,7 @@
 				  nLeaves="1000" exact="false"
 				  exceedCondition="false"/>
         <!-- output spec='NewickOutput' fileName='BDTree_hetero_anyN_MASTER.newick.tree'/ -->
-	<output spec='NexusOutput' fileName='BDTree_hetero_anyN_MASTER.nexus.tree'/>
+	<output spec='NexusOutput' fileName="output.tree"/>
 	<!-- output spec='JsonOutput' fileName='BDTree_hetero_anyN_MASTER.json'/ -->
     </run>
 </beast>

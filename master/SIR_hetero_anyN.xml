@@ -31,8 +31,8 @@
     <inheritancePostProcessor spec='LineageFilter'
 			      reactionName="I_sample"/>
 
-    <output spec='NewickOutput' fileName='SIRTree_hetero_anyN.newick.tree'/>
-    <output spec='NexusOutput' fileName='SIRTree_hetero_anyN.nexus.tree'/>
-    <output spec='JsonOutput' fileName='SIRTree_hetero_anyN.json'/>
+    <!-- output spec='NewickOutput' fileName='SIRTree_hetero_anyN.newick.tree'/ -->
+    <output spec='NexusOutput' fileName="output.tree"/>
+    <!-- output spec='JsonOutput' fileName='SIRTree_hetero_anyN.json'/ -->
   </run>
 </beast>

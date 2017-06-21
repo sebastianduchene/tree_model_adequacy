@@ -36,8 +36,8 @@
 	<postSimCondition spec="LeafCountPostSimCondition" nLeaves="50"
 			  exact="false" exceedCondition="true"/>
 
-	<output spec='NewickOutput' fileName='SIRTree_ultra_MASTER.newick.tree'/>
-	<output spec='NexusOutput' fileName='SIRTree_ultrametric_MASTER.nexus.tree'/>
-	<output spec='JsonOutput' fileName='SIRTree_ultrametric_MASTER.json'/>
+	<!-- output spec='NewickOutput' fileName='SIRTree_ultra_MASTER.newick.tree'/ -->
+	<output spec='NexusOutput' fileName="output.tree"/>
+	<!-- output spec='JsonOutput' fileName='SIRTree_ultrametric_MASTER.json'/ -->
       </run>
 </beast>
