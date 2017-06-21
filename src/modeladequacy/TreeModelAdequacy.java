@@ -21,9 +21,11 @@ import beast.app.BeastMCMC;
 import beast.app.treestat.statistics.TreeSummaryStatistic;
 import beast.app.util.OutFile;
 import beast.app.util.Utils;
+import beast.app.util.XMLFile;
 import beast.core.Description;
 import beast.core.Distribution;
 import beast.core.Input;
+import beast.core.Input.Validate;
 import beast.core.MCMC;
 import beast.core.Logger;
 import beast.core.util.CompoundDistribution;
@@ -53,7 +55,7 @@ public class TreeModelAdequacy extends MCMC {
 			"This can be useful for setting up an analysis on a cluster", false);
 
 	public Input<Integer> burnInPercentageInput = new Input<Integer>("burnInPercentage", "burn-In Percentage used for analysing log files", 50);
-	public Input<String> masterInput = new Input<>("master", "master template used for generating XML");
+	public Input<XMLFile> masterInput = new Input<>("master", "master template used for generating XML", Validate.REQUIRED);
 	public Input<List<TreeSummaryStatistic<?>>> statsInput = new Input<>("statistic", "set of statistics that need to be produced", new ArrayList<>());
 	public Input<OutFile> outFileInput = new Input<>("out","Output file, where logs are stored. If not specified, use stdout"); 
 	
@@ -66,6 +68,9 @@ public class TreeModelAdequacy extends MCMC {
 
 	@Override
 	public void run() throws IOException, SAXException, ParserConfigurationException  {
+		// sanity check: make sure master file exists:
+		getMasterTemplat();
+		
 		// first, do an MCMC run, which gives us a log file 
 		super.run();
 		
@@ -308,13 +313,38 @@ public class TreeModelAdequacy extends MCMC {
 
 
 	private String getMasterTemplat() throws IOException {
+		File file = masterInput.get();
+		file = findMasterFile(file);
+		if (!file.exists()) {
+			file = masterInput.get();
+			file = new File(file.getName());
+			file = findMasterFile(file);
+		}
+		if (!file.exists()) {
+			throw new IllegalArgumentException("Could not find master file associated with: " + masterInput.get().getPath());
+		}		
+		
+		// read file from disk
+        BufferedReader fin = new BufferedReader(new FileReader(file));
+        StringBuffer buf = new StringBuffer();
+        String str = null;
+        while (fin.ready()) {
+            str = fin.readLine();
+            buf.append(str);
+            buf.append('\n');
+        }
+        fin.close();
+        return buf.toString();
+	}
+
+
+	private File findMasterFile(File file) {
 		String FILESEP = "/";
 		if (Utils.isWindows()) {
 			FILESEP = "\\\\";
 		}
 
 		// determine location of file
-		File file = new File(masterInput.get());
 		if (!file.exists()) {
 			// try the master directory
 			file = new File("master" + FILESEP + masterInput.get());
@@ -336,18 +366,7 @@ public class TreeModelAdequacy extends MCMC {
 				file = new File(System.getProperty("user.dir") + FILESEP + "master" + FILESEP+ masterInput.get());
 			}
 		}
-
-		// read file from disk
-        BufferedReader fin = new BufferedReader(new FileReader(file));
-        StringBuffer buf = new StringBuffer();
-        String str = null;
-        while (fin.ready()) {
-            str = fin.readLine();
-            buf.append(str);
-            buf.append('\n');
-        }
-        fin.close();
-        return buf.toString();
+		return file;
 	}
 
 

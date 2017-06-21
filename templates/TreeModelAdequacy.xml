@@ -190,7 +190,7 @@
 
 <!-- framework for main model -->
 
-    <run spec="modeladequacy.TreeModelAdequacy" id="mcmc" chainLength="1110000">
+    <run spec="modeladequacy.TreeModelAdequacy" id="mcmc" chainLength="1110000" master="your_master_file">
 
         <state storeEvery='5000' id='state'>
         </state>
