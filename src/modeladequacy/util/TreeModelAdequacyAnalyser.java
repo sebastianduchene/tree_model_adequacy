@@ -9,16 +9,15 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import beast.app.treestat.statistics.AbstractTreeSummaryStatistic;
+import beast.app.treestat.statistics.TreeSummaryStatistic;
 import beast.app.util.Application;
+import beast.app.util.OutFile;
 import beast.app.util.TreeFile;
 import beast.core.Description;
 import beast.core.Input;
 import beast.core.Runnable;
-import beast.evolution.tree.Node;
 import beast.evolution.tree.Tree;
 import beast.util.NexusParser;
-import beast.evolution.tree.TreeUtils;
 
 
 
@@ -29,11 +28,12 @@ public class TreeModelAdequacyAnalyser extends Runnable {
 	public Input<Integer> treeCountInput = new Input<>("nrOfTrees", "the number of trees to use, default 100", 100);
 	public Input<TreeFile> treeFileInput = new Input<>("treefile", "file with original tree to test adequacy for");
 	public Input<Tree> treeInput = new Input<>("tree", "original tree to test adequacy for");
-	public Input<List<AbstractTreeSummaryStatistic<?>>> statsInput = new Input<>("statistic", "set of statistics that need to be produced", new ArrayList<>());
+	public Input<List<TreeSummaryStatistic<?>>> statsInput = new Input<>("statistic", "set of statistics that need to be produced", new ArrayList<>());
+	public Input<OutFile> outFileInput = new Input<>("out","Output file, where logs are stored"); 
 	
 	
 	
-	List<AbstractTreeSummaryStatistic<?>> stats;
+	List<TreeSummaryStatistic<?>> stats;
 	
 	@Override
 	public void initAndValidate() {
@@ -49,7 +49,7 @@ public class TreeModelAdequacyAnalyser extends Runnable {
 		
 		// init stats
 		Map<String, Object> origStats = new LinkedHashMap<>();
-		for (AbstractTreeSummaryStatistic<?> stat : stats) {
+		for (TreeSummaryStatistic<?> stat : stats) {
 			Map<String,?> map = stat.getStatistics(origTree);
 			for (String name : map.keySet()) {
 				origStats.put(name, map.get(name));
@@ -67,7 +67,7 @@ public class TreeModelAdequacyAnalyser extends Runnable {
 			File file = new File(rootDir + "/run" + i + "/output.tree");
 			parser.parseFile(file);
 			Tree tree = parser.trees.get(0);
-			for (AbstractTreeSummaryStatistic<?> stat : stats) {
+			for (TreeSummaryStatistic<?> stat : stats) {
 				Map<String,?> map = stat.getStatistics(tree);
 				for (String name : map.keySet()) {
 					treeStats[i].put(name, map.get(name));
@@ -76,11 +76,24 @@ public class TreeModelAdequacyAnalyser extends Runnable {
 		}
 		
 		// report stats
-		logStats(System.out, origStats, treeStats);
+		reportStats(origStats, treeStats);
+		
+		// log stats
+		PrintStream out = System.out;
+		if (outFileInput.get() != null && !outFileInput.get().getName().equals("[[none]]")) {
+			out = new PrintStream(outFileInput.get());			
+		}
+		logStats(out, origStats, treeStats);
 		
 	}
 
 	
+
+	private void reportStats(Map<String, Object> origStats, Map<String, Object>[] treeStats) {
+		
+	}
+
+
 
 	private void logStats(PrintStream out, Map<String, Object> origStats, Map<String, Object>[] treeStats) {
 		List<String> labels = new ArrayList<>();

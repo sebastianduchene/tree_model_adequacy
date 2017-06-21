@@ -18,7 +18,8 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 import beast.app.BeastMCMC;
-import beast.app.treestat.statistics.AbstractTreeSummaryStatistic;
+import beast.app.treestat.statistics.TreeSummaryStatistic;
+import beast.app.util.OutFile;
 import beast.app.util.Utils;
 import beast.core.Description;
 import beast.core.Distribution;
@@ -28,14 +29,13 @@ import beast.core.Logger;
 import beast.core.util.CompoundDistribution;
 import beast.core.util.Log;
 import beast.evolution.likelihood.GenericTreeLikelihood;
-import beast.evolution.likelihood.TreeLikelihood;
 import beast.evolution.tree.Node;
 import beast.evolution.tree.TreeInterface;
 import beast.util.LogAnalyser;
 import beast.util.Randomizer;
 import modeladequacy.util.TreeModelAdequacyAnalyser;
 
-@Description("Run a complete tree model dequacy analysis")
+@Description("Run a complete tree model adequacy analysis")
 public class TreeModelAdequacy extends MCMC {
 	public Input<Integer> treeCountInput = new Input<>("nrOfTrees", "the number of trees to use, default 100", 100);
 	public Input<String> rootDirInput = new Input<>("rootdir", "root directory for storing individual tree files (default /tmp)", "/tmp");
@@ -54,8 +54,9 @@ public class TreeModelAdequacy extends MCMC {
 
 	public Input<Integer> burnInPercentageInput = new Input<Integer>("burnInPercentage", "burn-In Percentage used for analysing log files", 50);
 	public Input<String> masterInput = new Input<>("master", "master template used for generating XML");
-	public Input<List<AbstractTreeSummaryStatistic<?>>> statsInput = new Input<>("statistic", "set of statistics that need to be produced", new ArrayList<>());
-
+	public Input<List<TreeSummaryStatistic<?>>> statsInput = new Input<>("statistic", "set of statistics that need to be produced", new ArrayList<>());
+	public Input<OutFile> outFileInput = new Input<>("out","Output file, where logs are stored. If not specified, use stdout"); 
+	
 	
 	String m_sScript;
 	String [] m_sHosts;
@@ -398,7 +399,8 @@ public class TreeModelAdequacy extends MCMC {
 			analyser.initByName("nrOfTrees", treeCountInput.get(),
 					"rootdir", rootDirInput.get(),
 					"tree", tree,
-					"statistic", statsInput.get());
+					"statistic", statsInput.get(),
+					"out", outFileInput.get());
 			analyser.run();
 		} catch (Exception e) {
 			e.printStackTrace();
