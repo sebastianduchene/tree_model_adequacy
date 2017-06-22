@@ -111,7 +111,7 @@ public class TreeModelAdequacyAnalyser extends Runnable {
 				double r95   = stats[(int)(95 * n / 100.0)];
 				double r97_5 = stats[(int)(97.5 * n / 100.0)];
 				int p = 0;
-				while (stats[p] > origStat) {
+				while (p < n && stats[p] > origStat) {
 					p++;
 				}
 				double pValue = (double) p / (double) n;

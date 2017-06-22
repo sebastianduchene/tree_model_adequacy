@@ -7,5 +7,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/TreeStat2"/>
 	<classpathentry kind="lib" path="/beast2/lib/jam.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/bdsky"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/phylodynamics"/>
 	<classpathentry kind="output" path="build"/>
 </classpath>

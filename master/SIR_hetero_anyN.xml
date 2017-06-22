@@ -1,24 +1,24 @@
 <beast version='2.0' namespace='master:master.model:master.conditions:master.outputs:master.postprocessors'>
   <run spec='InheritanceTrajectory'
        samplePopulationSizes="true"
-       verbosity="1" simulationTime=$(origin)>
+       verbosity="1" simulationTime="$(origin)">
     <model spec='Model' id='model'>
       <population spec='Population' id='S' populationName='S'/>
       <population spec='Population' id='I' populationName='I'/>
       <population spec='Population' id='R' populationName='R'/>
       <population spec="Population" id="I_sample" populationName="I_sample"/>
-      <reaction spec='Reaction' reactionName="Infection" rate=$(birth)>
+      <reaction spec='Reaction' reactionName="Infection" rate="$(birth)">
 	S + I -> 2I
       </reaction>
-      <reaction spec='Reaction' reactionName="Recovery" rate=$(death)>
+      <reaction spec='Reaction' reactionName="Recovery" rate="$(death)">
 	I -> R
       </reaction>
-      <reaction spec="Reaction" reactionName="I_sample" rate=$(sampling)>
+      <reaction spec="Reaction" reactionName="I_sample" rate="$(sampling)">
 	I -> I_sample
       </reaction>
     </model>
     <initialState spec='InitState'>
-      <populationSize spec='PopulationSize' population='@S' size=$(S0)/>
+      <populationSize spec='PopulationSize' population='@S' size="$(S0)"/>
       <lineageSeed spec='Individual' population='@I'/>
     </initialState>
 
