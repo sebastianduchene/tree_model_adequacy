@@ -1,5 +1,15 @@
-<addon name='tree_model_adequacy' version='0.0.1'>
+<addon name='TMA' version='0.0.1'>
 	<depends on='beast2' atleast='2.4.6'/>
 	<depends on='MASTER' atleast='5.1.1'/>
 	<depends on='BEASTLabs' atleast='1.7.1'/>
+	<depends on='phylodynamics' atleast='1.2.1'/>
+	<depends on='BDSKY' atleast='1.3.3'/>
+	<depends on='TreeStat2' atleast='0.0.1'/>
+	
+    <addonapp description="TMAAnalyser"
+        class="modeladequacy.util.TreeModelAdequacyAnalyser"
+        args=""
+        icon="beast/app/treestat/images/TreeStat.png"
+    />
+
 </addon>
