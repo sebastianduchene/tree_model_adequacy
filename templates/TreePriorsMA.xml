@@ -377,7 +377,7 @@ suppressInputs='beast.evolution.speciation.BirthDeathSkylineModel.intervalTimes,
 <!-- Sequential Birth Death Skyline model, with rho for contemp samples -->
 	<BirthDeathSkylineModel spec="beast.evolution.speciation.BirthDeathSkylineModel" id="BirthDeathSkyContemporary.t:$(n)" tree="@Tree.t:$(n)">
 		<parameter name="origin" id="origin.t:$(n)" value ="1000" lower="0." upper="Infinity"/>  	
-		<parameter name="reproductiveNumber" id="reproductiveNumber.t:$(n)" value="2" lower="0." dimension ="10" upper="Infinity"/>
+		<parameter name="reproductiveNumber" id="reproductiveNumber.t:$(n)" value="2" lower="0." dimension ="1" upper="Infinity"/>
 		<parameter name="becomeUninfectiousRate" id="becomeUninfectiousRate.t:$(n)" value="1." lower="0." upper="Infinity" dimension ="1"/>
 		<parameter name="samplingProportion" id="samplingProportion.t:$(n)" value="0."/> 
 		<parameter name="rho" id="rho.t:$(n)" value="0.01" lower="0." upper="1."/> 
@@ -486,7 +486,7 @@ suppressInputs='beast.evolution.speciation.BirthDeathSkylineModel.intervalTimes,
 <!-- Sequential Birth Death Skyline model-->
 	<BirthDeathSkylineModel spec="beast.evolution.speciation.BirthDeathSkylineModel" id="BirthDeathSkySerial.t:$(n)" tree="@Tree.t:$(n)">
 		<parameter name="origin" id="origin.t:$(n)" value ="1000" lower="0." upper="Infinity"/>  	
-		<parameter name="reproductiveNumber" id="reproductiveNumber.t:$(n)" value="2" lower="0." dimension ="10" upper="Infinity"/>
+		<parameter name="reproductiveNumber" id="reproductiveNumber.t:$(n)" value="2" lower="0." dimension ="1" upper="Infinity"/>
 		<parameter name="becomeUninfectiousRate" id="becomeUninfectiousRate.t:$(n)" value="1." lower="0." upper="Infinity" dimension ="1"/>
 		<parameter name="samplingProportion" id="samplingProportion.t:$(n)" value="0.01" lower="0." upper="1." dimension ="1"/> 
 	</BirthDeathSkylineModel>

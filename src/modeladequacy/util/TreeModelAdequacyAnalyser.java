@@ -68,7 +68,9 @@ public class TreeModelAdequacyAnalyser extends Runnable {
 			NexusParser parser = new NexusParser();
 			File file = new File(rootDir + "/run" + i + "/output.tree");
 			parser.parseFile(file);
-			Tree tree = parser.trees.get(0);
+			int lastTreeIndex = parser.trees.size();
+			Tree tree = parser.trees.get(lastTreeIndex-1);
+			int treeq = parser.trees.lastIndexOf(tree);
 			for (TreeSummaryStatistic<?> stat : stats) {
 				Map<String,?> map = stat.getStatistics(tree);
 				for (String name : map.keySet()) {

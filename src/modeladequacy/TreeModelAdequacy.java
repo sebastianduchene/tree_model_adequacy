@@ -273,11 +273,13 @@ public class TreeModelAdequacy extends MCMC {
 			char c = masterTemplate.charAt(i);
 			if (c == '$' && masterTemplate.charAt(i+1) == '(') {
 				int end = masterTemplate.indexOf(')', i);
-				String label = masterTemplate.substring(i+2, end - 1);
+//				String label = masterTemplate.substring(i+2, end - 1);
+				String label = masterTemplate.substring(i+2, end);
 				Double [] log = null;
 				for (int labelIndex = 0; labelIndex < labels.size(); labelIndex++) {
 					String candidate = labels.get(labelIndex);
-					if (candidate.startsWith(label)) {
+//					if (candidate.startsWith(label)) { 
+					if (candidate.endsWith(label)) {
 						log = trace.getTrace(labelIndex + 1);						
 						break;
 					}

@@ -52,7 +52,7 @@ name="alignment">
 
     <init id="RandomTree.t:dummy" spec="beast.evolution.tree.RandomTree" estimate="false" initial="@Tree.t:dummy" taxa="@dummy">
         <populationModel id="ConstantPopulation0.t:dummy" spec="ConstantPopulation">
-            <parameter id="randomPopSize.t:dummy" name="popSize">35</parameter>
+            <parameter id="randomPopSize.t:dummy" name="popSize">$(popSize)</parameter>
         </populationModel>
     </init>
 

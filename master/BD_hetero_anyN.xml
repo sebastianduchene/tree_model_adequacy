@@ -34,7 +34,7 @@
 				  nLeaves="2" exact="false"
 				  exceedCondition="true"/>
 	<postSimCondition spec="LeafCountPostSimCondition"
-				  nLeaves="1000" exact="false"
+				  nLeaves="10000" exact="false"
 				  exceedCondition="false"/>
         <!-- output spec='NewickOutput' fileName='BDTree_hetero_anyN_MASTER.newick.tree'/ -->
 	<output spec='NexusOutput' fileName="output.tree"/>

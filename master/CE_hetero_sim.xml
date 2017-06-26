@@ -64,7 +64,7 @@ name="alignment">
 
     <init id="RandomTree.t:dummy" spec="beast.evolution.tree.RandomTree" estimate="false" initial="@Tree.t:dummy" taxa="@dummy">
         <populationModel id="ConstantPopulation0.t:dummy" spec="ConstantPopulation">
-            <parameter id="randomPopSize.t:dummy" name="popSize">10000</parameter>
+            <parameter id="randomPopSize.t:dummy" name="popSize">$(ePopSize)</parameter>
         </populationModel>
     </init>
 
@@ -77,6 +77,8 @@ name="alignment">
             <prior id="ClockPrior.c:dummy" name="distribution" x="@clockRate.c:dummy">
                 <Uniform id="Uniform.7" name="distr" upper="Infinity"/>
             </prior>
+<!-- Priors ignored because there are no operators on ePopSize and GrowthRate  -->
+<!--
             <prior id="ePopSizePrior.t:dummy" name="distribution" x="@ePopSize.t:dummy">
                 <Normal id="Normal.5" name="distr">
                     <parameter id="RealParameter.28" estimate="false" name="mean">0.0</parameter>
@@ -89,6 +91,7 @@ name="alignment">
                     <parameter id="RealParameter.31" estimate="false" name="sigma">1.0</parameter>
                 </Normal>
             </prior>
+-->
         </distribution>
         <distribution id="likelihood" spec="util.CompoundDistribution" useThreads="true">
             <distribution id="treeLikelihood.dummy" spec="ThreadedTreeLikelihood" data="@dummy" tree="@Tree.t:dummy">
