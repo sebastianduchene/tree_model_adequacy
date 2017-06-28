@@ -103,8 +103,10 @@ public class TreeModelAdequacyAnalyser extends Runnable {
 			if (stat instanceof Double) {
 				Double origStat = (Double) stat;
 				Double [] stats = new Double[n];
+
 				for (int i = 0; i < n; i++) {
 					stats[i] = (Double) treeStats[i].get(label);
+					
 				}
 				Arrays.sort(stats);
 				double r2_5  = stats[(int)(2.5 * n / 100.0)];
@@ -112,11 +114,14 @@ public class TreeModelAdequacyAnalyser extends Runnable {
 				double r50   = stats[(int)(50 * n / 100.0)];
 				double r95   = stats[(int)(95 * n / 100.0)];
 				double r97_5 = stats[(int)(97.5 * n / 100.0)];
-				int p = 0;
-				while (p < n && stats[p] > origStat) {
-					p++;
+				double pval = 0.0;
+				for (int s=0; s < stats.length; s++){
+					if(origStat > stats[s]){
+						pval++;
+					}
 				}
-				double pValue = (double) p / (double) n;
+				
+				double pValue = pval / stats.length;
 				Log.info.print(label + "\t");
 				Log.info.print(String.format("%6.3e",r2_5) + "\t");
 				Log.info.print(String.format("%6.3e",r5) + "\t");
