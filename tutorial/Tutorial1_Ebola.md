@@ -1,7 +1,7 @@
 # Tutorial 1. Assessing the adequacy of phylodynamic models in Ebola
 
-Written by Sebastian Duchene
-4 July 2017
+Written by Sebastian Duchene and Remco Bouckaert
+5 July 2017
 
 ## Requirements
 
