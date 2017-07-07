@@ -5,7 +5,7 @@
 #    <distribution id="prior" spec="beast.core.util.CompoundDistribution">
 #        <distribution id="CoalescentConstant.t:dummy" spec="beast.evolution.tree.coalescent.Coalescent">
 #            <populationModel id="ConstantPopulation.t:dummy" spec="beast.evolution.tree.coalescent.ConstantPopulation">
-#                <parameter id="popSize.t:dummy" name="popSize">0.06266369126178004</parameter>
+#                <parameter id="popSize.t:dummy" name="popSize">0.08551275309036535</parameter>
 #            </populationModel>
 #            <treeIntervals id="TreeIntervals.t:dummy" spec="beast.evolution.tree.coalescent.TreeIntervals">
 #                <tree id="Tree.t:dummy">
@@ -29,5 +29,5 @@
 #</input>
 #
 Sample	posterior	likelihood	prior	treeLikelihood	TreeHeight	clockRate	popSize	CoalescentConstant
-0	127.59914496559857	NaN	127.59914496559857	NaN	0.20104175130148896	1.0	0.06266369126178004	127.59914496559857
-200000	127.9413084825939	NaN	127.9413084825939	NaN	0.10383948147186182	1.0	0.06266369126178004	127.9413084825939
+0	114.94390115558097	NaN	114.94390115558097	NaN	0.19616921106066518	1.0	0.08551275309036535	114.94390115558097
+200000	101.91159619395341	NaN	101.91159619395341	NaN	0.10975550067847477	1.0	0.08551275309036535	101.91159619395341

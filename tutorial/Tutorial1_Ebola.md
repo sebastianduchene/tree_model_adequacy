@@ -157,4 +157,30 @@ Click on **File**, **Save as** and save the file as **ebola_CE.xml**.
 
 ## Visualising the posterior predictive distribution of test statistics in R
 
-The main output from TMA is a log file with test statistics for the posterior predictive simulations and for the empirical data. For the analyses above, these files have names **out_cc.log** and **out_ce.log** for the constant size coalescent and the exponential growth coalescent models, respectively. We have provided an R script to do this, which can be downloaded [here](to plotting script).
+The main output from TMA is a log file with test statistics for the posterior predictive simulations and for the empirical data. For the analyses above, these files have names **out_cc.log** and **out_ce.log** for the constant size coalescent and the exponential growth coalescent models, respectively. We have provided an R script to do this, which can be downloaded [here](to plotting script). Save it the same folder where **out_cc.log** and **out_ce.log**. In UNIX machines you can run this script by opening **Terminal** (in mac go to Applications, Utilities, Terminal). Type "cd" and drag and drop the folder where **out_cc.log** and **out_ce.log** are contained, and hit Enter. In my terminal it looks like this:
+```
+5310-b127601:tree_model_adequacy sduchene$ cd /Users/sduchene/Dropbox/projects_WORKING/phylodynamics/GIT_Project/tree_model_adequacy/
+```
+If you have R installed, type the following in Terminal:
+```
+Rscript plot_pps.R out_cc.log out_cc.pdf
+```
+This will produce a pdf file, called out_cc.pdf, which contains the results for the constant size coalescent. Before looking at it, use the same command to obtain the same plot for the exponential growth:
+```
+Rscript plot_pps.R out_ce.log out_ce.pdf
+```
+Open the pdf files. The blue histograms correspond to the posterior predictive distribution for the five test statistics calculated here (i.e. those calculated using the trees simulated under each of the models). The red lines correspond to the test statistic for the empirical tree. The *P* values for each test statistic are also shown. The bottom right plot was obtained by combining all the test statistics into two components, similar to a principal component analysis (called singular value decomposition). The blue dots represent posterior predictive simulations, and the red dot is the empirical data (**Fig. 11** and **Fig. 12**).
+
+[insert fig11]
+**Fig. 11**
+
+[insert fig12]
+**Fig. 12**
+
+
+As we can see, the test statistics for the empirical data tend to fall closer to the centre of the posterior predictive distributions under the exponential growth coalescent than under the constant size coalescent. This is consistent with the trees generated under each model. **Fig. 13** shows the empirical Ebola virus tree and one posterior predictive simulation for both models. These are not sufficient posterior predictive simulations to make a meaningful comparison, but there are several key differences that can be spotted by eye. First, the root height of the constant size coalescent is almost two fold larger than empirical tree and for the exponential growth coalescent. Second, the constant size coalescent tree has internal branches that are much longer than external branches, compared to the other two trees. These two features are captured by the *Tree Height* and *External/Internal ratio* test statistics.
+
+[insert fig 13 here]
+**Fig. 13** Trees generated under the constant size coalescent, the exponential growth coalescent, and the empirical Ebola virus tree. The numbers at the root of each tree correspond to the tree height.
+
+The TMA package has a range of phylodynamic models available, including the Birth-Death with sampling through time, and the Birth-Death SIR. These models can be used similarly to those used in this tutorial. Other phylodynamic models in BEAST will also be implemented in TMA.
