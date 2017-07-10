@@ -16,6 +16,7 @@
     <property name="doc" location="doc"/>
     <property name="examples" location="examples"/>
     <property name="templates" location="templates"/>
+    <property name="master" location="master"/>
 
     <!-- BEAST branch and version to build against
          (only different for version tags because of
@@ -202,6 +203,11 @@
         <mkdir dir="${templates}" />
         <copy todir="${pack}/templates">
             <fileset dir="${templates}" includes="*.xml" />
+        </copy>
+
+        <mkdir dir="${master}" />
+        <copy todir="${pack}/master">
+            <fileset dir="${master}" includes="*.xml" />
         </copy>
 
         <mkdir dir="${doc}" />
