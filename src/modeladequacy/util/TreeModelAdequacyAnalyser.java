@@ -10,6 +10,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import beast.app.treestat.statistics.TreeHeight;
 import beast.app.treestat.statistics.TreeSummaryStatistic;
 import beast.app.util.Application;
 import beast.app.util.OutFile;
@@ -40,6 +41,7 @@ public class TreeModelAdequacyAnalyser extends Runnable {
 	@Override
 	public void initAndValidate() {
 		stats = statsInput.get();
+		//stats.add(new TreeHeight());
 	}
 
 	
@@ -97,7 +99,7 @@ public class TreeModelAdequacyAnalyser extends Runnable {
 		List<String> labels = getLabels(origStats);
 		int n = treeStats.length;
 		
-		Log.info("statistic\t2.5%\t5%\t50%\t95%\t97.5%\tp-value");
+		Log.info("statistic               2.5%        5%          50%         95%         97.5%       observed    p-value");
 		for (String label : labels) {
 			Object stat = origStats.get(label);
 			if (stat instanceof Double) {
@@ -122,12 +124,17 @@ public class TreeModelAdequacyAnalyser extends Runnable {
 				}
 				
 				double pValue = pval / stats.length;
-				Log.info.print(label + "\t");
-				Log.info.print(String.format("%6.3e",r2_5) + "\t");
-				Log.info.print(String.format("%6.3e",r5) + "\t");
-				Log.info.print(String.format("%6.3e",r50) + "\t");
-				Log.info.print(String.format("%6.3e",r95) + "\t");
-				Log.info.print(String.format("%6.3e",r97_5) + "\t");
+				if (label.length() > 23) {
+					label = label.substring(0, 23);
+				}				
+				label = label + "                        ".substring(label.length());
+				Log.info.print(label);
+				Log.info.print(String.format("%6.3e",r2_5)  + "   ");
+				Log.info.print(String.format("%6.3e",r5)    + "   ");
+				Log.info.print(String.format("%6.3e",r50)   + "   ");
+				Log.info.print(String.format("%6.3e",r95)   + "   ");
+				Log.info.print(String.format("%6.3e",r97_5) + "   ");
+				Log.info.print(String.format("%6.3e",origStat) + "   ");
 				Log.info.print(String.format("%6.3e",pValue) + "\n");
 				
 			}			
