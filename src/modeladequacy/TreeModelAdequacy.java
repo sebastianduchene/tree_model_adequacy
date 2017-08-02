@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.nio.file.Paths;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -302,6 +303,16 @@ public class TreeModelAdequacy extends MCMC {
 		for (Logger logger : loggers) {
 			if (logger.getID() != null && logger.getID().equals("tracelog")) {
 				String file = logger.fileNameInput.get();
+				if (!new File(file).exists()) {
+					file = Paths.get("").toAbsolutePath().toString() + "/" + file;
+					if (!new File(file).exists()) {
+						file = System.getProperty("file.name.prefix") + "/" + logger.fileNameInput.get();
+						if (!new File(file).exists()) {
+							throw new RuntimeException("Cannot find the log file " + file);
+						}
+					}
+				}
+				
 				LogAnalyser trace = new LogAnalyser(file, burnInPercentageInput.get(), false, false);
 				if (trace.getTrace(0).length < treeCountInput.get()) {
 					throw new IllegalArgumentException("tracelog has only " + trace.getTrace(0).length + " entries, but " + treeCountInput.get() + "  are needed. "
@@ -413,6 +424,16 @@ public class TreeModelAdequacy extends MCMC {
 
 	
 	private void postAnalysis() {
+		if (statsInput.get().size() == 0) {
+			// no statistics to calculate
+			Log.info("There are no tree summary statistics specified in the XML");
+			Log.info("To calclulate statistics, run the TreeModelAdequacy Analyser.");
+			Log.info("You can start this by selecting the File/Launch Apps menu in BEAUti, ");
+			Log.info("select the TreeModelAdequacyAnalyser icon in the window that pops up, ");
+			Log.info("and hit the launch button.");
+			return;
+		}
+		
         TreeInterface tree = getTree();
         
 		TreeModelAdequacyAnalyser analyser = new TreeModelAdequacyAnalyser();
