@@ -23,6 +23,7 @@ import beast.app.treestat.statistics.TreeSummaryStatistic;
 import beast.app.util.OutFile;
 import beast.app.util.Utils;
 import beast.app.util.XMLFile;
+import beast.core.Citation;
 import beast.core.Description;
 import beast.core.Distribution;
 import beast.core.Input;
@@ -39,6 +40,8 @@ import beast.util.Randomizer;
 import modeladequacy.util.TreeModelAdequacyAnalyser;
 
 @Description("Run a complete tree model adequacy analysis")
+@Citation(value="Maturana R, P., Brewer, B. J., Klaere, S., & Bouckaert, R. (2018). Model selection and parameter inference in phylogenetics using Nested Sampling. Systematic Biology, syy050. doi:10.1093/sysbio/syy050", 
+	year=2018, DOI="doi:10.1093/sysbio/syy050", firstAuthorSurname="Duchene")
 public class TreeModelAdequacy extends MCMC {
 	public Input<Integer> treeCountInput = new Input<>("nrOfTrees", "the number of trees to use, default 100", 100);
 	public Input<String> rootDirInput = new Input<>("rootdir", "root directory for storing individual tree files (default /tmp)", "/tmp");
