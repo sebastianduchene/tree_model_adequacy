@@ -87,11 +87,7 @@
 		       fork="true"
 		       memoryinitialsize="256m"
 		       memorymaximumsize="256m">
-			   <!--source="1.6"
-		       target="1.6"-->
-			<include name="beast/**/**" />
-			<!-- compile JUnit test classes -->
-			<include name="test/beast/**" />
+			<include name="**/**" />
 		</javac>
 		<echo message="Successfully compiled." />
 	</target>
@@ -129,7 +125,7 @@
 		</jar>
 		<jar jarfile="${distTMA}/TMA.src.jar">
 			<fileset dir="${srcTMA}">
-				<include name="beast/**/*.java" />
+				<include name="**/*.java" />
 				<include name="beast/**/*.png" />
 				<include name="beast/**/*.xsl" />
 			</fileset>
@@ -139,8 +135,7 @@
 				<attribute name="Built-By" value="${user.name}" />
 			</manifest>
 			<fileset dir="${buildTMA}">
-				<include name="beast/**/*.class" />
-				<include name="util/**/*.class" />
+				<include name="**/*.class" />
 				<include name="**/*.properties" />
 			</fileset>
 		</jar>
@@ -220,7 +215,7 @@
 			<fileset file="templates/TreePriorsMA.xml" />
 		</copy>
 
-		<jar jarfile="${distTMA}/TMA.addon.v${version}.zip">
+		<jar jarfile="${distTMA}/TMA.v${version}.zip">
 			<fileset dir="${Add_on_dir}">
 				<include name="**/*" />
 			</fileset>
