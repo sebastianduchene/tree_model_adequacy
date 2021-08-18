@@ -19,7 +19,7 @@ import beast.util.TreeParser;
 public class BeautiFixedTreeAlignmentProvider extends BeautiAlignmentProvider {
 
 	@Override
-	protected List<BEASTInterface> getAlignments(BeautiDoc doc) {
+	public List<BEASTInterface> getAlignments(BeautiDoc doc) {
 		try {
             File file = Utils.getLoadFile("Open tree file with fixed tree");
             if (file != null) {
