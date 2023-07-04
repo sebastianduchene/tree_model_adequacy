@@ -1,0 +1,107 @@
+<beast version='2.0'
+       namespace="beast.pkgmgmt:beast.base.core:beast.base.inference:beast.base.evolution.alignment:beast.base.evolution.tree.coalescent:beast.base.inference.util:beast.evolution.nuc:beast.base.evolution.operator:beast.base.evolution.sitemodel:beast.base.evolution.substitutionmodel:beast.base.evolution.likelihood">
+
+
+    <data
+id="dummy"
+name="alignment">
+      <!-- SEQ_DATA -->
+        <!--
+              <sequence id="" taxon=""
+               totalcount="4" value="?"/> -->
+    </data>
+
+    <map name="Uniform" >beast.base.math.distributions.Uniform</map>
+    <map name="Exponential" >beast.base.math.distributions.Exponential</map>
+    <map name="LogNormal" >beast.base.math.distributions.LogNormalDistributionModel</map>
+    <map name="Normal" >beast.base.math.distributions.Normal</map>
+    <map name="Beta" >beast.base.math.distributions.Beta</map>
+    <map name="Gamma" >beast.base.math.distributions.Gamma</map>
+    <map name="LaplaceDistribution" >beast.base.math.distributions.LaplaceDistribution</map>
+    <map name="prior" >beast.base.math.distributions.Prior</map>
+    <map name="InverseGamma" >beast.base.math.distributions.InverseGamma</map>
+    <map name="OneOnX" >beast.base.math.distributions.OneOnX</map>
+
+
+    <run id="mcmc" spec="beast.base.inference.MCMC" chainLength="100000" sampleFromPrior="false">
+        <state id="state" storeEvery="5000">
+            <tree id="Tree.t:dummy" name="stateNode">
+                <trait id="dateTrait.t:dummy"
+                       spec="beast.base.evolution.tree.TraitSet"
+                       traitname="date-backward">
+                    <!-- DATE_DATA -->
+                    <taxa id="TaxonSet.dummy" spec="beast.base.evolution.alignment.TaxonSet">
+                        <alignment idref="dummy"/>
+                    </taxa>
+                </trait>
+                <taxonset idref="TaxonSet.dummy"/>
+            </tree>
+            <parameter id="ePopSize.t:dummy" spec='beast.base.inference.parameter.RealParameter' name="stateNode">$(ePopSize)</parameter><!-- 100</parameter> -->
+            <parameter id="growthRate.t:dummy" spec='beast.base.inference.parameter.RealParameter' name="stateNode">$(growthRate)</parameter><!-- 0.5</parameter> -->
+            <parameter id="clockRate.c:dummy" spec='beast.base.inference.parameter.RealParameter' name="stateNode">1.0</parameter>
+        </state>
+
+        <init id="RandomTree.t:dummy" spec="beast.base.evolution.tree.coalescent.RandomTree" estimate="false" initial="@Tree.t:dummy" taxa="@dummy">
+            <populationModel id="ConstantPopulation0.t:dummy" spec="ConstantPopulation">
+                <parameter id="randomPopSize.t:dummy" name="popSize">$(ePopSize)</parameter>
+            </populationModel>
+        </init>
+
+        <distribution id="posterior" spec="CompoundDistribution">
+            <distribution id="prior" spec="CompoundDistribution">
+                <distribution id="CoalescentExponential.t:dummy" spec="Coalescent">
+                    <populationModel id="ExponentialGrowth.t:dummy" spec="ExponentialGrowth" growthRate="@growthRate.t:dummy" popSize="@ePopSize.t:dummy"/>
+                    <treeIntervals id="TreeIntervals.t:dummy" spec="beast.base.evolution.tree.TreeIntervals"  tree="@Tree.t:dummy"/>
+                </distribution>
+                <prior id="ClockPrior.c:dummy" name="distribution" x="@clockRate.c:dummy">
+                    <Uniform id="Uniform.7" name="distr" upper="Infinity"/>
+                </prior>
+
+            </distribution>
+        </distribution>
+
+        <operator id="CoalescentExponentialTreeScaler.t:dummy" spec="ScaleOperator" scaleFactor="0.5" tree="@Tree.t:dummy" weight="3.0"/>
+
+        <operator id="CoalescentExponentialTreeRootScaler.t:dummy" spec="ScaleOperator" rootOnly="true" scaleFactor="0.5" tree="@Tree.t:dummy" weight="3.0"/>
+
+        <operator id="CoalescentExponentialUniformOperator.t:dummy" spec="Uniform" tree="@Tree.t:dummy" weight="30.0"/>
+
+        <operator id="CoalescentExponentialSubtreeSlide.t:dummy" spec="SubtreeSlide" tree="@Tree.t:dummy" weight="15.0"/>
+
+        <operator id="CoalescentExponentialNarrow.t:dummy" spec="Exchange" tree="@Tree.t:dummy" weight="15.0"/>
+
+        <operator id="CoalescentExponentialWide.t:dummy" spec="Exchange" isNarrow="false" tree="@Tree.t:dummy" weight="3.0"/>
+
+        <operator id="CoalescentExponentialWilsonBalding.t:dummy" spec="WilsonBalding" tree="@Tree.t:dummy" weight="3.0"/>
+
+        <logger id="tracelog" fileName="CE_ultra_sim.log"
+                logEvery="5000" model="@posterior" sanitiseHeaders="true"
+                sort="smart">
+            <log idref="posterior"/>
+            <!--<log idref="likelihood"/>-->
+            <log idref="prior"/>
+            <!--<log idref="treeLikelihood.dummy"/>-->
+            <log id="TreeHeight.t:dummy" spec="treestat2.TreeStat2Logger" tree="@Tree.t:dummy"/>
+            <log idref="CoalescentExponential.t:dummy"/>
+            <log idref="ePopSize.t:dummy"/>
+            <log idref="growthRate.t:dummy"/>
+            <log idref="clockRate.c:dummy"/>
+        </logger>
+
+        <logger id="screenlog" logEvery="50000">
+            <log idref="posterior"/>
+            <log id="ESS.0" spec="util.ESS" arg="@posterior"/>
+            <!--<log idref="likelihood"/>-->
+            <log idref="prior"/>
+            <log idref="ePopSize.t:dummy"/>
+            <log idref="growthRate.t:dummy"/>
+            <log idref="TreeHeight.t:dummy"/>
+        </logger>
+
+        <logger id="treelog.t:dummy" fileName="output.tree" logEvery="5000" mode="tree">
+            <log id="TreeWithMetaDataLogger.t:dummy" spec="beast.base.evolution.TreeWithMetaDataLogger" tree="@Tree.t:dummy"/>
+        </logger>
+
+    </run>
+
+</beast>

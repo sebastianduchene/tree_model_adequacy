@@ -2,239 +2,239 @@
 
 
     <data
-id="ebola_2014"
-name="taxa">
-                <sequence id="Sequence.0" taxon="'EBOV|AA000000|EM104|SierraLeone_EM|2014-06-02'" totalcount="4" value="?"/>
-                <sequence id="Sequence.1" taxon="'EBOV|AA000000|EM106|SierraLeone_EM|2014-06-02'" totalcount="4" value="?"/>
-                <sequence id="Sequence.2" taxon="'EBOV|AA000000|EM110|SierraLeone_EM|2014-06-03'" totalcount="4" value="?"/>
-                <sequence id="Sequence.3" taxon="'EBOV|AA000000|EM111|SierraLeone_EM|2014-06-03'" totalcount="4" value="?"/>
-                <sequence id="Sequence.4" taxon="'EBOV|AA000000|EM112|SierraLeone_EM|2014-06-03'" totalcount="4" value="?"/>
-                <sequence id="Sequence.5" taxon="'EBOV|AA000000|EM113|SierraLeone_EM|2014-06-03'" totalcount="4" value="?"/>
-                <sequence id="Sequence.6" taxon="'EBOV|AA000000|EM115|SierraLeone_EM|2014-06-03'" totalcount="4" value="?"/>
-                <sequence id="Sequence.7" taxon="'EBOV|AA000000|EM119|SierraLeone_EM|2014-06-03'" totalcount="4" value="?"/>
-                <sequence id="Sequence.8" taxon="'EBOV|AA000000|EM120|SierraLeone_EM|2014-06-03'" totalcount="4" value="?"/>
-                <sequence id="Sequence.9" taxon="'EBOV|AA000000|EM121|SierraLeone_EM|2014-06-04'" totalcount="4" value="?"/>
-                <sequence id="Sequence.10" taxon="'EBOV|AA000000|EM124|SierraLeone_EM|2014-06-04'" totalcount="4" value="?"/>
-                <sequence id="Sequence.11" taxon="'EBOV|AA000000|G3707|SierraLeone_G|2014-05-31'" totalcount="4" value="?"/>
-                <sequence id="Sequence.12" taxon="'EBOV|AA000000|G3713|SierraLeone_G|2014-06-09'" totalcount="4" value="?"/>
-                <sequence id="Sequence.13" taxon="'EBOV|AA000000|G3724|SierraLeone_G|2014-06-05'" totalcount="4" value="?"/>
-                <sequence id="Sequence.14" taxon="'EBOV|AA000000|G3729|SierraLeone_G|2014-06-07'" totalcount="4" value="?"/>
-                <sequence id="Sequence.15" taxon="'EBOV|AA000000|G3734|SierraLeone_G|2014-06-07'" totalcount="4" value="?"/>
-                <sequence id="Sequence.16" taxon="'EBOV|AA000000|G3735|SierraLeone_G|2014-06-07'" totalcount="4" value="?"/>
-                <sequence id="Sequence.17" taxon="'EBOV|AA000000|G3750|SierraLeone_G|2014-06-10'" totalcount="4" value="?"/>
-                <sequence id="Sequence.18" taxon="'EBOV|AA000000|G3752|SierraLeone_G|2014-06-10'" totalcount="4" value="?"/>
-                <sequence id="Sequence.19" taxon="'EBOV|AA000000|G3758|SierraLeone_G|2014-06-11'" totalcount="4" value="?"/>
-                <sequence id="Sequence.20" taxon="'EBOV|AA000000|G3764|SierraLeone_G|2014-06-12'" totalcount="4" value="?"/>
-                <sequence id="Sequence.21" taxon="'EBOV|AA000000|G3765|SierraLeone_G|2014-06-14'" totalcount="4" value="?"/>
-                <sequence id="Sequence.22" taxon="'EBOV|AA000000|G3769|SierraLeone_G|2014-06-12'" totalcount="4" value="?"/>
-                <sequence id="Sequence.23" taxon="'EBOV|AA000000|G3770|SierraLeone_G|2014-06-12'" totalcount="4" value="?"/>
-                <sequence id="Sequence.24" taxon="'EBOV|AA000000|G3771|SierraLeone_G|2014-06-12'" totalcount="4" value="?"/>
-                <sequence id="Sequence.25" taxon="'EBOV|AA000000|G3782|SierraLeone_G|2014-06-14'" totalcount="4" value="?"/>
-                <sequence id="Sequence.26" taxon="'EBOV|AA000000|G3786|SierraLeone_G|2014-06-14'" totalcount="4" value="?"/>
-                <sequence id="Sequence.27" taxon="'EBOV|AA000000|G3787|SierraLeone_G|2014-06-14'" totalcount="4" value="?"/>
-                <sequence id="Sequence.28" taxon="'EBOV|AA000000|G3788|SierraLeone_G|2014-06-14'" totalcount="4" value="?"/>
-                <sequence id="Sequence.29" taxon="'EBOV|AA000000|G3789|SierraLeone_G|2014-06-14'" totalcount="4" value="?"/>
-                <sequence id="Sequence.30" taxon="'EBOV|AA000000|G3795|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
-                <sequence id="Sequence.31" taxon="'EBOV|AA000000|G3796|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
-                <sequence id="Sequence.32" taxon="'EBOV|AA000000|G3798|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
-                <sequence id="Sequence.33" taxon="'EBOV|AA000000|G3799|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
-                <sequence id="Sequence.34" taxon="'EBOV|AA000000|G3800|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
-                <sequence id="Sequence.35" taxon="'EBOV|AA000000|G3805|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
-                <sequence id="Sequence.36" taxon="'EBOV|AA000000|G3807|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
-                <sequence id="Sequence.37" taxon="'EBOV|AA000000|G3808|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
-                <sequence id="Sequence.38" taxon="'EBOV|AA000000|G3809|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
-                <sequence id="Sequence.39" taxon="'EBOV|AA000000|G3810|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
-                <sequence id="Sequence.40" taxon="'EBOV|AA000000|G3814|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
-                <sequence id="Sequence.41" taxon="'EBOV|AA000000|G3816|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
-                <sequence id="Sequence.42" taxon="'EBOV|AA000000|G3817|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
-                <sequence id="Sequence.43" taxon="'EBOV|AA000000|G3818|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
-                <sequence id="Sequence.44" taxon="'EBOV|AA000000|G3819|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
-                <sequence id="Sequence.45" taxon="'EBOV|AA000000|G3820|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
-                <sequence id="Sequence.46" taxon="'EBOV|AA000000|G3821|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
-                <sequence id="Sequence.47" taxon="'EBOV|AA000000|G3822|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
-                <sequence id="Sequence.48" taxon="'EBOV|AA000000|G3823|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
-                <sequence id="Sequence.49" taxon="'EBOV|AA000000|G3825|SierraLeone_G|2014-06-16'" totalcount="4" value="?"/>
-                <sequence id="Sequence.50" taxon="'EBOV|AA000000|G3826|SierraLeone_G|2014-06-16'" totalcount="4" value="?"/>
-                <sequence id="Sequence.51" taxon="'EBOV|AA000000|G3827|SierraLeone_G|2014-06-16'" totalcount="4" value="?"/>
-                <sequence id="Sequence.52" taxon="'EBOV|AA000000|G3829|SierraLeone_G|2014-06-16'" totalcount="4" value="?"/>
-                <sequence id="Sequence.53" taxon="'EBOV|AA000000|G3831|SierraLeone_G|2014-06-16'" totalcount="4" value="?"/>
-                <sequence id="Sequence.54" taxon="'EBOV|AA000000|G3834|SierraLeone_G|2014-06-17'" totalcount="4" value="?"/>
-                <sequence id="Sequence.55" taxon="'EBOV|AA000000|G3838|SierraLeone_G|2014-06-17'" totalcount="4" value="?"/>
-                <sequence id="Sequence.56" taxon="'EBOV|AA000000|G3840|SierraLeone_G|2014-06-17'" totalcount="4" value="?"/>
-                <sequence id="Sequence.57" taxon="'EBOV|AA000000|G3841|SierraLeone_G|2014-06-17'" totalcount="4" value="?"/>
-                <sequence id="Sequence.58" taxon="'EBOV|AA000000|G3845|SierraLeone_G|2014-06-18'" totalcount="4" value="?"/>
-                <sequence id="Sequence.59" taxon="'EBOV|AA000000|G3846|SierraLeone_G|2014-06-18'" totalcount="4" value="?"/>
-                <sequence id="Sequence.60" taxon="'EBOV|AA000000|G3848|SierraLeone_G|2014-06-18'" totalcount="4" value="?"/>
-                <sequence id="Sequence.61" taxon="'EBOV|AA000000|G3850|SierraLeone_G|2014-06-18'" totalcount="4" value="?"/>
-                <sequence id="Sequence.62" taxon="'EBOV|AA000000|G3851|SierraLeone_G|2014-06-18'" totalcount="4" value="?"/>
-                <sequence id="Sequence.63" taxon="'EBOV|AA000000|G3856|SierraLeone_G|2014-06-18'" totalcount="4" value="?"/>
-                <sequence id="Sequence.64" taxon="'EBOV|AA000000|G3857|SierraLeone_G|2014-06-18'" totalcount="4" value="?"/>
-                <sequence id="Sequence.65" taxon="'EBOV|AA000000|NM042|SierraLeone_NM|2014-06-04'" totalcount="4" value="?"/>
-                <sequence id="Sequence.66" taxon="'EBOV|KM034551|EM096|SierraLeone_EM|2014-05-26'" totalcount="4" value="?"/>
-                <sequence id="Sequence.67" taxon="'EBOV|KM034552|EM098|SierraLeone_EM|2014-05-26'" totalcount="4" value="?"/>
-                <sequence id="Sequence.68" taxon="'EBOV|KM034553|G3670|SierraLeone_G|2014-05-27'" totalcount="4" value="?"/>
-                <sequence id="Sequence.69" taxon="'EBOV|KM034556|G3677|SierraLeone_G|2014-05-26'" totalcount="4" value="?"/>
-                <sequence id="Sequence.70" taxon="'EBOV|KM034558|G3679|SierraLeone_G|2014-05-28'" totalcount="4" value="?"/>
-                <sequence id="Sequence.71" taxon="'EBOV|KM034560|G3682|SierraLeone_G|2014-05-28'" totalcount="4" value="?"/>
-            </data>
+            id="ebola_2014"
+            name="taxa">
+        <sequence id="Sequence.0" taxon="'EBOV|AA000000|EM104|SierraLeone_EM|2014-06-02'" totalcount="4" value="?"/>
+        <sequence id="Sequence.1" taxon="'EBOV|AA000000|EM106|SierraLeone_EM|2014-06-02'" totalcount="4" value="?"/>
+        <sequence id="Sequence.2" taxon="'EBOV|AA000000|EM110|SierraLeone_EM|2014-06-03'" totalcount="4" value="?"/>
+        <sequence id="Sequence.3" taxon="'EBOV|AA000000|EM111|SierraLeone_EM|2014-06-03'" totalcount="4" value="?"/>
+        <sequence id="Sequence.4" taxon="'EBOV|AA000000|EM112|SierraLeone_EM|2014-06-03'" totalcount="4" value="?"/>
+        <sequence id="Sequence.5" taxon="'EBOV|AA000000|EM113|SierraLeone_EM|2014-06-03'" totalcount="4" value="?"/>
+        <sequence id="Sequence.6" taxon="'EBOV|AA000000|EM115|SierraLeone_EM|2014-06-03'" totalcount="4" value="?"/>
+        <sequence id="Sequence.7" taxon="'EBOV|AA000000|EM119|SierraLeone_EM|2014-06-03'" totalcount="4" value="?"/>
+        <sequence id="Sequence.8" taxon="'EBOV|AA000000|EM120|SierraLeone_EM|2014-06-03'" totalcount="4" value="?"/>
+        <sequence id="Sequence.9" taxon="'EBOV|AA000000|EM121|SierraLeone_EM|2014-06-04'" totalcount="4" value="?"/>
+        <sequence id="Sequence.10" taxon="'EBOV|AA000000|EM124|SierraLeone_EM|2014-06-04'" totalcount="4" value="?"/>
+        <sequence id="Sequence.11" taxon="'EBOV|AA000000|G3707|SierraLeone_G|2014-05-31'" totalcount="4" value="?"/>
+        <sequence id="Sequence.12" taxon="'EBOV|AA000000|G3713|SierraLeone_G|2014-06-09'" totalcount="4" value="?"/>
+        <sequence id="Sequence.13" taxon="'EBOV|AA000000|G3724|SierraLeone_G|2014-06-05'" totalcount="4" value="?"/>
+        <sequence id="Sequence.14" taxon="'EBOV|AA000000|G3729|SierraLeone_G|2014-06-07'" totalcount="4" value="?"/>
+        <sequence id="Sequence.15" taxon="'EBOV|AA000000|G3734|SierraLeone_G|2014-06-07'" totalcount="4" value="?"/>
+        <sequence id="Sequence.16" taxon="'EBOV|AA000000|G3735|SierraLeone_G|2014-06-07'" totalcount="4" value="?"/>
+        <sequence id="Sequence.17" taxon="'EBOV|AA000000|G3750|SierraLeone_G|2014-06-10'" totalcount="4" value="?"/>
+        <sequence id="Sequence.18" taxon="'EBOV|AA000000|G3752|SierraLeone_G|2014-06-10'" totalcount="4" value="?"/>
+        <sequence id="Sequence.19" taxon="'EBOV|AA000000|G3758|SierraLeone_G|2014-06-11'" totalcount="4" value="?"/>
+        <sequence id="Sequence.20" taxon="'EBOV|AA000000|G3764|SierraLeone_G|2014-06-12'" totalcount="4" value="?"/>
+        <sequence id="Sequence.21" taxon="'EBOV|AA000000|G3765|SierraLeone_G|2014-06-14'" totalcount="4" value="?"/>
+        <sequence id="Sequence.22" taxon="'EBOV|AA000000|G3769|SierraLeone_G|2014-06-12'" totalcount="4" value="?"/>
+        <sequence id="Sequence.23" taxon="'EBOV|AA000000|G3770|SierraLeone_G|2014-06-12'" totalcount="4" value="?"/>
+        <sequence id="Sequence.24" taxon="'EBOV|AA000000|G3771|SierraLeone_G|2014-06-12'" totalcount="4" value="?"/>
+        <sequence id="Sequence.25" taxon="'EBOV|AA000000|G3782|SierraLeone_G|2014-06-14'" totalcount="4" value="?"/>
+        <sequence id="Sequence.26" taxon="'EBOV|AA000000|G3786|SierraLeone_G|2014-06-14'" totalcount="4" value="?"/>
+        <sequence id="Sequence.27" taxon="'EBOV|AA000000|G3787|SierraLeone_G|2014-06-14'" totalcount="4" value="?"/>
+        <sequence id="Sequence.28" taxon="'EBOV|AA000000|G3788|SierraLeone_G|2014-06-14'" totalcount="4" value="?"/>
+        <sequence id="Sequence.29" taxon="'EBOV|AA000000|G3789|SierraLeone_G|2014-06-14'" totalcount="4" value="?"/>
+        <sequence id="Sequence.30" taxon="'EBOV|AA000000|G3795|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
+        <sequence id="Sequence.31" taxon="'EBOV|AA000000|G3796|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
+        <sequence id="Sequence.32" taxon="'EBOV|AA000000|G3798|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
+        <sequence id="Sequence.33" taxon="'EBOV|AA000000|G3799|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
+        <sequence id="Sequence.34" taxon="'EBOV|AA000000|G3800|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
+        <sequence id="Sequence.35" taxon="'EBOV|AA000000|G3805|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
+        <sequence id="Sequence.36" taxon="'EBOV|AA000000|G3807|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
+        <sequence id="Sequence.37" taxon="'EBOV|AA000000|G3808|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
+        <sequence id="Sequence.38" taxon="'EBOV|AA000000|G3809|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
+        <sequence id="Sequence.39" taxon="'EBOV|AA000000|G3810|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
+        <sequence id="Sequence.40" taxon="'EBOV|AA000000|G3814|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
+        <sequence id="Sequence.41" taxon="'EBOV|AA000000|G3816|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
+        <sequence id="Sequence.42" taxon="'EBOV|AA000000|G3817|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
+        <sequence id="Sequence.43" taxon="'EBOV|AA000000|G3818|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
+        <sequence id="Sequence.44" taxon="'EBOV|AA000000|G3819|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
+        <sequence id="Sequence.45" taxon="'EBOV|AA000000|G3820|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
+        <sequence id="Sequence.46" taxon="'EBOV|AA000000|G3821|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
+        <sequence id="Sequence.47" taxon="'EBOV|AA000000|G3822|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
+        <sequence id="Sequence.48" taxon="'EBOV|AA000000|G3823|SierraLeone_G|2014-06-15'" totalcount="4" value="?"/>
+        <sequence id="Sequence.49" taxon="'EBOV|AA000000|G3825|SierraLeone_G|2014-06-16'" totalcount="4" value="?"/>
+        <sequence id="Sequence.50" taxon="'EBOV|AA000000|G3826|SierraLeone_G|2014-06-16'" totalcount="4" value="?"/>
+        <sequence id="Sequence.51" taxon="'EBOV|AA000000|G3827|SierraLeone_G|2014-06-16'" totalcount="4" value="?"/>
+        <sequence id="Sequence.52" taxon="'EBOV|AA000000|G3829|SierraLeone_G|2014-06-16'" totalcount="4" value="?"/>
+        <sequence id="Sequence.53" taxon="'EBOV|AA000000|G3831|SierraLeone_G|2014-06-16'" totalcount="4" value="?"/>
+        <sequence id="Sequence.54" taxon="'EBOV|AA000000|G3834|SierraLeone_G|2014-06-17'" totalcount="4" value="?"/>
+        <sequence id="Sequence.55" taxon="'EBOV|AA000000|G3838|SierraLeone_G|2014-06-17'" totalcount="4" value="?"/>
+        <sequence id="Sequence.56" taxon="'EBOV|AA000000|G3840|SierraLeone_G|2014-06-17'" totalcount="4" value="?"/>
+        <sequence id="Sequence.57" taxon="'EBOV|AA000000|G3841|SierraLeone_G|2014-06-17'" totalcount="4" value="?"/>
+        <sequence id="Sequence.58" taxon="'EBOV|AA000000|G3845|SierraLeone_G|2014-06-18'" totalcount="4" value="?"/>
+        <sequence id="Sequence.59" taxon="'EBOV|AA000000|G3846|SierraLeone_G|2014-06-18'" totalcount="4" value="?"/>
+        <sequence id="Sequence.60" taxon="'EBOV|AA000000|G3848|SierraLeone_G|2014-06-18'" totalcount="4" value="?"/>
+        <sequence id="Sequence.61" taxon="'EBOV|AA000000|G3850|SierraLeone_G|2014-06-18'" totalcount="4" value="?"/>
+        <sequence id="Sequence.62" taxon="'EBOV|AA000000|G3851|SierraLeone_G|2014-06-18'" totalcount="4" value="?"/>
+        <sequence id="Sequence.63" taxon="'EBOV|AA000000|G3856|SierraLeone_G|2014-06-18'" totalcount="4" value="?"/>
+        <sequence id="Sequence.64" taxon="'EBOV|AA000000|G3857|SierraLeone_G|2014-06-18'" totalcount="4" value="?"/>
+        <sequence id="Sequence.65" taxon="'EBOV|AA000000|NM042|SierraLeone_NM|2014-06-04'" totalcount="4" value="?"/>
+        <sequence id="Sequence.66" taxon="'EBOV|KM034551|EM096|SierraLeone_EM|2014-05-26'" totalcount="4" value="?"/>
+        <sequence id="Sequence.67" taxon="'EBOV|KM034552|EM098|SierraLeone_EM|2014-05-26'" totalcount="4" value="?"/>
+        <sequence id="Sequence.68" taxon="'EBOV|KM034553|G3670|SierraLeone_G|2014-05-27'" totalcount="4" value="?"/>
+        <sequence id="Sequence.69" taxon="'EBOV|KM034556|G3677|SierraLeone_G|2014-05-26'" totalcount="4" value="?"/>
+        <sequence id="Sequence.70" taxon="'EBOV|KM034558|G3679|SierraLeone_G|2014-05-28'" totalcount="4" value="?"/>
+        <sequence id="Sequence.71" taxon="'EBOV|KM034560|G3682|SierraLeone_G|2014-05-28'" totalcount="4" value="?"/>
+    </data>
 
 
-    
 
 
-    
 
 
-    
-<map name="Uniform" >beast.math.distributions.Uniform</map>
-<map name="Exponential" >beast.math.distributions.Exponential</map>
-<map name="LogNormal" >beast.math.distributions.LogNormalDistributionModel</map>
-<map name="Normal" >beast.math.distributions.Normal</map>
-<map name="Beta" >beast.math.distributions.Beta</map>
-<map name="Gamma" >beast.math.distributions.Gamma</map>
-<map name="LaplaceDistribution" >beast.math.distributions.LaplaceDistribution</map>
-<map name="prior" >beast.math.distributions.Prior</map>
-<map name="InverseGamma" >beast.math.distributions.InverseGamma</map>
-<map name="OneOnX" >beast.math.distributions.OneOnX</map>
 
 
-<run id="mcmc" spec="modeladequacy.TreeModelAdequacy" burnInPercentage="10" chainLength="10000000" master="/Users/sduchene/Dropbox/projects_WORKING/phylodynamics/GIT_Project/tree_model_adequacy/master/CC_hetero_sim.xml" out="/Users/sduchene/Dropbox/projects_WORKING/phylodynamics/GIT_Project/tree_model_adequacy/tutorial/out_cc.log" rootdir="tmp_CC">
-    <statistic id="TreeHeight" spec="beast.app.treestat.statistics.TreeHeight"/>
 
-    <statistic id="TimeMaximumLineages" spec="beast.app.treestat.statistics.TimeMaximumLineages"/>
+    <map name="Uniform" >beast.math.distributions.Uniform</map>
+    <map name="Exponential" >beast.math.distributions.Exponential</map>
+    <map name="LogNormal" >beast.math.distributions.LogNormalDistributionModel</map>
+    <map name="Normal" >beast.math.distributions.Normal</map>
+    <map name="Beta" >beast.math.distributions.Beta</map>
+    <map name="Gamma" >beast.math.distributions.Gamma</map>
+    <map name="LaplaceDistribution" >beast.math.distributions.LaplaceDistribution</map>
+    <map name="prior" >beast.math.distributions.Prior</map>
+    <map name="InverseGamma" >beast.math.distributions.InverseGamma</map>
+    <map name="OneOnX" >beast.math.distributions.OneOnX</map>
 
-    <statistic id="LttSlopeRatio" spec="beast.app.treestat.statistics.LttSlopeRatio"/>
 
-    <statistic id="CollessIndex" spec="beast.app.treestat.statistics.CollessIndex"/>
+    <run id="mcmc" spec="modeladequacy.TreeModelAdequacy" burnInPercentage="10" chainLength="10000000" master="/Users/sduchene/Dropbox/projects_WORKING/phylodynamics/GIT_Project/tree_model_adequacy/master/CC_hetero_sim.xml" out="/Users/sduchene/Dropbox/projects_WORKING/phylodynamics/GIT_Project/tree_model_adequacy/tutorial/out_cc.log" rootdir="tmp_CC">
+        <statistic id="TreeHeight" spec="treestat2.statistics.TreeHeight"/>
 
-    <statistic id="ExternalInternalRatio" spec="beast.app.treestat.statistics.ExternalInternalRatio"/>
+        <statistic id="TimeMaximumLineages" spec="treestat2.statistics.TimeMaximumLineages"/>
 
-    <state id="state" storeEvery="5000">
-        <stateNode id="Tree.t:ebola_2014" spec="beast.util.TreeParser" IsLabelledNewick="true" adjustTipHeights="false" estimate="false" newick="((('EBOV|KM034560|G3682|SierraLeone_G|2014-05-28':0.013960000000000007,(('EBOV|AA000000|EM120|SierraLeone_EM|2014-06-03':0.022793000000000008,'EBOV|KM034556|G3677|SierraLeone_G|2014-05-26':8.750000000000147E-4):8.259999999999934E-4,(('EBOV|KM034552|EM098|SierraLeone_EM|2014-05-26':5.750000000000061E-4,((((((('EBOV|AA000000|G3752|SierraLeone_G|2014-06-10':0.006098000000000006,('EBOV|AA000000|G3825|SierraLeone_G|2014-06-16':0.012625999999999998,((('EBOV|AA000000|G3857|SierraLeone_G|2014-06-18':0.005720000000000003,'EBOV|AA000000|G3851|SierraLeone_G|2014-06-18':0.005720000000000003):0.003354999999999997,'EBOV|AA000000|G3829|SierraLeone_G|2014-06-16':0.003595000000000001):0.002343999999999999,('EBOV|AA000000|G3848|SierraLeone_G|2014-06-18':0.003157999999999994,'EBOV|AA000000|G3834|SierraLeone_G|2014-06-17':4.190000000000027E-4):0.008261000000000004):0.0066859999999999975):0.009911000000000003):0.014617000000000005,'EBOV|AA000000|G3750|SierraLeone_G|2014-06-10':0.020714999999999997):0.002018999999999993,'EBOV|AA000000|EM106|SierraLeone_EM|2014-06-02':8.169999999999983E-4):0.005524000000000001,('EBOV|AA000000|G3724|SierraLeone_G|2014-06-05':0.008826,('EBOV|AA000000|G3735|SierraLeone_G|2014-06-07':0.011779999999999999,'EBOV|AA000000|EM115|SierraLeone_EM|2014-06-03':8.210000000000023E-4):0.0025249999999999995):0.005734000000000003):0.006268000000000003,'EBOV|AA000000|EM113|SierraLeone_EM|2014-06-03':0.015348000000000007):0.0030820000000000014,(((('EBOV|AA000000|G3713|SierraLeone_G|2014-06-09':0.005862000000000006,'EBOV|AA000000|G3817|SierraLeone_G|2014-06-15':0.022301):0.012787000000000007,(('EBOV|AA000000|G3771|SierraLeone_G|2014-06-12':0.005463999999999997,(('EBOV|AA000000|G3764|SierraLeone_G|2014-06-12':1.9299999999999873E-4,('EBOV|AA000000|G3765|SierraLeone_G|2014-06-14':0.0018819999999999948,(('EBOV|AA000000|G3814|SierraLeone_G|2014-06-15':5.769999999999942E-4,'EBOV|AA000000|G3850|SierraLeone_G|2014-06-18':0.008797):0.003802,'EBOV|AA000000|G3789|SierraLeone_G|2014-06-14':0.0016400000000000026):2.4299999999999322E-4):0.0037900000000000017):0.0029679999999999984,(((('EBOV|AA000000|G3826|SierraLeone_G|2014-06-16':0.0025020000000000042,'EBOV|AA000000|G3827|SierraLeone_G|2014-06-16':0.0025020000000000042):0.0039010000000000017,'EBOV|AA000000|G3798|SierraLeone_G|2014-06-15':0.0036629999999999996):1.9500000000000073E-4,('EBOV|AA000000|G3840|SierraLeone_G|2014-06-17':0.0039929999999999966,('EBOV|AA000000|G3845|SierraLeone_G|2014-06-18':0.006510000000000002,'EBOV|AA000000|G3856|SierraLeone_G|2014-06-18':0.006510000000000002):2.2199999999999998E-4):0.0053440000000000015):0.006746000000000002,'EBOV|AA000000|G3819|SierraLeone_G|2014-06-15':0.010604000000000002):7.759999999999989E-4):0.0023029999999999995):0.011261999999999994,(('EBOV|AA000000|G3805|SierraLeone_G|2014-06-15':0.010105000000000003,'EBOV|AA000000|G3846|SierraLeone_G|2014-06-18':0.018324000000000007):0.0043279999999999985,(('EBOV|AA000000|G3822|SierraLeone_G|2014-06-15':0.006504999999999997,'EBOV|AA000000|G3816|SierraLeone_G|2014-06-15':0.006504999999999997):0.0010249999999999981,('EBOV|AA000000|G3821|SierraLeone_G|2014-06-15':8.670000000000067E-4,'EBOV|AA000000|G3809|SierraLeone_G|2014-06-15':8.670000000000067E-4):0.006663000000000002):0.006903000000000006):0.010510999999999993):0.010143):0.006988000000000001,('EBOV|AA000000|G3707|SierraLeone_G|2014-05-31':2.0900000000000085E-4,('EBOV|AA000000|EM110|SierraLeone_EM|2014-06-03':0.006653000000000006,'EBOV|AA000000|EM104|SierraLeone_EM|2014-06-02':0.003913):0.0017749999999999988):7.710000000000009E-4):0.002161000000000003,(('EBOV|AA000000|EM124|SierraLeone_EM|2014-06-04':0.007421999999999998,'EBOV|AA000000|NM042|SierraLeone_NM|2014-06-04':0.007421999999999998):3.640000000000032E-4,('EBOV|AA000000|EM111|SierraLeone_EM|2014-06-03':0.0031260000000000038,('EBOV|AA000000|EM112|SierraLeone_EM|2014-06-03':0.0015000000000000013,'EBOV|AA000000|G3818|SierraLeone_G|2014-06-15':0.03437699999999999):0.0016270000000000034):0.001919000000000004):0.006314):0.00707):5.000000000000143E-5,('EBOV|AA000000|G3770|SierraLeone_G|2014-06-12':0.027927999999999994,'EBOV|AA000000|EM119|SierraLeone_EM|2014-06-03':0.003269999999999995):0.015210000000000001):0.004013000000000003):7.539999999999908E-4,(('EBOV|AA000000|G3729|SierraLeone_G|2014-06-07':0.004422999999999996,'EBOV|AA000000|G3734|SierraLeone_G|2014-06-07':0.004422999999999996):0.010218000000000005,(((('EBOV|AA000000|G3787|SierraLeone_G|2014-06-14':0.0016250000000000014,'EBOV|AA000000|G3831|SierraLeone_G|2014-06-16':0.007103999999999999):0.017613000000000004,((('EBOV|AA000000|G3795|SierraLeone_G|2014-06-15':3.1699999999999784E-4,'EBOV|AA000000|G3800|SierraLeone_G|2014-06-15':3.1699999999999784E-4):8.259999999999934E-4,'EBOV|AA000000|G3820|SierraLeone_G|2014-06-15':0.0011430000000000051):0.011708999999999997,'EBOV|AA000000|G3758|SierraLeone_G|2014-06-11':0.0018930000000000058):0.009125999999999995):0.009692000000000006,((('EBOV|AA000000|G3810|SierraLeone_G|2014-06-15':0.014594999999999997,('EBOV|AA000000|G3808|SierraLeone_G|2014-06-15':0.004059999999999994,('EBOV|AA000000|G3796|SierraLeone_G|2014-06-15':0.001792000000000002,'EBOV|AA000000|G3807|SierraLeone_G|2014-06-15':0.001792000000000002):0.002268000000000006):0.010534000000000002):0.010373000000000007,'EBOV|AA000000|G3799|SierraLeone_G|2014-06-15':0.024968000000000004):0.0041009999999999935,('EBOV|AA000000|G3769|SierraLeone_G|2014-06-12':0.009456999999999993,(('EBOV|AA000000|G3782|SierraLeone_G|2014-06-14':0.0020050000000000068,'EBOV|AA000000|G3823|SierraLeone_G|2014-06-15':0.004744999999999999):0.0025379999999999986,(('EBOV|AA000000|G3786|SierraLeone_G|2014-06-14':0.0012709999999999944,'EBOV|AA000000|G3788|SierraLeone_G|2014-06-14':0.0012709999999999944):5.639999999999951E-4,('EBOV|AA000000|G3838|SierraLeone_G|2014-06-17':0.0013299999999999979,'EBOV|AA000000|G3841|SierraLeone_G|2014-06-17':0.0013299999999999979):0.008723999999999996):0.002709000000000003):0.010393):0.011392):0.002601000000000006):0.0030020000000000047,'EBOV|AA000000|EM121|SierraLeone_EM|2014-06-04':0.004534999999999997):0.0018869999999999998):0.019564999999999985):3.710000000000102E-4):0.006780000000000008):0.009183999999999998,('EBOV|KM034558|G3679|SierraLeone_G|2014-05-28':0.006727999999999998,'EBOV|KM034551|EM096|SierraLeone_EM|2014-05-26':0.0012490000000000001):0.016416):0.026210999999999998,'EBOV|KM034553|G3670|SierraLeone_G|2014-05-27':0.046615):0.0">
-            <taxa idref="ebola_2014"/>
-            <taxonset id="TaxonSet.1" spec="TaxonSet">
-                <taxon id="'EBOV|AA000000|EM104|SierraLeone_EM|2014-06-02'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|EM106|SierraLeone_EM|2014-06-02'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|EM110|SierraLeone_EM|2014-06-03'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|EM111|SierraLeone_EM|2014-06-03'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|EM112|SierraLeone_EM|2014-06-03'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|EM113|SierraLeone_EM|2014-06-03'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|EM115|SierraLeone_EM|2014-06-03'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|EM119|SierraLeone_EM|2014-06-03'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|EM120|SierraLeone_EM|2014-06-03'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|EM121|SierraLeone_EM|2014-06-04'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|EM124|SierraLeone_EM|2014-06-04'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3707|SierraLeone_G|2014-05-31'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3713|SierraLeone_G|2014-06-09'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3724|SierraLeone_G|2014-06-05'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3729|SierraLeone_G|2014-06-07'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3734|SierraLeone_G|2014-06-07'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3735|SierraLeone_G|2014-06-07'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3750|SierraLeone_G|2014-06-10'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3752|SierraLeone_G|2014-06-10'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3758|SierraLeone_G|2014-06-11'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3764|SierraLeone_G|2014-06-12'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3765|SierraLeone_G|2014-06-14'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3769|SierraLeone_G|2014-06-12'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3770|SierraLeone_G|2014-06-12'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3771|SierraLeone_G|2014-06-12'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3782|SierraLeone_G|2014-06-14'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3786|SierraLeone_G|2014-06-14'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3787|SierraLeone_G|2014-06-14'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3788|SierraLeone_G|2014-06-14'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3789|SierraLeone_G|2014-06-14'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3795|SierraLeone_G|2014-06-15'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3796|SierraLeone_G|2014-06-15'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3798|SierraLeone_G|2014-06-15'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3799|SierraLeone_G|2014-06-15'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3800|SierraLeone_G|2014-06-15'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3805|SierraLeone_G|2014-06-15'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3807|SierraLeone_G|2014-06-15'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3808|SierraLeone_G|2014-06-15'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3809|SierraLeone_G|2014-06-15'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3810|SierraLeone_G|2014-06-15'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3814|SierraLeone_G|2014-06-15'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3816|SierraLeone_G|2014-06-15'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3817|SierraLeone_G|2014-06-15'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3818|SierraLeone_G|2014-06-15'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3819|SierraLeone_G|2014-06-15'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3820|SierraLeone_G|2014-06-15'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3821|SierraLeone_G|2014-06-15'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3822|SierraLeone_G|2014-06-15'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3823|SierraLeone_G|2014-06-15'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3825|SierraLeone_G|2014-06-16'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3826|SierraLeone_G|2014-06-16'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3827|SierraLeone_G|2014-06-16'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3829|SierraLeone_G|2014-06-16'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3831|SierraLeone_G|2014-06-16'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3834|SierraLeone_G|2014-06-17'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3838|SierraLeone_G|2014-06-17'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3840|SierraLeone_G|2014-06-17'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3841|SierraLeone_G|2014-06-17'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3845|SierraLeone_G|2014-06-18'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3846|SierraLeone_G|2014-06-18'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3848|SierraLeone_G|2014-06-18'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3850|SierraLeone_G|2014-06-18'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3851|SierraLeone_G|2014-06-18'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3856|SierraLeone_G|2014-06-18'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|G3857|SierraLeone_G|2014-06-18'" spec="Taxon"/>
-                <taxon id="'EBOV|AA000000|NM042|SierraLeone_NM|2014-06-04'" spec="Taxon"/>
-                <taxon id="'EBOV|KM034551|EM096|SierraLeone_EM|2014-05-26'" spec="Taxon"/>
-                <taxon id="'EBOV|KM034552|EM098|SierraLeone_EM|2014-05-26'" spec="Taxon"/>
-                <taxon id="'EBOV|KM034553|G3670|SierraLeone_G|2014-05-27'" spec="Taxon"/>
-                <taxon id="'EBOV|KM034556|G3677|SierraLeone_G|2014-05-26'" spec="Taxon"/>
-                <taxon id="'EBOV|KM034558|G3679|SierraLeone_G|2014-05-28'" spec="Taxon"/>
-                <taxon id="'EBOV|KM034560|G3682|SierraLeone_G|2014-05-28'" spec="Taxon"/>
-            </taxonset>
-        </stateNode>
-        <parameter id="popSize.t:ebola_2014" name="stateNode">0.3</parameter>
-    </state>
+        <statistic id="LttSlopeRatio" spec="treestat2.statistics.LttSlopeRatio"/>
 
-    <distribution id="posterior" spec="util.CompoundDistribution">
-        <distribution id="prior" spec="util.CompoundDistribution">
-            <distribution id="CoalescentConstant.t:ebola_2014" spec="Coalescent">
-                <populationModel id="ConstantPopulation.t:ebola_2014" spec="ConstantPopulation" popSize="@popSize.t:ebola_2014"/>
-                <treeIntervals id="TreeIntervals.t:ebola_2014" spec="TreeIntervals" tree="@Tree.t:ebola_2014"/>
+        <statistic id="CollessIndex" spec="treestat2.statistics.CollessIndex"/>
+
+        <statistic id="ExternalInternalRatio" spec="treestat2.statistics.ExternalInternalRatio"/>
+
+        <state id="state" storeEvery="5000">
+            <stateNode id="Tree.t:ebola_2014" spec="beast.base.evolution.tree.TreeParser" IsLabelledNewick="true" adjustTipHeights="false" estimate="false" newick="((('EBOV|KM034560|G3682|SierraLeone_G|2014-05-28':0.013960000000000007,(('EBOV|AA000000|EM120|SierraLeone_EM|2014-06-03':0.022793000000000008,'EBOV|KM034556|G3677|SierraLeone_G|2014-05-26':8.750000000000147E-4):8.259999999999934E-4,(('EBOV|KM034552|EM098|SierraLeone_EM|2014-05-26':5.750000000000061E-4,((((((('EBOV|AA000000|G3752|SierraLeone_G|2014-06-10':0.006098000000000006,('EBOV|AA000000|G3825|SierraLeone_G|2014-06-16':0.012625999999999998,((('EBOV|AA000000|G3857|SierraLeone_G|2014-06-18':0.005720000000000003,'EBOV|AA000000|G3851|SierraLeone_G|2014-06-18':0.005720000000000003):0.003354999999999997,'EBOV|AA000000|G3829|SierraLeone_G|2014-06-16':0.003595000000000001):0.002343999999999999,('EBOV|AA000000|G3848|SierraLeone_G|2014-06-18':0.003157999999999994,'EBOV|AA000000|G3834|SierraLeone_G|2014-06-17':4.190000000000027E-4):0.008261000000000004):0.0066859999999999975):0.009911000000000003):0.014617000000000005,'EBOV|AA000000|G3750|SierraLeone_G|2014-06-10':0.020714999999999997):0.002018999999999993,'EBOV|AA000000|EM106|SierraLeone_EM|2014-06-02':8.169999999999983E-4):0.005524000000000001,('EBOV|AA000000|G3724|SierraLeone_G|2014-06-05':0.008826,('EBOV|AA000000|G3735|SierraLeone_G|2014-06-07':0.011779999999999999,'EBOV|AA000000|EM115|SierraLeone_EM|2014-06-03':8.210000000000023E-4):0.0025249999999999995):0.005734000000000003):0.006268000000000003,'EBOV|AA000000|EM113|SierraLeone_EM|2014-06-03':0.015348000000000007):0.0030820000000000014,(((('EBOV|AA000000|G3713|SierraLeone_G|2014-06-09':0.005862000000000006,'EBOV|AA000000|G3817|SierraLeone_G|2014-06-15':0.022301):0.012787000000000007,(('EBOV|AA000000|G3771|SierraLeone_G|2014-06-12':0.005463999999999997,(('EBOV|AA000000|G3764|SierraLeone_G|2014-06-12':1.9299999999999873E-4,('EBOV|AA000000|G3765|SierraLeone_G|2014-06-14':0.0018819999999999948,(('EBOV|AA000000|G3814|SierraLeone_G|2014-06-15':5.769999999999942E-4,'EBOV|AA000000|G3850|SierraLeone_G|2014-06-18':0.008797):0.003802,'EBOV|AA000000|G3789|SierraLeone_G|2014-06-14':0.0016400000000000026):2.4299999999999322E-4):0.0037900000000000017):0.0029679999999999984,(((('EBOV|AA000000|G3826|SierraLeone_G|2014-06-16':0.0025020000000000042,'EBOV|AA000000|G3827|SierraLeone_G|2014-06-16':0.0025020000000000042):0.0039010000000000017,'EBOV|AA000000|G3798|SierraLeone_G|2014-06-15':0.0036629999999999996):1.9500000000000073E-4,('EBOV|AA000000|G3840|SierraLeone_G|2014-06-17':0.0039929999999999966,('EBOV|AA000000|G3845|SierraLeone_G|2014-06-18':0.006510000000000002,'EBOV|AA000000|G3856|SierraLeone_G|2014-06-18':0.006510000000000002):2.2199999999999998E-4):0.0053440000000000015):0.006746000000000002,'EBOV|AA000000|G3819|SierraLeone_G|2014-06-15':0.010604000000000002):7.759999999999989E-4):0.0023029999999999995):0.011261999999999994,(('EBOV|AA000000|G3805|SierraLeone_G|2014-06-15':0.010105000000000003,'EBOV|AA000000|G3846|SierraLeone_G|2014-06-18':0.018324000000000007):0.0043279999999999985,(('EBOV|AA000000|G3822|SierraLeone_G|2014-06-15':0.006504999999999997,'EBOV|AA000000|G3816|SierraLeone_G|2014-06-15':0.006504999999999997):0.0010249999999999981,('EBOV|AA000000|G3821|SierraLeone_G|2014-06-15':8.670000000000067E-4,'EBOV|AA000000|G3809|SierraLeone_G|2014-06-15':8.670000000000067E-4):0.006663000000000002):0.006903000000000006):0.010510999999999993):0.010143):0.006988000000000001,('EBOV|AA000000|G3707|SierraLeone_G|2014-05-31':2.0900000000000085E-4,('EBOV|AA000000|EM110|SierraLeone_EM|2014-06-03':0.006653000000000006,'EBOV|AA000000|EM104|SierraLeone_EM|2014-06-02':0.003913):0.0017749999999999988):7.710000000000009E-4):0.002161000000000003,(('EBOV|AA000000|EM124|SierraLeone_EM|2014-06-04':0.007421999999999998,'EBOV|AA000000|NM042|SierraLeone_NM|2014-06-04':0.007421999999999998):3.640000000000032E-4,('EBOV|AA000000|EM111|SierraLeone_EM|2014-06-03':0.0031260000000000038,('EBOV|AA000000|EM112|SierraLeone_EM|2014-06-03':0.0015000000000000013,'EBOV|AA000000|G3818|SierraLeone_G|2014-06-15':0.03437699999999999):0.0016270000000000034):0.001919000000000004):0.006314):0.00707):5.000000000000143E-5,('EBOV|AA000000|G3770|SierraLeone_G|2014-06-12':0.027927999999999994,'EBOV|AA000000|EM119|SierraLeone_EM|2014-06-03':0.003269999999999995):0.015210000000000001):0.004013000000000003):7.539999999999908E-4,(('EBOV|AA000000|G3729|SierraLeone_G|2014-06-07':0.004422999999999996,'EBOV|AA000000|G3734|SierraLeone_G|2014-06-07':0.004422999999999996):0.010218000000000005,(((('EBOV|AA000000|G3787|SierraLeone_G|2014-06-14':0.0016250000000000014,'EBOV|AA000000|G3831|SierraLeone_G|2014-06-16':0.007103999999999999):0.017613000000000004,((('EBOV|AA000000|G3795|SierraLeone_G|2014-06-15':3.1699999999999784E-4,'EBOV|AA000000|G3800|SierraLeone_G|2014-06-15':3.1699999999999784E-4):8.259999999999934E-4,'EBOV|AA000000|G3820|SierraLeone_G|2014-06-15':0.0011430000000000051):0.011708999999999997,'EBOV|AA000000|G3758|SierraLeone_G|2014-06-11':0.0018930000000000058):0.009125999999999995):0.009692000000000006,((('EBOV|AA000000|G3810|SierraLeone_G|2014-06-15':0.014594999999999997,('EBOV|AA000000|G3808|SierraLeone_G|2014-06-15':0.004059999999999994,('EBOV|AA000000|G3796|SierraLeone_G|2014-06-15':0.001792000000000002,'EBOV|AA000000|G3807|SierraLeone_G|2014-06-15':0.001792000000000002):0.002268000000000006):0.010534000000000002):0.010373000000000007,'EBOV|AA000000|G3799|SierraLeone_G|2014-06-15':0.024968000000000004):0.0041009999999999935,('EBOV|AA000000|G3769|SierraLeone_G|2014-06-12':0.009456999999999993,(('EBOV|AA000000|G3782|SierraLeone_G|2014-06-14':0.0020050000000000068,'EBOV|AA000000|G3823|SierraLeone_G|2014-06-15':0.004744999999999999):0.0025379999999999986,(('EBOV|AA000000|G3786|SierraLeone_G|2014-06-14':0.0012709999999999944,'EBOV|AA000000|G3788|SierraLeone_G|2014-06-14':0.0012709999999999944):5.639999999999951E-4,('EBOV|AA000000|G3838|SierraLeone_G|2014-06-17':0.0013299999999999979,'EBOV|AA000000|G3841|SierraLeone_G|2014-06-17':0.0013299999999999979):0.008723999999999996):0.002709000000000003):0.010393):0.011392):0.002601000000000006):0.0030020000000000047,'EBOV|AA000000|EM121|SierraLeone_EM|2014-06-04':0.004534999999999997):0.0018869999999999998):0.019564999999999985):3.710000000000102E-4):0.006780000000000008):0.009183999999999998,('EBOV|KM034558|G3679|SierraLeone_G|2014-05-28':0.006727999999999998,'EBOV|KM034551|EM096|SierraLeone_EM|2014-05-26':0.0012490000000000001):0.016416):0.026210999999999998,'EBOV|KM034553|G3670|SierraLeone_G|2014-05-27':0.046615):0.0">
+                <taxa idref="ebola_2014"/>
+                <taxonset id="TaxonSet.1" spec="TaxonSet">
+                    <taxon id="'EBOV|AA000000|EM104|SierraLeone_EM|2014-06-02'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|EM106|SierraLeone_EM|2014-06-02'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|EM110|SierraLeone_EM|2014-06-03'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|EM111|SierraLeone_EM|2014-06-03'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|EM112|SierraLeone_EM|2014-06-03'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|EM113|SierraLeone_EM|2014-06-03'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|EM115|SierraLeone_EM|2014-06-03'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|EM119|SierraLeone_EM|2014-06-03'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|EM120|SierraLeone_EM|2014-06-03'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|EM121|SierraLeone_EM|2014-06-04'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|EM124|SierraLeone_EM|2014-06-04'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3707|SierraLeone_G|2014-05-31'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3713|SierraLeone_G|2014-06-09'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3724|SierraLeone_G|2014-06-05'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3729|SierraLeone_G|2014-06-07'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3734|SierraLeone_G|2014-06-07'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3735|SierraLeone_G|2014-06-07'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3750|SierraLeone_G|2014-06-10'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3752|SierraLeone_G|2014-06-10'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3758|SierraLeone_G|2014-06-11'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3764|SierraLeone_G|2014-06-12'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3765|SierraLeone_G|2014-06-14'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3769|SierraLeone_G|2014-06-12'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3770|SierraLeone_G|2014-06-12'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3771|SierraLeone_G|2014-06-12'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3782|SierraLeone_G|2014-06-14'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3786|SierraLeone_G|2014-06-14'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3787|SierraLeone_G|2014-06-14'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3788|SierraLeone_G|2014-06-14'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3789|SierraLeone_G|2014-06-14'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3795|SierraLeone_G|2014-06-15'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3796|SierraLeone_G|2014-06-15'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3798|SierraLeone_G|2014-06-15'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3799|SierraLeone_G|2014-06-15'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3800|SierraLeone_G|2014-06-15'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3805|SierraLeone_G|2014-06-15'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3807|SierraLeone_G|2014-06-15'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3808|SierraLeone_G|2014-06-15'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3809|SierraLeone_G|2014-06-15'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3810|SierraLeone_G|2014-06-15'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3814|SierraLeone_G|2014-06-15'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3816|SierraLeone_G|2014-06-15'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3817|SierraLeone_G|2014-06-15'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3818|SierraLeone_G|2014-06-15'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3819|SierraLeone_G|2014-06-15'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3820|SierraLeone_G|2014-06-15'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3821|SierraLeone_G|2014-06-15'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3822|SierraLeone_G|2014-06-15'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3823|SierraLeone_G|2014-06-15'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3825|SierraLeone_G|2014-06-16'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3826|SierraLeone_G|2014-06-16'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3827|SierraLeone_G|2014-06-16'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3829|SierraLeone_G|2014-06-16'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3831|SierraLeone_G|2014-06-16'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3834|SierraLeone_G|2014-06-17'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3838|SierraLeone_G|2014-06-17'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3840|SierraLeone_G|2014-06-17'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3841|SierraLeone_G|2014-06-17'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3845|SierraLeone_G|2014-06-18'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3846|SierraLeone_G|2014-06-18'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3848|SierraLeone_G|2014-06-18'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3850|SierraLeone_G|2014-06-18'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3851|SierraLeone_G|2014-06-18'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3856|SierraLeone_G|2014-06-18'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|G3857|SierraLeone_G|2014-06-18'" spec="Taxon"/>
+                    <taxon id="'EBOV|AA000000|NM042|SierraLeone_NM|2014-06-04'" spec="Taxon"/>
+                    <taxon id="'EBOV|KM034551|EM096|SierraLeone_EM|2014-05-26'" spec="Taxon"/>
+                    <taxon id="'EBOV|KM034552|EM098|SierraLeone_EM|2014-05-26'" spec="Taxon"/>
+                    <taxon id="'EBOV|KM034553|G3670|SierraLeone_G|2014-05-27'" spec="Taxon"/>
+                    <taxon id="'EBOV|KM034556|G3677|SierraLeone_G|2014-05-26'" spec="Taxon"/>
+                    <taxon id="'EBOV|KM034558|G3679|SierraLeone_G|2014-05-28'" spec="Taxon"/>
+                    <taxon id="'EBOV|KM034560|G3682|SierraLeone_G|2014-05-28'" spec="Taxon"/>
+                </taxonset>
+            </stateNode>
+            <parameter id="popSize.t:ebola_2014" name="stateNode">0.3</parameter>
+        </state>
+
+        <distribution id="posterior" spec="util.CompoundDistribution">
+            <distribution id="prior" spec="util.CompoundDistribution">
+                <distribution id="CoalescentConstant.t:ebola_2014" spec="Coalescent">
+                    <populationModel id="ConstantPopulation.t:ebola_2014" spec="ConstantPopulation" popSize="@popSize.t:ebola_2014"/>
+                    <treeIntervals id="TreeIntervals.t:ebola_2014" spec="TreeIntervals" tree="@Tree.t:ebola_2014"/>
+                </distribution>
+                <prior id="PopSizePrior.t:ebola_2014" name="distribution" x="@popSize.t:ebola_2014">
+                    <OneOnX id="OneOnX.0" name="distr"/>
+                </prior>
             </distribution>
-            <prior id="PopSizePrior.t:ebola_2014" name="distribution" x="@popSize.t:ebola_2014">
-                <OneOnX id="OneOnX.0" name="distr"/>
-            </prior>
-        </distribution>
-        <distribution id="likelihood" spec="util.CompoundDistribution" useThreads="true">
-            <distribution id="treeLikelihood.ebola_2014" spec="FixedTreeLikelihood" data="@ebola_2014" tree="@Tree.t:ebola_2014">
-                <siteModel id="FixedSiteModel.s:ebola_2014" spec="FixedSiteModel">
-                    <parameter id="RealParameter.0" lower="0.0" name="mutationRate" upper="0.0">1.0</parameter>
-                    <parameter id="RealParameter.1" lower="0.0" name="shape" upper="0.0">1.0</parameter>
-                    <parameter id="RealParameter.2" lower="0.0" name="proportionInvariant" upper="0.0">0.0</parameter>
-                </siteModel>
-                <branchRateModel id="FixedClock.c:ebola_2014" spec="beast.evolution.branchratemodel.FixedClockModel">
-                    <parameter id="RealParameter.3" estimate="false" name="clock.rate">1.0</parameter>
-                </branchRateModel>
+            <distribution id="likelihood" spec="util.CompoundDistribution" useThreads="true">
+                <distribution id="treeLikelihood.ebola_2014" spec="FixedTreeLikelihood" data="@ebola_2014" tree="@Tree.t:ebola_2014">
+                    <siteModel id="FixedSiteModel.s:ebola_2014" spec="FixedSiteModel">
+                        <parameter id="RealParameter.0" lower="0.0" name="mutationRate" upper="0.0">1.0</parameter>
+                        <parameter id="RealParameter.1" lower="0.0" name="shape" upper="0.0">1.0</parameter>
+                        <parameter id="RealParameter.2" lower="0.0" name="proportionInvariant" upper="0.0">0.0</parameter>
+                    </siteModel>
+                    <branchRateModel id="FixedClock.c:ebola_2014" spec="beast.base.evolution.branchratemodel.FixedClockModel">
+                        <parameter id="RealParameter.3" estimate="false" name="clock.rate">1.0</parameter>
+                    </branchRateModel>
+                </distribution>
             </distribution>
         </distribution>
-    </distribution>
 
-    <operator id="PopSizeScaler.t:ebola_2014" spec="ScaleOperator" parameter="@popSize.t:ebola_2014" scaleFactor="0.75" weight="3.0"/>
+        <operator id="PopSizeScaler.t:ebola_2014" spec="ScaleOperator" parameter="@popSize.t:ebola_2014" scaleFactor="0.75" weight="3.0"/>
 
-    <logger id="tracelog" fileName="ebola_2014.log" logEvery="10000" model="@posterior" sanitiseHeaders="true" sort="smart">
-        <log idref="posterior"/>
-        <log idref="likelihood"/>
-        <log idref="prior"/>
-        <log idref="popSize.t:ebola_2014"/>
-        <log idref="CoalescentConstant.t:ebola_2014"/>
-    </logger>
+        <logger id="tracelog" fileName="ebola_2014.log" logEvery="10000" model="@posterior" sanitiseHeaders="true" sort="smart">
+            <log idref="posterior"/>
+            <log idref="likelihood"/>
+            <log idref="prior"/>
+            <log idref="popSize.t:ebola_2014"/>
+            <log idref="CoalescentConstant.t:ebola_2014"/>
+        </logger>
 
-    <logger id="screenlog" logEvery="10000">
-        <log idref="posterior"/>
-        <log id="ESS.0" spec="util.ESS" arg="@posterior"/>
-        <log idref="likelihood"/>
-        <log idref="prior"/>
-    </logger>
+        <logger id="screenlog" logEvery="10000">
+            <log idref="posterior"/>
+            <log id="ESS.0" spec="util.ESS" arg="@posterior"/>
+            <log idref="likelihood"/>
+            <log idref="prior"/>
+        </logger>
 
-    <logger id="treelog.t:ebola_2014" fileName="$(tree).trees" logEvery="1000" mode="tree">
-        <log id="TreeWithMetaDataLogger.t:ebola_2014" spec="beast.evolution.tree.TreeWithMetaDataLogger" tree="@Tree.t:ebola_2014"/>
-    </logger>
+        <logger id="treelog.t:ebola_2014" fileName="$(tree).trees" logEvery="1000" mode="tree">
+            <log id="TreeWithMetaDataLogger.t:ebola_2014" spec="beast.evolution.tree.TreeWithMetaDataLogger" tree="@Tree.t:ebola_2014"/>
+        </logger>
 
-</run>
+    </run>
 
 </beast>
