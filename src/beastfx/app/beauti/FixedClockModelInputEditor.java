@@ -35,9 +35,8 @@ public class FixedClockModelInputEditor extends InputEditor.Base {
 		m_bAddButtons = addButtons;
 
 		//add(m_entry);
-		Box box = Box.createHorizontalBox();
-		box.add(Box.createHorizontalGlue());
-		addValidationLabel();
+        add(Box.createHorizontalGlue());
+        addValidationLabel();
 	}
 
 }

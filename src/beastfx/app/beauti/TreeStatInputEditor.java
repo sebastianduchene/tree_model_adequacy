@@ -61,9 +61,7 @@ public class TreeStatInputEditor extends ListInputEditor {
                 ee.printStackTrace();
             }
         });
-        Box box = Box.createHorizontalBox();
-        box.add(Box.createGlue());
-        box.add(button);
+    	add(button);
     }
 
 
