@@ -1,19 +1,19 @@
 <beast version='2.0'
-       namespace='beast.app.beauti:beast.core:beast.evolution.branchratemodel:beast.evolution.speciation:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood:beast.evolution:beast.math.distributions'
+       namespace='beastfx.app.beauti:beast.base.core:beast.base.evolution.branchratemodel:beast.base.evolution.speciation:beast.base.evolution.tree.coalescent:beast.base.util:beast.base.evolution.datatype.Nucleotide:beast.base.evolution.operator:beast.base.evolution.sitemodel:beast.base.evolution.substitutionmodel:beast.base.evolution.likelihood:beast.base.evolution:beast.base.inference.distribution'
 	templateinfo='template for tree model adequacy analysis'>
 
-<map name='connect' reserved='true'>beast.app.beauti.BeautiConnector</map>
-<map name='subtemplate' reserved='true'>beast.app.beauti.BeautiSubTemplate</map>
-<map name='Uniform'>beast.math.distributions.Uniform</map>
-<map name='Normal'>beast.math.distributions.Normal</map>
-<map name='OneOnX'>beast.math.distributions.OneOnX</map>
-<map name='LogNormal'>beast.math.distributions.LogNormalDistributionModel</map>
-<map name='Exponential'>beast.math.distributions.Exponential</map>
-<map name='Gamma'>beast.math.distributions.Gamma</map>
-<map name='Beta'>beast.math.distributions.Beta</map>
-<map name='LaplaceDistribution'>beast.math.distributions.LaplaceDistribution</map>
-<map name='InverseGamma'>beast.math.distributions.InverseGamma</map>
-<map name='prior'>beast.math.distributions.Prior</map>
+<map name='connect' reserved='true'>beastfx.app.inputeditor.BeautiConnector</map>
+<map name='subtemplate' reserved='true'>beastfx.app.inputeditor.BeautiSubTemplate</map>
+<map name='Uniform'>beast.base.inference.distribution.Uniform</map>
+<map name='Normal'>beast.base.inference.distribution.Normal</map>
+<map name='OneOnX'>beast.base.inference.distribution.OneOnX</map>
+<map name='LogNormal'>beast.base.inference.distribution..LogNormalDistributionModel</map>
+<map name='Exponential'>beast.base.inference.distribution.Exponential</map>
+<map name='Gamma'>beast.base.inference.distribution.Gamma</map>
+<map name='Beta'>beast.base.inference.distribution.Beta</map>
+<map name='LaplaceDistribution'>beast.base.inference.distribution.LaplaceDistribution</map>
+<map name='InverseGamma'>beast.base.inference.distribution.InverseGamma</map>
+<map name='prior'>beast.base.inference.distribution.Prior</map>
 
     <beauticonfig spec='BeautiConfig'
         inputLabelMap='beast.core.MCMC.operator=Operators,
@@ -131,7 +131,7 @@
 		<alignmentProvider id="Import Fixed Tree" spec='BeautiFixedTreeAlignmentProvider' template='@FixedTreePartitionTemplate'/>
 
 
-        <partitiontemplate id='FixedTreePartitionTemplate' spec='BeautiSubTemplate' class='beast.evolution.likelihood.FixedTreeLikelihood' mainid='mcmc'>
+        <partitiontemplate id='FixedTreePartitionTemplate' spec='BeautiSubTemplate' class='beast.base.evolution.likelihood.FixedTreeLikelihood' mainid='mcmc'>
 <![CDATA[
             <plugin spec='FixedTreeLikelihood' id="treeLikelihood.$(n)">
                 <data idref="data"/>

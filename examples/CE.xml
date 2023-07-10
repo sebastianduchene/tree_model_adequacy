@@ -1,0 +1,104 @@
+<beast version='2.0'
+       namespace='beast.pkgmgmt:beast.base.core:beast.base.inference:beast.base.evolution.tree.coalescent:beast.pkgmgmt:beast.base.core:beast.base.inference.util:beast.evolution.nuc:beast.base.evolution.operator:beast.base.inference.operator:beast.base.evolution.sitemodel:beast.base.evolution.substitutionmodel:beast.base.evolution.likelihood'>
+
+
+    <data id="alignment" dataType="nucleotide">
+        <sequence id="Sequence.0" taxon="Carp" totalcount="4" value="?"/>
+        <sequence id="Sequence.1" taxon="Chicken" totalcount="4" value="?"/>
+        <sequence id="Sequence.2" taxon="Cow" totalcount="4" value="?"/>
+        <sequence id="Sequence.3" taxon="Frog" totalcount="4" value="?"/>
+        <sequence id="Sequence.4" taxon="Human" totalcount="4" value="?"/>
+        <sequence id="Sequence.5" taxon="Loach" totalcount="4" value="?"/>
+        <sequence id="Sequence.6" taxon="Mouse" totalcount="4" value="?"/>
+        <sequence id="Sequence.7" taxon="Rat" totalcount="4" value="?"/>
+        <sequence id="Sequence.8" taxon="Seal" totalcount="4" value="?"/>
+        <sequence id="Sequence.9" taxon="Whale" totalcount="4" value="?"/>
+    </data>
+
+    <map name="Uniform" >beast.base.inference.distribution.Uniform</map>
+    <map name="Exponential" >beast.base.inference.distribution.Exponential</map>
+    <map name="LogNormal" >beast.base.inference.distribution.LogNormalDistributionModel</map>
+    <map name="Normal" >beast.base.inference.distribution.Normal</map>
+    <map name="Beta" >beast.base.inference.distribution.Beta</map>
+    <map name="Gamma" >beast.base.inference.distribution.Gamma</map>
+    <map name="LaplaceDistribution" >beast.base.inference.distribution.LaplaceDistribution</map>
+    <map name="prior" >beast.base.inference.distribution.Prior</map>
+    <map name="InverseGamma" >beast.base.inference.distribution.InverseGamma</map>
+    <map name="OneOnX" >beast.base.inference.distribution.OneOnX</map>
+
+    <run spec="modeladequacy.TreeModelAdequacy" id="mcmc" chainLength="20000" master="CE_ultra_sim.xml"> <!--autoOptimize="true"-->
+        <state id="state" storeEvery="100">
+            <stateNode spec='beast.base.evolution.tree.TreeParser' id="tree" name="stateNode" IsLabelledNewick="true" adjustTipHeights="false" estimate="false" >
+                <input name='newick'>
+                    ((((Carp[&amp;height=8.584198644008943E-18,height_95%_HPD={0.0,5.551115123125783E-17},height_median=0.0,height_range={0.0,1.1102230246251565E-16},length=0.18441035507833367,length_95%_HPD={0.1275493760225521,0.2396659772216551},length_median=0.18191246232253,length_range={0.12374393421491114,0.2774382766571106}]:0.1844103550783337,Loach[&amp;height=8.584198644008943E-18,height_95%_HPD={0.0,5.551115123125783E-17},height_median=0.0,height_range={0.0,1.1102230246251565E-16},length=0.18331191743969727,length_95%_HPD={0.12374393421491114,0.2396659772216551},length_median=0.18027729760050037,length_range={0.09553284387984273,0.2774382766571106}]:0.1844103550783337)[&amp;CAheight_95%_HPD={0.1275493760225521,0.2396659772216551},CAheight_mean=0.18441035507833367,CAheight_median=0.18191246232253,CAheight_range={0.12374393421491114,0.2774382766571106},height=0.1842262827892791,height_95%_HPD={0.1275493760225521,0.2396659772216551},height_median=0.1810948799615152,height_range={0.12374393421491114,0.2774382766571106},length=0.13565706708421518,length_95%_HPD={0.06043708457411351,0.20036734444103055},length_median=0.1345222888180101,length_range={0.06043708457411351,0.25209341606112545},posterior=0.9896907216494846]:0.14342120787454332,Frog[&amp;height=6.295079005606558E-18,height_95%_HPD={0.0,5.551115123125783E-17},height_median=0.0,height_range={0.0,5.551115123125783E-17},length=0.31677037499456434,length_95%_HPD={0.2094175533379382,0.44047169019323873},length_median=0.3226775469811689,length_range={0.01792478661728425,0.5295316927182361}]:0.327831562952877)[&amp;CAheight_95%_HPD={0.2094175533379382,0.44047169019323873},CAheight_mean=0.327831562952877,CAheight_median=0.3244739269523523,CAheight_range={0.18803004580873428,1.090860018573611},height=0.31988334987349437,height_95%_HPD={0.18803004580873428,0.40588468364968483},height_median=0.32357573696676056,height_range={0.18803004580873428,0.5295316927182361},length=0.11781025749718138,length_95%_HPD={0.04862713488810022,0.2002280971061542},length_median=0.11374765034830704,length_range={0.014737808533657193,0.2900174330760126},posterior=0.9896907216494846]:0.11872586462587198,Chicken[&amp;height=6.295079005606558E-18,height_95%_HPD={0.0,5.551115123125783E-17},height_median=0.0,height_range={0.0,5.551115123125783E-17},length=0.43542975991954225,length_95%_HPD={0.24792792344004608,0.5816514389450587},length_median=0.4353996242594929,length_range={0.06398371594909014,0.8363133290590973}]:0.446557427578749)[&amp;CAheight_95%_HPD={0.24792792344004608,0.5816514389450587},CAheight_mean=0.446557427578749,CAheight_median=0.43874624853293426,CAheight_range={0.24792792344004608,1.090860018573611},height=0.4294653776662589,height_95%_HPD={0.24792792344004608,0.5727704262747657},height_median=0.43261225406880227,height_range={0.24792792344004608,0.7061381100850154},length=0.07039621773629041,length_95%_HPD={0.0012470117519981505,0.16827595982477883},length_median=0.06274326898484744,length_range={0.0012470117519981505,0.224512004044914},posterior=0.8969072164948454]:0.06334747563318882,((((Cow[&amp;height=4.005959367204173E-18,height_95%_HPD={0.0,5.551115123125783E-17},height_median=0.0,height_range={0.0,5.551115123125783E-17},length=0.17378152623618942,length_95%_HPD={0.11174141907888907,0.2267498179327967},length_median=0.16933426933677576,length_range={0.09869097232862178,0.44397336143613986}]:0.18202710714748976,Seal[&amp;height=4.578239276804769E-18,height_95%_HPD={0.0,5.551115123125783E-17},height_median=0.0,height_range={0.0,5.551115123125783E-17},length=0.17772535314281698,length_95%_HPD={0.11174141907888907,0.2464710514693862},length_median=0.17079944520369622,length_range={0.06398371594909014,0.2869503770627061}]:0.18202710714748976)[&amp;CAheight_95%_HPD={0.11174141907888907,0.2464710514693862},CAheight_mean=0.1820271071474898,CAheight_median=0.173985871795303,CAheight_range={0.11174141907888907,0.44397336143613986},height=0.17413953507034002,height_95%_HPD={0.11174141907888907,0.21833596880420225},height_median=0.170792403869861,height_range={0.11174141907888907,0.28229586024991016},length=0.023154776736476233,length_95%_HPD={0.0010002734708779437,0.047667384973360094},length_median=0.022164850883573894,length_range={0.0010002734708779437,0.06456992603638806},posterior=0.6494845360824743]:0.015038669426783391,Whale[&amp;height=2.8613995480029806E-18,height_95%_HPD={0.0,0.0},height_median=0.0,height_range={0.0,5.551115123125783E-17},length=0.18694913812729022,length_95%_HPD={0.123240907539451,0.2609016058762003},length_median=0.18368293542615527,length_range={0.09869097232862178,0.30699056365784905}]:0.19706577657427315)[&amp;CAheight_95%_HPD={0.12184120382526897,0.2609016058762003},CAheight_mean=0.19706577657427318,CAheight_median=0.19211036424892947,CAheight_range={0.12184120382526897,0.44397336143613986},height=0.19449382256529546,height_95%_HPD={0.1295887941335167,0.2609016058762003},height_median=0.19110532396898522,height_range={0.12184120382526897,0.30699056365784905},length=0.059792620850517564,length_95%_HPD={0.028204708718053667,0.10902291467032282},length_median=0.05723023276434189,length_range={0.008987374728106123,0.12821031508973096},posterior=0.9896907216494846]:0.06584513668852743,(Mouse[&amp;height=9.728758463210134E-18,height_95%_HPD={0.0,5.551115123125783E-17},height_median=0.0,height_range={0.0,1.1102230246251565E-16},length=0.12278963892644579,length_95%_HPD={0.08242151773933426,0.168722259610606},length_median=0.11846917049534034,length_range={0.07843221311158893,0.21309346008929342}]:0.133050743820196,Rat[&amp;height=9.728758463210134E-18,height_95%_HPD={0.0,5.551115123125783E-17},height_median=0.0,height_range={0.0,1.1102230246251565E-16},length=0.12198955586188331,length_95%_HPD={0.07843221311158893,0.168722259610606},length_median=0.11846917049534034,length_range={0.01792478661728425,0.21309346008929342}]:0.133050743820196)[&amp;CAheight_95%_HPD={0.07843221311158893,0.168722259610606},CAheight_mean=0.133050743820196,CAheight_median=0.1186330090736798,CAheight_range={0.07843221311158893,1.090860018573611},height=0.12307356387484795,height_95%_HPD={0.08242151773933426,0.168722259610606},height_median=0.11855108978451007,height_range={0.07843221311158893,0.21309346008929342},length=0.13121287954096514,length_95%_HPD={0.07340944895927143,0.1931860250089366},length_median=0.12938826797913916,length_range={0.0651870179802744,0.2752001218854416},posterior=0.9896907216494846]:0.1298601694426046)[&amp;CAheight_95%_HPD={0.15349376655396432,0.33939320738159934},CAheight_mean=0.2629109132628006,CAheight_median=0.2497407245199773,CAheight_range={0.15349376655396432,1.090860018573611},height=0.254286443415813,height_95%_HPD={0.15349376655396432,0.3222834475995682},height_median=0.24921783785776108,height_range={0.15349376655396432,0.41516069215243706},length=0.15072086385702368,length_95%_HPD={0.07304904870110474,0.2856691676559304},length_median=0.14207229790182088,length_range={0.044326958829877555,0.38411266990095877},posterior=0.9896907216494846]:0.14937564044985874,Human[&amp;height=6.295079005606558E-18,height_95%_HPD={0.0,5.551115123125783E-17},height_median=0.0,height_range={0.0,5.551115123125783E-17},length=0.40287925609826014,length_95%_HPD={0.2351496473924293,0.5977213954746242},length_median=0.39997233498694834,length_range={0.17835214997688487,0.7235058772825581}]:0.4122865537126593)[&amp;CAheight_95%_HPD={0.2351496473924293,0.5977213954746242},CAheight_mean=0.4122865537126593,CAheight_median=0.4002462348265167,CAheight_range={0.2351496473924293,1.090860018573611},height=0.4068672316579791,height_95%_HPD={0.24335600055315637,0.5977213954746242},height_median=0.40026926906182003,height_range={0.2351496473924293,0.7235058772825581},length=0.0979771094907581,length_95%_HPD={0.027874341713985118,0.15607516453777365},length_median=0.09766390321258445,length_range={0.022026833390667522,0.20043169404772743},posterior=0.9690721649484536]:0.0976183494992785)[&amp;CAheight_95%_HPD={0.2776190519352042,0.7144417875124696},CAheight_mean=0.5099049032119378,CAheight_median=0.48671555268664335,CAheight_range={0.2776190519352042,1.090860018573611},height=0.5099049032119378,height_95%_HPD={0.2776190519352042,0.7144417875124696},height_median=0.48671555268664335,height_range={0.2776190519352042,1.090860018573611},length=0.0,posterior=1.0]:0.0
+                </input>
+                <taxonset id="TaxonSet.1" spec="beast.base.evolution.alignment.TaxonSet">
+                    <alignment idref="alignment"/>
+                </taxonset>
+            </stateNode>
+            <parameter name='stateNode' spec='beast.base.inference.parameter.RealParameter' id='ePopSize'>0.3</parameter>
+            <parameter name='stateNode' spec='beast.base.inference.parameter.RealParameter' id="growthRate" >1.0</parameter>
+        </state>
+
+        <distribution spec="CompoundDistribution" id="posterior">
+            <distribution id="prior" spec="CompoundDistribution">
+                <distribution id="CoalescentExponential" spec="Coalescent">
+                    <populationModel spec="ExponentialGrowth" id='ExponentialGrowth'>
+                        <parameter name="growthRate" idref="growthRate"/>
+                        <parameter name="popSize" idref="ePopSize"/>
+                    </populationModel>
+                    <treeIntervals spec='beast.base.evolution.tree.TreeIntervals' id='TreeIntervals'>
+                        <tree idref="tree"/>
+                    </treeIntervals>
+                </distribution>
+                <distribution id="ePopSize.prior" spec="beast.base.inference.distribution.Prior" x="@ePopSize">
+                    <distr id="OneOnX.01" offset="0.0" spec="beast.base.inference.distribution.OneOnX"/>
+                </distribution>
+                <distribution id="GrowthRatePrior" spec="beast.base.inference.distribution.Prior" x="@growthRate">
+                    <distr id="Uniform.1" upper="Infinity" spec="beast.base.inference.distribution.Uniform"/>
+                </distribution>
+            </distribution>
+            <distribution spec="beast.base.inference.CompoundDistribution" useThreads="true" id='likelihood'>
+                <distribution id="treeLikelihood.alignment" spec="beast.base.evolution.likelihood.FixedTreeLikelihood" data="@alignment" tree="@tree">
+                    <siteModel id="FixedSiteModel" spec="beast.base.evolution.sitemodel.FixedSiteModel">
+                        <parameter id="RealParameter.0" lower="0.0" name="mutationRate" upper="0.0">1.0</parameter>
+                        <parameter id="RealParameter.1" lower="0.0" name="shape" upper="0.0">1.0</parameter>
+                        <parameter id="RealParameter.2" lower="0.0" name="proportionInvariant" upper="0.0">0.0</parameter>
+                    </siteModel>
+                    <branchRateModel id="FixedClock" spec="beast.base.evolution.branchratemodel.FixedClockModel">
+                        <parameter id="ClockRate" estimate="false" name="clock.rate">1.0</parameter>
+                    </branchRateModel>
+                </distribution>
+            </distribution>
+        </distribution>
+
+        <operator id='ePopSizeScaler' spec='ScaleOperator' scaleFactor="0.75" weight="3.0">
+            <parameter idref="ePopSize"/>
+        </operator>
+
+        <operator id='GrowthRateRandomWalk' spec='RealRandomWalkOperator' windowSize="1.0" weight="3.0">
+            <parameter idref="growthRate"/>
+        </operator>
+
+        <logger id="tracelog" logEvery="100" fileName="test.$(seed).log">
+            <model idref='posterior'/>
+            <log idref="posterior"/>
+            <log idref="prior"/>
+            <log idref="CoalescentExponential"/>
+            <log idref="ePopSize"/>
+            <log idref="growthRate"/>
+            <log id="TreeHeight" spec="treestat2.TreeStat2Logger" tree="@tree" TreeHeight="true"/>
+        </logger>
+        <logger id="treelog.t:dna"  logEvery="10000" fileName="test.$(seed).trees">
+            <log idref="tree"/>
+        </logger>
+        <logger id="screenlog" logEvery="100">
+            <model idref='posterior'/>
+            <log idref="posterior"/>
+            <log idref="prior"/>
+            <!--parameter idref="treeModel.rootHeight"/-->
+            <log idref="TreeHeight" spec="treestat2.TreeStat2Logger" tree="@tree" TreeHeight="true"/>
+        </logger>
+    </run>
+
+</beast>

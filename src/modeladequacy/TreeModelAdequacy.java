@@ -16,27 +16,24 @@ import java.util.concurrent.CountDownLatch;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import beast.base.core.*;
 import org.xml.sax.SAXException;
 
-import beast.app.BeastMCMC;
-import beast.app.treestat.statistics.TreeSummaryStatistic;
-import beast.app.util.OutFile;
-import beast.app.util.Utils;
-import beast.app.util.XMLFile;
-import beast.core.Citation;
-import beast.core.Description;
-import beast.core.Distribution;
-import beast.core.Input;
-import beast.core.Input.Validate;
-import beast.core.MCMC;
-import beast.core.Logger;
-import beast.core.util.CompoundDistribution;
-import beast.core.util.Log;
-import beast.evolution.likelihood.GenericTreeLikelihood;
-import beast.evolution.tree.Node;
-import beast.evolution.tree.TreeInterface;
-import beast.util.LogAnalyser;
-import beast.util.Randomizer;
+import beastfx.app.beast.BeastMCMC;
+import treestat2.statistics.TreeSummaryStatistic;
+import beastfx.app.util.OutFile;
+import beastfx.app.util.Utils;
+import beastfx.app.util.XMLFile;
+import beast.base.inference.Distribution;
+import beast.base.core.Input.Validate;
+import beast.base.inference.MCMC;
+import beast.base.inference.Logger;
+import beast.base.inference.CompoundDistribution;
+import beast.base.evolution.likelihood.GenericTreeLikelihood;
+import beast.base.evolution.tree.Node;
+import beast.base.evolution.tree.TreeInterface;
+import beastfx.app.tools.LogAnalyser;
+import beast.base.util.Randomizer;
 import modeladequacy.util.TreeModelAdequacyAnalyser;
 
 @Description("Run a complete tree model adequacy analysis")
@@ -101,8 +98,8 @@ public class TreeModelAdequacy extends MCMC {
 
     	int runCount = treeCountInput.get();
 		for (int i = 0; i < runCount; i++) {
-	    	if (BeastMCMC.m_nThreads > 1) {
-	    		int nSteps = Math.min(BeastMCMC.m_nThreads, runCount - i);
+	    	if (ProgramStatus.m_nThreads > 1) {
+	    		int nSteps = Math.min(ProgramStatus.m_nThreads, runCount - i);
 	    		countDown = new CountDownLatch(nSteps);
 	    		for (int j = 0; j < nSteps; j++) {
 	    			new StepThread(i).start();
@@ -116,7 +113,7 @@ public class TreeModelAdequacy extends MCMC {
 					throw new IOException("Failed to find directory " + stepDir.getName());
 				}
 	        	String cmd = 
-	        			(beast.app.util.Utils.isWindows()?
+	        			(beastfx.app.util.Utils.isWindows()?
 	        					stepDir.getAbsoluteFile() + "\\run.bat":
 	        					stepDir.getAbsoluteFile() + "/run.sh");
 	        	
@@ -152,9 +149,9 @@ public class TreeModelAdequacy extends MCMC {
 		}
 		formatter = new DecimalFormat(sFormat);
 
-		PrintStream [] cmdFiles = new PrintStream[BeastMCMC.m_nThreads];
-    	for (int i = 0; i < BeastMCMC.m_nThreads; i++) {
-    		FileOutputStream outStream = (beast.app.util.Utils.isWindows()?
+		PrintStream [] cmdFiles = new PrintStream[ProgramStatus.m_nThreads];
+    	for (int i = 0; i < ProgramStatus.m_nThreads; i++) {
+    		FileOutputStream outStream = (beastfx.app.util.Utils.isWindows()?
     					new FileOutputStream(rootDirInput.get() + "/run" + i +".bat"):
     					new FileOutputStream(rootDirInput.get() + "/run" + i +".sh"));
     		 cmdFiles[i] = new PrintStream(outStream);
@@ -170,7 +167,7 @@ public class TreeModelAdequacy extends MCMC {
 			
 			String cmd = getCommand(stepDir.getAbsolutePath(), i);
         	FileOutputStream cmdFile = 
-        			(beast.app.util.Utils.isWindows()?
+        			(beastfx.app.util.Utils.isWindows()?
         					new FileOutputStream(stepDir.getAbsoluteFile() + "/run.bat"):
         					new FileOutputStream(stepDir.getAbsoluteFile() + "/run.sh"));
         	PrintStream out2 = new PrintStream(cmdFile);
@@ -178,7 +175,7 @@ public class TreeModelAdequacy extends MCMC {
 			out2.close();
 
         	cmdFile = 
-        			(beast.app.util.Utils.isWindows()?
+        			(beastfx.app.util.Utils.isWindows()?
         					new FileOutputStream(stepDir.getAbsoluteFile() + "/resume.bat"):
         					new FileOutputStream(stepDir.getAbsoluteFile() + "/resume.sh"));
         	cmd = cmd.replace("-overwrite", "-resume");
@@ -186,16 +183,16 @@ public class TreeModelAdequacy extends MCMC {
             out2.println(cmd);
 			out2.close();
 
-			if (i / BeastMCMC.m_nThreads == 0) {
+			if (i / ProgramStatus.m_nThreads == 0) {
 				cmd = cmd.replace("-resume", "-overwrite");
 			}
-			cmdFiles[i % BeastMCMC.m_nThreads].println(cmd);
+			cmdFiles[i % ProgramStatus.m_nThreads].println(cmd);
 			File script = new File(stepDir.getAbsoluteFile() + 
-					(beast.app.util.Utils.isWindows()? "/run.bat": "/run.sh"));
+					(beastfx.app.util.Utils.isWindows()? "/run.bat": "/run.sh"));
 			script.setExecutable(true);
 		}
 		
-    	for (int k = 0; k < BeastMCMC.m_nThreads; k++) {
+    	for (int k = 0; k < ProgramStatus.m_nThreads; k++) {
     		cmdFiles[k].close();
     	}		
 	}
@@ -211,7 +208,7 @@ public class TreeModelAdequacy extends MCMC {
 		m_sScript = scriptInput.get();
 		if (m_sScript == null) {
 			m_sScript = "cd $(dir)\n" +
-					"java -cp $(java.class.path) beast.app.beastapp.BeastMain $(resume/overwrite) -java -seed $(seed) beast.xml\n";
+					"java -cp $(java.class.path) beastfx.app.beast.BeastMain $(resume/overwrite) -java -seed $(seed) beast.xml\n";
 		}
 		if (hostsInput.get() != null) {
 			m_sHosts = hostsInput.get().split(",");
@@ -416,7 +413,7 @@ public class TreeModelAdequacy extends MCMC {
 		property = b.substring(0, b.length() - 1);
 		
 		// sanitise for windows
-		if (beast.app.util.Utils.isWindows()) {
+		if (beastfx.app.util.Utils.isWindows()) {
 			String cwd = System.getProperty("user.dir");
 			cwd = cwd.replace("\\", "/");
 			property = property.replaceAll(";\\.", ";" +  cwd + ".");
@@ -491,7 +488,7 @@ public class TreeModelAdequacy extends MCMC {
 					throw new Exception("Failed to find directory " + stepDir.getName());
 				}
 	        	String cmd = 
-        			(beast.app.util.Utils.isWindows()?
+        			(beastfx.app.util.Utils.isWindows()?
         					stepDir.getAbsoluteFile() + "/run.bat":
         					stepDir.getAbsoluteFile() + "/run.sh");
 	        	

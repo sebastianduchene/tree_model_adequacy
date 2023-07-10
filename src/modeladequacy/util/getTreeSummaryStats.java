@@ -1,8 +1,8 @@
 package modeladequacy.util;
 
-import beast.evolution.tree.Node;
-import beast.evolution.tree.Tree;
-import beast.evolution.tree.TreeUtils;
+import beast.base.evolution.tree.Node;
+import beast.base.evolution.tree.Tree;
+import beast.base.evolution.tree.TreeUtils;
 
 public class getTreeSummaryStats {
 

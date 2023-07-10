@@ -10,17 +10,17 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import beast.app.treestat.statistics.TreeHeight;
-import beast.app.treestat.statistics.TreeSummaryStatistic;
-import beast.app.util.Application;
-import beast.app.util.OutFile;
-import beast.app.util.TreeFile;
-import beast.core.Description;
-import beast.core.Input;
-import beast.core.Runnable;
-import beast.core.util.Log;
-import beast.evolution.tree.Tree;
-import beast.util.NexusParser;
+import treestat2.statistics.TreeHeight;
+import treestat2.statistics.TreeSummaryStatistic;
+import beastfx.app.tools.Application;
+import beastfx.app.util.OutFile;
+import beastfx.app.util.TreeFile;
+import beast.base.core.Description;
+import beast.base.core.Input;
+import beast.base.inference.Runnable;
+import beast.base.core.Log;
+import beast.base.evolution.tree.Tree;
+import beast.base.parser.NexusParser;
 
 
 

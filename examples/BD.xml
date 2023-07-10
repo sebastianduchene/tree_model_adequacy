@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='TreeModelAdequacy' beautistatus='' namespace="beast.core:beast.base.evolution.alignment:beast.base.evolution.tree.coalescent:beast.base.util:beast.base.evolution.datatype.Nucleotide:beast.base.evolution.operator:beast.base.evolution.sitemodel:beast.base.evolution.substitutionmodel:beast.base.evolution.likelihood" version="2.4">
+
+
+    <data id="output_BD_100taxa_1.nexus" name="taxa">
+        <sequence id="Sequence.1" taxon="A/Arizona/01/2009|North_America_/_USA_/_Arizona_state|112|2009.307" totalcount="4" value="?"/>
+        <sequence id="Sequence.2" taxon="A/Brawley/40082/2009|North_America_/_USA_/_California_state|111|2009.304" totalcount="4" value="?"/>
+        <sequence id="Sequence.3" taxon="A/California/04/2009|North_America_/_USA_/_California_state|91|2009.249" totalcount="4" value="?"/>
+        <sequence id="Sequence.4" taxon="A/California/06/2009|North_America_/_USA_/_California_state|106|2009.29" totalcount="4" value="?"/>
+        <sequence id="Sequence.5" taxon="A/California/08/2009|North_America_/_USA_/_California_state|99|2009.271" totalcount="4" value="?"/>
+        <sequence id="Sequence.6" taxon="A/Canada-AB/RV1531/2009|North_America_/_Canada_/_Alberta|118|2009.323" totalcount="4" value="?"/>
+        <sequence id="Sequence.7" taxon="A/Canada-NS/RV1535/2009|North_America_/_Canada_/_Nova_Scotia|114|2009.312" totalcount="4" value="?"/>
+        <sequence id="Sequence.8" taxon="A/Canada-NS/RV1551/2009|North_America_/_Canada_/_Nova_Scotia|119|2009.326" totalcount="4" value="?"/>
+        <sequence id="Sequence.9" taxon="A/Canada-ON/RV1589/2009|North_America_/_Canada_/_Ontario|117|2009.321" totalcount="4" value="?"/>
+        <sequence id="Sequence.10" taxon="A/Canada-PQ/RV1586/2009|North_America_/_Canada_/_Quebec|116|2009.318" totalcount="4" value="?"/>
+        <sequence id="Sequence.11" taxon="A/Canada-QC/RV1595/2009|North_America_/_Canada_/_Quebec|106|2009.29" totalcount="4" value="?"/>
+        <sequence id="Sequence.12" taxon="A/Canada-SK/RV1788/2009|North_America_/_Canada_/_Manitoba_/_Saskatchewan|120|2009.329" totalcount="4" value="?"/>
+        <sequence id="Sequence.13" taxon="A/Kansas/03/2009|North_America_/_USA_/_Kansas_state|114|2009.312" totalcount="4" value="?"/>
+        <sequence id="Sequence.14" taxon="A/Mexico/4108/2009|North_America_/_Mexico|93|2009.255" totalcount="4" value="?"/>
+        <sequence id="Sequence.15" taxon="A/Mexico/4115/2009|North_America_/_Mexico|97|2009.266" totalcount="4" value="?"/>
+        <sequence id="Sequence.16" taxon="A/Mexico/4269/2009|North_America_/_Mexico|105|2009.288" totalcount="4" value="?"/>
+        <sequence id="Sequence.17" taxon="A/Mexico/4604/2009|North_America_/_Mexico|109|2009.299" totalcount="4" value="?"/>
+        <sequence id="Sequence.18" taxon="A/Mexico/48N/2009|North_America_/_Mexico_/_The_Federal_District|115|2009.315" totalcount="4" value="?"/>
+        <sequence id="Sequence.19" taxon="A/Mexico/InDRE13547/2009|North_America_/_Mexico|117|2009.321" totalcount="4" value="?"/>
+        <sequence id="Sequence.20" taxon="A/Mexico/InDRE13551/2009|North_America_/_Mexico|118|2009.323" totalcount="4" value="?"/>
+        <sequence id="Sequence.21" taxon="A/Mexico/InDRE13555/2009|North_America_/_Mexico|119|2009.326" totalcount="4" value="?"/>
+        <sequence id="Sequence.22" taxon="A/Mexico/InDRE4487/2009|North_America_/_Mexico|104|2009.285" totalcount="4" value="?"/>
+        <sequence id="Sequence.23" taxon="A/New_York/13/2009|North_America_/_USA_/_New_York_state|115|2009.315" totalcount="4" value="?"/>
+        <sequence id="Sequence.24" taxon="A/New_York/1682/2009|North_America_/_USA_/_New_York_state_/_Suffolk_County|117|2009.321" totalcount="4" value="?"/>
+        <sequence id="Sequence.25" taxon="A/New_York/3074/2009|USA_/_New_York_state_/_Westchester_County|119|2009.326" totalcount="4" value="?"/>
+        <sequence id="Sequence.26" taxon="A/New_York/3167/2009|USA_/_New_York_state_/_Queens_County|118|2009.323" totalcount="4" value="?"/>
+        <sequence id="Sequence.27" taxon="A/New_York/3205/2009|North_America_/_USA_/_New_York_state_/_Queens_County|116|2009.318" totalcount="4" value="?"/>
+        <sequence id="Sequence.28" taxon="A/New_York/3232/2009|North_America_/_USA_/_New_York_state|120|2009.329" totalcount="4" value="?"/>
+        <sequence id="Sequence.29" taxon="A/New_York/3265/2009|North_America_/_USA_/_New_York_state|119|2009.326" totalcount="4" value="?"/>
+        <sequence id="Sequence.30" taxon="A/New_York/3365/2009|USA_/_New_York_state_/_Queens_County|120|2009.329" totalcount="4" value="?"/>
+        <sequence id="Sequence.31" taxon="A/San_Antonio/PR923/2009|North_America_/_USA_/_Texas_state|113|2009.31" totalcount="4" value="?"/>
+        <sequence id="Sequence.32" taxon="A/Texas/04/2009|North_America_/_USA_/_Texas_state|104|2009.285" totalcount="4" value="?"/>
+        <sequence id="Sequence.33" taxon="A/Texas/05/2009|North_America_/_USA_/_Texas_state|105|2009.288" totalcount="4" value="?"/>
+        <sequence id="Sequence.34" taxon="A/Wisconsin/629-D01505/2009|North_America_/_USA_/_Wisconsin_state|118|2009.323" totalcount="4" value="?"/>
+        <!--sequence id="Sequence.0" taxon="1" totalcount="4" value="?"/>
+        <sequence id="Sequence.1" taxon="10" totalcount="4" value="?"/-->
+    </data>
+
+    <map name="Uniform" >beast.base.inference.distribution.Uniform</map>
+    <map name="Exponential" >beast.base.inference.distribution.Exponential</map>
+    <map name="LogNormal" >beast.base.inference.distribution.LogNormalDistributionModel</map>
+    <map name="Normal" >beast.base.inference.distribution.Normal</map>
+    <map name="Beta" >beast.base.inference.distribution.Beta</map>
+    <map name="Gamma" >beast.base.inference.distribution.Gamma</map>
+    <map name="LaplaceDistribution" >beast.base.inference.distribution.LaplaceDistribution</map>
+    <map name="prior" >beast.base.inference.distribution.Prior</map>
+    <map name="InverseGamma" >beast.base.inference.distribution.InverseGamma</map>
+    <map name="OneOnX" >beast.base.inference.distribution.OneOnX</map>
+
+    <run id="mcmc" spec="modeladequacy.TreeModelAdequacy" chainLength="20000" master="master/BD_hetero_anyN.xml">
+        <statistic id="TreeLength" spec="treestat2.statistics.TreeLength"/>
+
+        <state id="state" storeEvery="100">
+            <stateNode id="Tree.t:output_BD_100taxa_1.nexus" spec="beast.base.evolution.tree.TreeParser" IsLabelledNewick="true" adjustTipHeights="false" estimate="false" newick="((((((A/Arizona/01/2009|North_America_/_USA_/_Arizona_state|112|2009.307:0.07578680592,A/Canada-PQ/RV1586/2009|North_America_/_Canada_/_Quebec|116|2009.318:0.08678680592):0.0278131564,(A/Mexico/4115/2009|North_America_/_Mexico|97|2009.266:0.01412177441,A/Mexico/InDRE4487/2009|North_America_/_Mexico|104|2009.285:0.03312177441):0.04847818791):0.01129342388,(A/San_Antonio/PR923/2009|North_America_/_USA_/_Texas_state|113|2009.31:0.05109208822,(A/Texas/04/2009|North_America_/_USA_/_Texas_state|104|2009.285:0.01643787846,A/Texas/05/2009|North_America_/_USA_/_Texas_state|105|2009.288:0.01943787846):0.009654209768):0.06680129798):0.00563462856,((((((A/Canada-AB/RV1531/2009|North_America_/_Canada_/_Alberta|118|2009.323:0.03939701642,((A/Canada-ON/RV1589/2009|North_America_/_Canada_/_Ontario|117|2009.321:0.025397718,A/New_York/3167/2009|USA_/_New_York_state_/_Queens_County|118|2009.323:0.027397718):0.008925042478,(A/New_York/3232/2009|North_America_/_USA_/_New_York_state|120|2009.329:0.03569800178,A/New_York/3365/2009|USA_/_New_York_state_/_Queens_County|120|2009.329:0.03569800178):0.0066247587):0.003074255942):0.001741611174,A/New_York/3265/2009|North_America_/_USA_/_New_York_state|119|2009.326:0.0441386276):0.0005769751843,A/New_York/13/2009|North_America_/_USA_/_New_York_state|115|2009.315:0.03371560278):0.001368095752,A/New_York/3205/2009|North_America_/_USA_/_New_York_state_/_Queens_County|116|2009.318:0.03808369853):0.04119336786,((A/Mexico/4604/2009|North_America_/_Mexico|109|2009.299:0.05255546319,A/Mexico/InDRE13551/2009|North_America_/_Mexico|118|2009.323:0.07655546319):0.004152871992,(A/Mexico/InDRE13555/2009|North_America_/_Mexico|119|2009.326:0.07650652395,A/Wisconsin/629-D01505/2009|North_America_/_USA_/_Wisconsin_state|118|2009.323:0.07350652395):0.007201811236):0.003568731203):0.03176582007,A/Mexico/InDRE13547/2009|North_America_/_Mexico|117|2009.321:0.1140428865):0.0204851283):0.004331735883,(((A/Brawley/40082/2009|North_America_/_USA_/_California_state|111|2009.304:0.0657077047,A/California/06/2009|North_America_/_USA_/_California_state|106|2009.29:0.0517077047):0.01702638576,(A/Canada-QC/RV1595/2009|North_America_/_Canada_/_Quebec|106|2009.29:0.04521531971,A/Mexico/48N/2009|North_America_/_Mexico_/_The_Federal_District|115|2009.315:0.07021531971):0.02351877074):0.01544491147,((((((A/Canada-NS/RV1535/2009|North_America_/_Canada_/_Nova_Scotia|114|2009.312:0.0232543613,A/Canada-NS/RV1551/2009|North_America_/_Canada_/_Nova_Scotia|119|2009.326:0.0372543613):0.05457036357,A/Mexico/4269/2009|North_America_/_Mexico|105|2009.288:0.05382472487):0.003261631524,A/Kansas/03/2009|North_America_/_USA_/_Kansas_state|114|2009.312:0.08108635639):0.001207406867,A/New_York/3074/2009|USA_/_New_York_state_/_Westchester_County|119|2009.326:0.09629376326):0.01907463769,(A/Mexico/4108/2009|North_America_/_Mexico|93|2009.255:0.02427830992,A/New_York/1682/2009|North_America_/_USA_/_New_York_state_/_Suffolk_County|117|2009.321:0.09027830992):0.02009009103):0.002347111364,A/Canada-SK/RV1788/2009|North_America_/_Canada_/_Manitoba_/_Saskatchewan|120|2009.329:0.1207155123):0.002463489617):0.02368074872):0.009083870663,(A/California/04/2009|North_America_/_USA_/_California_state|91|2009.249:0.01269039097,A/California/08/2009|North_America_/_USA_/_California_state|99|2009.271:0.03469039097):0.06325323034):0;">
+                <taxa idref="output_BD_100taxa_1.nexus"/>
+                <taxonset id="TaxonSet.1" spec="TaxonSet">
+                    <taxon id="A/Arizona/01/2009|North_America_/_USA_/_Arizona_state|112|2009.307" spec="Taxon"/>
+                    <taxon id="A/Brawley/40082/2009|North_America_/_USA_/_California_state|111|2009.304" spec="Taxon"/>
+                    <taxon id="A/California/04/2009|North_America_/_USA_/_California_state|91|2009.249" spec="Taxon"/>
+                    <taxon id="A/California/06/2009|North_America_/_USA_/_California_state|106|2009.29" spec="Taxon"/>
+                    <taxon id="A/California/08/2009|North_America_/_USA_/_California_state|99|2009.271" spec="Taxon"/>
+                    <taxon id="A/Canada-AB/RV1531/2009|North_America_/_Canada_/_Alberta|118|2009.323" spec="Taxon"/>
+                    <taxon id="A/Canada-NS/RV1535/2009|North_America_/_Canada_/_Nova_Scotia|114|2009.312" spec="Taxon"/>
+                    <taxon id="A/Canada-NS/RV1551/2009|North_America_/_Canada_/_Nova_Scotia|119|2009.326" spec="Taxon"/>
+                    <taxon id="A/Canada-ON/RV1589/2009|North_America_/_Canada_/_Ontario|117|2009.321" spec="Taxon"/>
+                    <taxon id="A/Canada-PQ/RV1586/2009|North_America_/_Canada_/_Quebec|116|2009.318" spec="Taxon"/>
+                    <taxon id="A/Canada-QC/RV1595/2009|North_America_/_Canada_/_Quebec|106|2009.29" spec="Taxon"/>
+                    <taxon id="A/Canada-SK/RV1788/2009|North_America_/_Canada_/_Manitoba_/_Saskatchewan|120|2009.329" spec="Taxon"/>
+                    <taxon id="A/Kansas/03/2009|North_America_/_USA_/_Kansas_state|114|2009.312" spec="Taxon"/>
+                    <taxon id="A/Mexico/4108/2009|North_America_/_Mexico|93|2009.255" spec="Taxon"/>
+                    <taxon id="A/Mexico/4115/2009|North_America_/_Mexico|97|2009.266" spec="Taxon"/>
+                    <taxon id="A/Mexico/4269/2009|North_America_/_Mexico|105|2009.288" spec="Taxon"/>
+                    <taxon id="A/Mexico/4604/2009|North_America_/_Mexico|109|2009.299" spec="Taxon"/>
+                    <taxon id="A/Mexico/48N/2009|North_America_/_Mexico_/_The_Federal_District|115|2009.315" spec="Taxon"/>
+                    <taxon id="A/Mexico/InDRE13547/2009|North_America_/_Mexico|117|2009.321" spec="Taxon"/>
+                    <taxon id="A/Mexico/InDRE13551/2009|North_America_/_Mexico|118|2009.323" spec="Taxon"/>
+                    <taxon id="A/Mexico/InDRE13555/2009|North_America_/_Mexico|119|2009.326" spec="Taxon"/>
+                    <taxon id="A/Mexico/InDRE4487/2009|North_America_/_Mexico|104|2009.285" spec="Taxon"/>
+                    <taxon id="A/New_York/13/2009|North_America_/_USA_/_New_York_state|115|2009.315" spec="Taxon"/>
+                    <taxon id="A/New_York/1682/2009|North_America_/_USA_/_New_York_state_/_Suffolk_County|117|2009.321" spec="Taxon"/>
+                    <taxon id="A/New_York/3074/2009|USA_/_New_York_state_/_Westchester_County|119|2009.326" spec="Taxon"/>
+                    <taxon id="A/New_York/3167/2009|USA_/_New_York_state_/_Queens_County|118|2009.323" spec="Taxon"/>
+                    <taxon id="A/New_York/3205/2009|North_America_/_USA_/_New_York_state_/_Queens_County|116|2009.318" spec="Taxon"/>
+                    <taxon id="A/New_York/3232/2009|North_America_/_USA_/_New_York_state|120|2009.329" spec="Taxon"/>
+                    <taxon id="A/New_York/3265/2009|North_America_/_USA_/_New_York_state|119|2009.326" spec="Taxon"/>
+                    <taxon id="A/New_York/3365/2009|USA_/_New_York_state_/_Queens_County|120|2009.329" spec="Taxon"/>
+                    <taxon id="A/San_Antonio/PR923/2009|North_America_/_USA_/_Texas_state|113|2009.31" spec="Taxon"/>
+                    <taxon id="A/Texas/04/2009|North_America_/_USA_/_Texas_state|104|2009.285" spec="Taxon"/>
+                    <taxon id="A/Texas/05/2009|North_America_/_USA_/_Texas_state|105|2009.288" spec="Taxon"/>
+                    <taxon id="A/Wisconsin/629-D01505/2009|North_America_/_USA_/_Wisconsin_state|118|2009.323" spec="Taxon"/>
+                    <!--taxon id="1" spec="Taxon"/>
+                    <taxon id="10" spec="Taxon"/-->
+                </taxonset>
+            </stateNode>
+            <parameter id="origin.t:output_BD_100taxa_1.nexus" lower="0.0" name="stateNode" upper="Infinity">1000.0</parameter>
+            <parameter id="samplingProportion.t:output_BD_100taxa_1.nexus" lower="0.0" name="stateNode" upper="1.0">0.01</parameter>
+            <parameter id="becomeUninfectiousRate.t:output_BD_100taxa_1.nexus" lower="0.0" name="stateNode" upper="Infinity">1.0</parameter>
+            <parameter id="reproductiveNumber.t:output_BD_100taxa_1.nexus" lower="0.0" name="stateNode" upper="Infinity">2.0</parameter>
+        </state>
+
+        <distribution id="posterior" spec="beast.base.inference.CompoundDistribution">
+            <distribution id="prior" spec="beast.base.inference.CompoundDistribution">
+                <distribution id="BirthDeathSkySerial.t:output_BD_100taxa_1.nexus" spec="bdsky.evolution.speciation.BirthDeathSkylineModel" becomeUninfectiousRate="@becomeUninfectiousRate.t:output_BD_100taxa_1.nexus" origin="@origin.t:output_BD_100taxa_1.nexus" reproductiveNumber="@reproductiveNumber.t:output_BD_100taxa_1.nexus" samplingProportion="@samplingProportion.t:output_BD_100taxa_1.nexus" tree="@Tree.t:output_BD_100taxa_1.nexus"/>
+                <prior id="becomeUninfectiousRatePrior.t:output_BD_100taxa_1.nexus" name="distribution" x="@becomeUninfectiousRate.t:output_BD_100taxa_1.nexus">
+                    <Normal id="NormalDistroModel.1" name="distr" mean="85" sigma="15"/>
+                </prior>
+                <prior id="originPrior.t:output_BD_100taxa_1.nexus" name="distribution" x="@origin.t:output_BD_100taxa_1.nexus">
+                    <Uniform id="Uniform.3" name="distr" upper="Infinity"/>
+                </prior>
+                <prior id="reproductiveNumberPrior.t:output_BD_100taxa_1.nexus" name="distribution" x="@reproductiveNumber.t:output_BD_100taxa_1.nexus">
+                    <LogNormal id="LogNormalDistributionModel.1" name="distr">
+                        <parameter id="RealParameter.10" estimate="false" name="M">0.0</parameter>
+                        <parameter id="RealParameter.11" estimate="false" name="S">1.0</parameter>
+                    </LogNormal>
+                </prior>
+                <prior id="samplingProportionPrior.t:output_BD_100taxa_1.nexus" name="distribution" x="@samplingProportion.t:output_BD_100taxa_1.nexus">
+                    <Uniform id="Uniform.1" name="distr" lower="0" upper="1"/>
+                </prior>
+            </distribution>
+            <distribution id="likelihood" spec="beast.base.inference.CompoundDistribution" useThreads="true">
+                <distribution id="treeLikelihood.output_BD_100taxa_1.nexus" spec="beast.base.evolution.likelihood.FixedTreeLikelihood" data="@output_BD_100taxa_1.nexus" tree="@Tree.t:output_BD_100taxa_1.nexus">
+                    <siteModel id="FixedSiteModel.s:output_BD_100taxa_1.nexus" spec="beast.base.evolution.sitemodel.FixedSiteModel">
+                        <parameter id="RealParameter.0" lower="0.0" name="mutationRate" upper="0.0">1.0</parameter>
+                        <parameter id="RealParameter.1" lower="0.0" name="shape" upper="0.0">1.0</parameter>
+                        <parameter id="RealParameter.2" lower="0.0" name="proportionInvariant" upper="0.0">0.0</parameter>
+                    </siteModel>
+                    <branchRateModel id="FixedClock.c:output_BD_100taxa_1.nexus" spec="beast.base.evolution.branchratemodel.FixedClockModel">
+                        <parameter id="RealParameter.3" estimate="false" name="clock.rate">1.0</parameter>
+                    </branchRateModel>
+                </distribution>
+            </distribution>
+        </distribution>
+
+        <operator id="becomeUninfectiousRateScaler.t:output_BD_100taxa_1.nexus" spec="ScaleOperator" parameter="@becomeUninfectiousRate.t:output_BD_100taxa_1.nexus" scaleFactor="0.75" weight="2.0"/>
+
+        <operator id="samplingScaler.t:output_BD_100taxa_1.nexus" spec="ScaleOperator" parameter="@samplingProportion.t:output_BD_100taxa_1.nexus" scaleFactor="0.75" weight="2.0"/>
+
+        <operator id="reproductiveNumberScaler.t:output_BD_100taxa_1.nexus" spec="ScaleOperator" parameter="@reproductiveNumber.t:output_BD_100taxa_1.nexus" scaleFactor="0.75" weight="10.0"/>
+
+        <operator id="updownBD.t:output_BD_100taxa_1.nexus" spec="beast.base.inference.operator.UpDownOperator" scaleFactor="0.75" weight="2.0">
+            <up idref="reproductiveNumber.t:output_BD_100taxa_1.nexus"/>
+            <down idref="becomeUninfectiousRate.t:output_BD_100taxa_1.nexus"/>
+        </operator>
+
+        <operator id="origScaler.t:output_BD_100taxa_1.nexus" spec="ScaleOperator" parameter="@origin.t:output_BD_100taxa_1.nexus" scaleFactor="0.75" weight="1.0"/>
+
+        <logger id="tracelog" fileName="BD_BD_100taxa_1.log" logEvery="100" model="@posterior" sanitiseHeaders="true" sort="smart">
+            <log idref="posterior"/>
+            <log idref="likelihood"/>
+            <log idref="prior"/>
+            <log idref="origin.t:output_BD_100taxa_1.nexus"/>
+            <log idref="samplingProportion.t:output_BD_100taxa_1.nexus"/>
+            <log idref="becomeUninfectiousRate.t:output_BD_100taxa_1.nexus"/>
+            <log idref="reproductiveNumber.t:output_BD_100taxa_1.nexus"/>
+            <log id="birth.t:output_BD_100taxa_1.nexus" spec="beast.base.inference.util.RPNcalculator" expression="reproductiveNumber.t:output_BD_100taxa_1.nexus becomeUninfectiousRate.t:output_BD_100taxa_1.nexus *">
+                <parameter idref="becomeUninfectiousRate.t:output_BD_100taxa_1.nexus"/>
+                <parameter idref="reproductiveNumber.t:output_BD_100taxa_1.nexus"/>
+            </log>
+            <log id="death.t:output_BD_100taxa_1.nexus" spec="beast.base.inference.util.RPNcalculator" expression="becomeUninfectiousRate.t:output_BD_100taxa_1.nexus 1 samplingProportion.t:output_BD_100taxa_1.nexus - *">
+                <parameter idref="becomeUninfectiousRate.t:output_BD_100taxa_1.nexus"/>
+                <parameter idref="samplingProportion.t:output_BD_100taxa_1.nexus"/>
+            </log>
+            <log id="sampling.t:output_BD_100taxa_1.nexus" spec="beast.base.inference.util.RPNcalculator" expression="becomeUninfectiousRate.t:output_BD_100taxa_1.nexus samplingProportion.t:output_BD_100taxa_1.nexus *">
+                <parameter idref="becomeUninfectiousRate.t:output_BD_100taxa_1.nexus"/>
+                <parameter idref="samplingProportion.t:output_BD_100taxa_1.nexus"/>
+            </log>
+        </logger>
+
+        <logger id="screenlog" logEvery="100">
+            <log idref="posterior"/>
+            <log id="ESS.0" spec="beast.base.inference.util.ESS" arg="@posterior"/>
+            <log idref="likelihood"/>
+            <log idref="prior"/>
+        </logger>
+
+        <!--logger id="treelog.t:output_BD_100taxa_1.nexus" fileName="$(tree).trees" logEvery="1000" mode="tree">
+            <log id="TreeWithMetaDataLogger.t:output_BD_100taxa_1.nexus" spec="beast.evolution.tree.TreeWithMetaDataLogger" tree="@Tree.t:output_BD_100taxa_1.nexus"/>
+        </logger-->
+    </run>
+
+</beast>

@@ -211,7 +211,7 @@ name="taxa">
                     <parameter id="RealParameter.1" lower="0.0" name="shape" upper="0.0">1.0</parameter>
                     <parameter id="RealParameter.2" lower="0.0" name="proportionInvariant" upper="0.0">0.0</parameter>
                 </siteModel>
-                <branchRateModel id="FixedClock.c:ebola_2014" spec="beast.evolution.branchratemodel.FixedClockModel">
+                <branchRateModel id="FixedClock.c:ebola_2014" spec="beast.base.evolution.branchratemodel.FixedClockModel">
                     <parameter id="RealParameter.3" estimate="false" name="clock.rate">1.0</parameter>
                 </branchRateModel>
             </distribution>
