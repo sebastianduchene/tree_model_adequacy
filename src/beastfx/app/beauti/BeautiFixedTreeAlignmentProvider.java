@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JOptionPane;
 
 import beastfx.app.inputeditor.BeautiAlignmentProvider;
 import beastfx.app.inputeditor.BeautiDoc;
+import beastfx.app.util.Alert;
 import beastfx.app.util.Utils;
 import beast.base.core.BEASTInterface;
 import beast.base.inference.State;
@@ -29,11 +29,11 @@ public class BeautiFixedTreeAlignmentProvider extends BeautiAlignmentProvider {
 				NexusParser parser = new NexusParser();
 				parser.parseFile(file);
 				if (parser.trees == null || parser.trees.size() == 0) {
-					JOptionPane.showMessageDialog(null, "Did not find any tree in the file -- giving up.");
+					Alert.showMessageDialog(null, "Did not find any tree in the file -- giving up.");
 					return null;
 				}
 				if (parser.trees.size() > 1) {
-					JOptionPane.showMessageDialog(null, "Found more than one tree in the file -- expected only 1!");
+					Alert.showMessageDialog(null, "Found more than one tree in the file -- expected only 1!");
 					return null;
 				}
 
@@ -42,7 +42,7 @@ public class BeautiFixedTreeAlignmentProvider extends BeautiAlignmentProvider {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Something went wrong: " + e.getMessage());
+			Alert.showMessageDialog(null, "Something went wrong: " + e.getMessage());
 		}
 		return null;
 	}
@@ -99,7 +99,7 @@ public class BeautiFixedTreeAlignmentProvider extends BeautiAlignmentProvider {
 				likelihood = (FixedTreeLikelihood) output;
 				TreeParser parser = (TreeParser) likelihood.treeInput.get();
 
-				Object result = JOptionPane.showInputDialog("Edit Newick tree:", parser.newickInput.get());
+				Object result = Alert.showInputDialog(null, "Edit Newick tree:", "Editor", Alert.PLAIN_MESSAGE, parser.newickInput.get());
 				if (result != null) {
 					parser.newickInput.setValue(result, parser);
 				}

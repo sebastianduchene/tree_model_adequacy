@@ -1,16 +1,14 @@
 package beastfx.app.beauti;
 
-import javax.swing.Box;
 
 import beastfx.app.inputeditor.BeautiDoc;
 import beastfx.app.inputeditor.InputEditor;
+import beastfx.app.util.FXUtils;
 import beast.base.core.BEASTInterface;
 import beast.base.core.Input;
 import beast.base.evolution.branchratemodel.FixedClockModel;
 
 public class FixedClockModelInputEditor extends InputEditor.Base {
-
-	private static final long serialVersionUID = 1L;
 
 	public FixedClockModelInputEditor(BeautiDoc doc) {
 		super(doc);
@@ -24,7 +22,8 @@ public class FixedClockModelInputEditor extends InputEditor.Base {
 	@Override
 	public void init(Input<?> input, BEASTInterface beastObject, int itemNr, ExpandOption isExpandOption,
 					 boolean addButtons) {
-//		super.init(input, beastObject, itemNr, isExpandOption, addButtons);
+        pane = FXUtils.newHBox();
+		super.init(input, beastObject, itemNr, isExpandOption, addButtons);
 		m_input = input;
 		m_beastObject = beastObject;
 		this.itemNr= itemNr;
@@ -35,8 +34,9 @@ public class FixedClockModelInputEditor extends InputEditor.Base {
 		m_bAddButtons = addButtons;
 
 		//add(m_entry);
-        add(Box.createHorizontalGlue());
+        // add(Box.createHorizontalGlue());
         addValidationLabel();
+        getChildren().add(pane);
 	}
 
 }
