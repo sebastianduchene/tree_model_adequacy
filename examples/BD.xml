@@ -122,13 +122,13 @@
                 </prior>
             </distribution>
             <distribution id="likelihood" spec="beast.base.inference.CompoundDistribution" useThreads="true">
-                <distribution id="treeLikelihood.output_BD_100taxa_1.nexus" spec="beast.base.evolution.likelihood.FixedTreeLikelihood" data="@output_BD_100taxa_1.nexus" tree="@Tree.t:output_BD_100taxa_1.nexus">
-                    <siteModel id="FixedSiteModel.s:output_BD_100taxa_1.nexus" spec="beast.base.evolution.sitemodel.FixedSiteModel">
+                <distribution id="treeLikelihood.output_BD_100taxa_1.nexus" spec="modeladequacy.base.evolution.likelihood.FixedTreeLikelihood" data="@output_BD_100taxa_1.nexus" tree="@Tree.t:output_BD_100taxa_1.nexus">
+                    <siteModel id="FixedSiteModel.s:output_BD_100taxa_1.nexus" spec="modeladequacy.base.evolution.sitemodel.FixedSiteModel">
                         <parameter id="RealParameter.0" lower="0.0" name="mutationRate" upper="0.0">1.0</parameter>
                         <parameter id="RealParameter.1" lower="0.0" name="shape" upper="0.0">1.0</parameter>
                         <parameter id="RealParameter.2" lower="0.0" name="proportionInvariant" upper="0.0">0.0</parameter>
                     </siteModel>
-                    <branchRateModel id="FixedClock.c:output_BD_100taxa_1.nexus" spec="beast.base.evolution.branchratemodel.FixedClockModel">
+                    <branchRateModel id="FixedClock.c:output_BD_100taxa_1.nexus" spec="modeladequacy.base.evolution.branchratemodel.FixedClockModel">
                         <parameter id="RealParameter.3" estimate="false" name="clock.rate">1.0</parameter>
                     </branchRateModel>
                 </distribution>

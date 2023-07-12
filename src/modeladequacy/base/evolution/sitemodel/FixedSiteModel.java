@@ -1,4 +1,4 @@
-package beast.base.evolution.sitemodel;
+package modeladequacy.base.evolution.sitemodel;
 
 import beast.base.core.Input.Validate;
 import beast.base.evolution.sitemodel.SiteModel;

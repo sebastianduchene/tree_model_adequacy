@@ -1,4 +1,4 @@
-package beast.base.evolution.likelihood;
+package modeladequacy.base.evolution.likelihood;
 
 import beast.base.core.Description;
 import beast.base.evolution.likelihood.GenericTreeLikelihood;

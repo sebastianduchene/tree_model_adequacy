@@ -1,7 +1,7 @@
-package beastfx.app.beauti;
+package modeladequacy.app.beauti;
 
-import beast.base.evolution.sitemodel.FixedSiteModel;
 import beastfx.app.inputeditor.BeautiDoc;
+import modeladequacy.base.evolution.sitemodel.FixedSiteModel;
 
 public class FixedSiteModelInputEditor extends FixedClockModelInputEditor {
 

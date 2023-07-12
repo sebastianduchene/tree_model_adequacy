@@ -54,13 +54,13 @@
                 </distribution>
             </distribution>
             <distribution spec="beast.base.inference.CompoundDistribution" useThreads="true" id='likelihood'>
-                <distribution id="treeLikelihood.alignment" spec="beast.base.evolution.likelihood.FixedTreeLikelihood" data="@alignment" tree="@tree">
-                    <siteModel id="FixedSiteModel" spec="beast.base.evolution.sitemodel.FixedSiteModel">
+                <distribution id="treeLikelihood.alignment" spec="modeladequacy.base.evolution.likelihood.FixedTreeLikelihood" data="@alignment" tree="@tree">
+                    <siteModel id="FixedSiteModel" spec="modeladequacy.base.evolution.sitemodel.FixedSiteModel">
                         <parameter id="RealParameter.0" lower="0.0" name="mutationRate" upper="0.0">1.0</parameter>
                         <parameter id="RealParameter.1" lower="0.0" name="shape" upper="0.0">1.0</parameter>
                         <parameter id="RealParameter.2" lower="0.0" name="proportionInvariant" upper="0.0">0.0</parameter>
                     </siteModel>
-                    <branchRateModel id="FixedClock" spec="beast.base.evolution.branchratemodel.FixedClockModel">
+                    <branchRateModel id="FixedClock" spec="modeladequacy.base.evolution.branchratemodel.FixedClockModel">
                         <parameter id="ClockRate" estimate="false" name="clock.rate">1.0</parameter>
                     </branchRateModel>
                 </distribution>

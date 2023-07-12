@@ -1,12 +1,12 @@
-package beastfx.app.beauti;
+package modeladequacy.app.beauti;
 
 
 import beastfx.app.inputeditor.BeautiDoc;
 import beastfx.app.inputeditor.InputEditor;
 import beastfx.app.util.FXUtils;
+import modeladequacy.base.evolution.branchratemodel.FixedClockModel;
 import beast.base.core.BEASTInterface;
 import beast.base.core.Input;
-import beast.base.evolution.branchratemodel.FixedClockModel;
 
 public class FixedClockModelInputEditor extends InputEditor.Base {
 

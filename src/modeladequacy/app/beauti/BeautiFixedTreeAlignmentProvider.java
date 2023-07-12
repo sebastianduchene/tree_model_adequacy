@@ -1,4 +1,4 @@
-package beastfx.app.beauti;
+package modeladequacy.app.beauti;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,11 +10,11 @@ import beastfx.app.inputeditor.BeautiAlignmentProvider;
 import beastfx.app.inputeditor.BeautiDoc;
 import beastfx.app.util.Alert;
 import beastfx.app.util.Utils;
+import modeladequacy.base.evolution.likelihood.FixedTreeLikelihood;
 import beast.base.core.BEASTInterface;
 import beast.base.inference.State;
 import beast.base.evolution.alignment.Alignment;
 import beast.base.evolution.alignment.Sequence;
-import beast.base.evolution.likelihood.FixedTreeLikelihood;
 import beast.base.evolution.tree.Tree;
 import beast.base.parser.NexusParser;
 import beast.base.evolution.tree.TreeParser;

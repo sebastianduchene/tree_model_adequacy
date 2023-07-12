@@ -1,4 +1,4 @@
-package beast.base.evolution.branchratemodel;
+package modeladequacy.base.evolution.branchratemodel;
 
 import beast.base.evolution.branchratemodel.StrictClockModel;
 

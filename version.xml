@@ -1,15 +1,32 @@
-<addon name='TMA' version='1.0.0'>
-	<depends on='beast2' atleast='2.5.0'/>
-	<depends on='MASTER' atleast='6.0.0'/>
-	<depends on='BEASTLabs' atleast='1.8.0'/>
-	<depends on='phylodynamics' atleast='1.3.0'/>
-	<depends on='BDSKY' atleast='1.4.0'/>
-	<depends on='TreeStat2' atleast='0.0.2'/>	
+<package name='TMA' version='1.1.0'>
+	<depends on='BEAST.base' atleast='2.7.0'/>
+	<depends on='BEAST.app' atleast='2.7.0'/>
+	<depends on='MASTER' atleast='7.0.0'/>
+	<depends on='BEASTLabs' atleast='2.0.0'/>
+	<depends on='phylodynamics' atleast='1.4.0'/>
+	<depends on='BDSKY' atleast='1.5.0'/>
+	<depends on='TreeStat2' atleast='0.1.2'/>	
 
-    <addonapp description="TMAAnalyser"
+    <packageapp description="TMAAnalyser"
         class="modeladequacy.util.TreeModelAdequacyAnalyser"
         args=""
         icon="beast/app/treestat/images/TreeStat.png"
     />
 
-</addon>
+    <service type="beast.base.core.BEASTInterface">
+        <provider classname="modeladequacy.app.beauti.BeautiFixedTreeAlignmentProvider"/>
+        <provider classname="modeladequacy.base.evolution.branchratemodel.FixedClockModel"/>
+        <provider classname="modeladequacy.base.evolution.likelihood.FixedTreeLikelihood"/>
+        <provider classname="modeladequacy.base.evolution.sitemodel.FixedSiteModel"/>
+        <provider classname="modeladequacy.TreeModelAdequacy"/>
+        <provider classname="modeladequacy.util.TreeModelAdequacyAnalyser"/>
+    </service>
+
+    <service type="beastfx.app.inputeditor.InputEditor">
+        <provider classname="modeladequacy.app.beauti.FixedClockModelInputEditor"/>
+        <provider classname="modeladequacy.app.beauti.FixedSiteModelInputEditor"/>
+        <provider classname="modeladequacy.app.beauti.TreeStatInputEditor"/>
+    </service>
+
+
+</package>

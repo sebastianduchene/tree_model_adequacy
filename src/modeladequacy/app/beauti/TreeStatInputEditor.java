@@ -1,4 +1,4 @@
-package beastfx.app.beauti;
+package modeladequacy.app.beauti;
 
 import java.util.List;
 

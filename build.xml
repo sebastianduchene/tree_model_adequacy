@@ -1,5 +1,5 @@
 <!-- Build TMA. It is also used by Hudson TMA project. JUnit test is available for this build. -->
-<project basedir="." default="addon" name="BUILD_TMA">
+<project basedir="." default="package" name="BUILD_TMA">
 	<description>
 	    Build TMA. 
             Also used by Hudson TMA project. 
@@ -17,8 +17,8 @@
 	<property name="libBeast2" location="${beast2path}/lib" />
 	<property name="srcBeast2" location="${beast2path}/src" />
 	<property name="beast2classpath" location="${beast2path}/build" />
-	<property name="Add_on_dir" value="${release_dir}/add-on" />
-	<property name="version" value="1.0.0" />
+    <property name="BeastFXpath" location="../BeastFX" />
+ 	<property name="Add_on_dir" value="${release_dir}/add-on" />
 	
 	<property name="buildMODEL_SELECTION" location="../model-selection/build"/>
 	<property name="buildBEAST_LABS" location="../BEASTLabs/build"/>
@@ -44,11 +44,20 @@
         <pathelement path="../TreeStat2/build"/>
         <pathelement path="${buildBEAST_LABS}"/>
         <pathelement path="${beast2classpath}"/>
+        <pathelement path="${BeastFXpath}/build"/>
 	</path>
 
 	<!-- start -->
 	<target name="initTMA">
 		<echo message="${ant.project.name}: ${ant.file}" />
+		<available file="./version.xml" property="versionAvailable"/>
+        	<fail unless="versionAvailable">
+              ** Required file version.xml does not exist. **
+	        </fail>
+
+        <!-- Read package name and version from xml file -->
+        <xmlproperty file="./version.xml" prefix="fromVersionFile" />
+        <property name="TMAVersion" value="${fromVersionFile.package(version)}" />
 	</target>
 
 	<target name="cleanTMA">
@@ -130,7 +139,7 @@
 				<include name="beast/**/*.xsl" />
 			</fileset>
         </jar>
-		<jar jarfile="${distTMA}/TMA.addon.jar">
+		<jar jarfile="${distTMA}/TMA.package.jar">
 			<manifest>
 				<attribute name="Built-By" value="${user.name}" />
 			</manifest>
@@ -180,7 +189,9 @@
 	</target>
 
 
-	<target name="addon"
+	<target name="addon" depends="package"/>
+
+	<target name="package"
 	        depends="build_jar_all_TMA_NoJUnitTest"
 	        description="release BEAST 2 add-on version of TMA">
 
@@ -202,7 +213,7 @@
 			<fileset dir="examples" />
 		</copy>
 		<copy todir="${Add_on_dir}/lib">
-			<fileset dir="${distTMA}" includes="TMA.addon.jar" />
+			<fileset dir="${distTMA}" includes="TMA.package.jar" />
 		</copy>
 		<copy todir="${Add_on_dir}">
 			<fileset dir="${distTMA}" includes="TMA.src.jar" />
@@ -215,12 +226,12 @@
 			<fileset file="templates/TreePriorsMA.xml" />
 		</copy>
 
-		<jar jarfile="${distTMA}/TMA.v${version}.zip">
+		<jar jarfile="${distTMA}/TMA.v${TMAVersion}.zip">
 			<fileset dir="${Add_on_dir}">
 				<include name="**/*" />
 			</fileset>
         </jar>
-		<echo message="Add-on version v${version} release is finished." />
+		<echo message="Add-on version v${TMAVersion} release is finished." />
 	</target>
 
 </project>
