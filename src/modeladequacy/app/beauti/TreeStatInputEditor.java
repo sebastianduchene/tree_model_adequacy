@@ -41,15 +41,13 @@ public class TreeStatInputEditor extends ListInputEditor {
 		Button button = new Button("Edit statistics");
 		button.setOnAction(e -> {
 			try {
-				List<TreeSummaryStatistic<?>> stats = (List<TreeSummaryStatistic<?>>) input.get();
-				TreeStatData treeStatData = new TreeStatData();
-				treeStatData.statistics.addAll(stats);
-
-				StatisticsPanel panel = new StatisticsPanel(null, treeStatData);
-				SwingNode sn = new SwingNode();
 				SwingUtilities.invokeAndWait(new Runnable() {
 					@Override
 					public void run() {
+						List<TreeSummaryStatistic<?>> stats = (List<TreeSummaryStatistic<?>>) input.get();
+						TreeStatData treeStatData = new TreeStatData();
+						treeStatData.statistics.addAll(stats);
+						StatisticsPanel panel = new StatisticsPanel(null, treeStatData);
 						int result = JOptionPane.showConfirmDialog(null, panel, "Pick your Tree Statistics",
 								JOptionPane.OK_CANCEL_OPTION);
 						if (result == JOptionPane.OK_OPTION) {
@@ -60,7 +58,6 @@ public class TreeStatInputEditor extends ListInputEditor {
 						}
 					}
 				});
-
 			} catch (Exception ee) {
 				Alert.showMessageDialog(null, "Fatal exception: " + ee, "Please report this to the authors",
 						Alert.ERROR_MESSAGE);

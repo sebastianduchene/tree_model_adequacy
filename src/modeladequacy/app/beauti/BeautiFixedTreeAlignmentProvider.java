@@ -1,5 +1,6 @@
 package modeladequacy.app.beauti;
 
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import java.util.List;
 import beastfx.app.inputeditor.BeautiAlignmentProvider;
 import beastfx.app.inputeditor.BeautiDoc;
 import beastfx.app.util.Alert;
-import beastfx.app.util.Utils;
+import beastfx.app.util.FXUtils;
 import modeladequacy.base.evolution.likelihood.FixedTreeLikelihood;
 import beast.base.core.BEASTInterface;
 import beast.base.inference.State;
@@ -24,7 +25,7 @@ public class BeautiFixedTreeAlignmentProvider extends BeautiAlignmentProvider {
 	@Override
 	public List<BEASTInterface> getAlignments(BeautiDoc doc) {
 		try {
-			File file = Utils.getLoadFile("Open tree file with fixed tree");
+			File file = FXUtils.getLoadFile("Open tree file with fixed tree");
 			if (file != null) {
 				NexusParser parser = new NexusParser();
 				parser.parseFile(file);
